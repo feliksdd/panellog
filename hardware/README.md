@@ -30,7 +30,7 @@ One node per PV module with:
 - E73-2G4M08S1C / nRF52840 in normal-voltage mode with VDD and VDDH on 3.3 V; DCCH/USB VBUS are unused
 - external two-wire Pt1000 module probe, measured ratiometrically with a 14.7 kOhm precision reference
 - internal 10 kOhm NTC close to Q1 for hotspot/thermal protection
-- passive normally-ON **intended** Q1 gate bias with nominal 10 V VGS zener and MCU-controlled 2N7002 pull-down; the 220-kOhm microamp-level clamp voltage, hot leakage and fault behavior remain unqualified
+- passive normally-ON **intended** Q1 gate bias with **R8 47 kΩ**, **JSCJ MMSZ4697 10-V low-current zener (D2)** and **R9 2.2 kΩ**, with MCU-controlled 2N7002 pull-down; hot leakage, actual gate voltage, switching SOA and fault behavior remain unqualified
 - SWD pogo interface
 
 The TVS position D1 is intentionally present but DNP. Its actual part number and clamp voltage must not be frozen before the cold-Voc and transient envelope is checked for every deployed module type.
@@ -57,7 +57,7 @@ INA228 sense traces must leave directly from the dedicated Kelvin lands, not fro
 
 ## Updated field-installation assumptions (2026-10-29)
 
-The intended PV connection uses only **1–2 m MC4 cables** per single module and infrequent, slow Q1 switching. A continuously imposed >85-V PV-module voltage is not expected from the nominal cold `Voc`, but inductive switching peaks at **Q1 drain**, MPPT input-capacitor resonance, and unrelated induced surges cannot be excluded by `Voc`. Given the explicitly accepted modest surge-protection requirement, **retain D1 as DNP**, reserve Q1-snubber space if possible, and scope the actual transients before ordering a TVS. The provisional 20-A thermal/current case remains. The proposed capacitor/zener/gate value changes and actual LCSC numbers are in [short-lead PV decisions](../docs/design_decisions_short_pv_leads_2026-10-29.md); schematic is not yet modified.
+The intended PV connection uses only **1–2 m MC4 cables** per single module and infrequent, slow Q1 switching. A continuously imposed >85-V PV-module voltage is not expected from the nominal cold `Voc`, but inductive switching peaks at **Q1 drain**, MPPT input-capacitor resonance, and unrelated induced surges cannot be excluded by `Voc`. Given the explicitly accepted modest surge-protection requirement, **retain D1 as DNP**, reserve Q1-snubber space if possible, and scope the actual transients before ordering a TVS. The provisional 20-A thermal/current case remains. The proposed capacitor/zener/gate value changes and actual LCSC numbers are in [short-lead PV decisions](../docs/design_decisions_short_pv_leads_2026-10-29.md). Native schematic **has now been modified**, see [pin/net static validation](kicad/VALIDATION_2026-10-29.md). D1 and the Q1 RC snubber are **DNP**, not fitted protection.
 
 ## Not yet release-frozen
 
@@ -66,7 +66,7 @@ The intended PV connection uses only **1–2 m MC4 cables** per single module an
 - exact 68 uH inductor MPN, hot Isat, input MLCC DC-bias derating (C1), input damping capacitor and regulator exposed-pad footprint
 - footprints for BVB, IPT015N10N5 and PV cable interfaces
 - enclosure
-- exact gate-clamp zener and pull-down MOSFET MPN; test gate bias, hot leakage and brownout
+- verify exact JSCJ MMSZ4697 diode characteristics and qualified 2N7002 Q2 MPN; test gate voltage, hot leakage, R9 switching time/SOA and brownout
 - exact Pt1000 probe encapsulation, cable and adhesive/protective patch stack
 
 These depend on cold-Voc/transient validation, PCB geometry and the first thermal/RF prototype. The earlier 15-A power-path envelope is not generally sufficient for the bifacial Solarwatt model; perform a provisional 20-A thermal/current-path design check as described in [the detailed audit](../docs/electrical_audit_2026-10-29.md). The native schematic remains unchanged pending verified part choices.
