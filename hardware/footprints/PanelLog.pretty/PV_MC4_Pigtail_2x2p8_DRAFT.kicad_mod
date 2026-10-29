@@ -1,0 +1,13 @@
+(footprint "PV_MC4_Pigtail_2x2p8_DRAFT"
+ (version 20241229)
+ (generator "pcbnew")
+ (layer "F.Cu")
+ (descr "DRAFT MC4 pigtail solder holes 2.8 mm, 18 mm pin span. External mechanical strain relief required; not a certified DC terminal.")
+ (property "Reference" "REF**" (at 0 -14 0) (layer "F.SilkS") (effects (font (size 0.8 0.8) (thickness 0.12))))
+ (property "Value" "PV_MC4_Pigtail_2x2p8_DRAFT" (at 0 14 0) (layer "F.Fab") (effects (font (size 0.7 0.7) (thickness 0.1))))
+ (attr through_hole)
+ (fp_rect (start -4 -12.5) (end 4 12.5) (stroke (width 0.1) (type default)) (fill no) (layer "F.Fab") (uuid "c5b9e883-79ce-4c5b-8e19-00000000001f"))
+ (fp_rect (start -4.4 -12.9) (end 4.4 12.9) (stroke (width 0.05) (type default)) (fill no) (layer "F.CrtYd") (uuid "c5b9e883-79ce-4c5b-8e19-000000000020"))
+  (pad "1" thru_hole circle (at 0 -9) (size 6.3 6.3) (drill 2.8) (layers "*.Cu" "*.Mask") (uuid "c5b9e883-79ce-4c5b-8e19-00000000001d"))
+  (pad "2" thru_hole circle (at 0 9) (size 6.3 6.3) (drill 2.8) (layers "*.Cu" "*.Mask") (uuid "c5b9e883-79ce-4c5b-8e19-00000000001e"))
+)
