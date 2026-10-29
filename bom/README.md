@@ -27,6 +27,10 @@ The current baseline is intentionally small and biased toward parts available fr
 
 Source/calculation and user constraints: [2026-10-29 design decisions](../docs/design_decisions_short_pv_leads_2026-10-29.md). Native KiCad 10 **schematic updated**; PCB not created. See [static validation](../hardware/kicad/VALIDATION_2026-10-29.md); native KiCad 10 ERC still pending.
 
+## PCB/footprint release status (2026-10-29)
+
+A [61-part KiCad PCB placement draft](../hardware/kicad/panellog.kicad_pcb) now exists, but **nine project-local review-stage footprint definitions** (TOLL Q1, BVB RSH1, E73 U3, LM5164 DDA U1, two PV pigtail pads, L1 envelope, C3, J3, J4) are **not certified against final manufacturer land patterns**. The standard library pads in this generated PCB also require updating to the installed KiCad-10 footprints. In particular select the 68-µH inductor MPN, cable interface/strain relief and optional C3 before any fabrication. Detailed status: [PCB footprint matrix](../hardware/kicad/PCB_LAYOUT_REV0_DRAFT.md).
+
 ## Selection notes
 
 - The 0.7 mOhm BVB is selected over larger shunts because it retains 0 +/-20 ppm/K TCR in the manufacturer table while INA228 resolution is still far more than sufficient.
