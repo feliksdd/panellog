@@ -404,6 +404,10 @@ A PV laminate and aluminium rail are poor surroundings for a 2.4 GHz ceramic ant
 
 For the actual **1–2 m MC4 single-module installation**, with rare switching, LCSC preferred, and an accepted non-industrial surge risk profile, see [short-lead PV electrical decisions](docs/design_decisions_short_pv_leads_2026-10-29.md). **Prototype candidates** are TDK **CNA6P1X7R2A475KT000A** (LCSC C22877898) **3× 4.7 µF / 100 V in parallel** at LM5164 VIN because TDK's DC-bias curve shows ~−75% at 60 V; low-current **MMSZ4697** zener (JSCJ C2910058), **R8 47 kΩ**, and **R9 2.2 kΩ**. D1 TVS stays **DNP** unless switching tests establish a need for targeted clamping. **Implemented in the native KiCad 10 schematic:** C1/C21/C22 (3× 4.7 µF/100 V), D2 MMSZ4697, R8 47 kΩ, R9 2.2 kΩ, D1 SMB footprint (DNP), and R23/C23 RC snubber footprints (both DNP). See [static net/pin validation](hardware/kicad/VALIDATION_2026-10-29.md). **Native KiCad 10 ERC is still pending; PCB and component qualification are not released.** Continue the provisional **20-A** current-path check.
 
+### PCB review draft — 2026-10-29
+
+The [native KiCad-10-readable PCB placement draft](hardware/kicad/panellog.kicad_pcb) has **61 PCB components, 191 pads, 32 named nets**, and two preliminary power-path copper segments. The [footprint validation matrix and DRC release gates](hardware/kicad/PCB_LAYOUT_REV0_DRAFT.md) explicitly identify unverified packages, missing power-return/Kelvin/RF routing and thermal/EMC/DRC blockers. **This is not a manufacturing release.**
+
 ## Current schematic review
 
 The [initial source-structural review](docs/schematic_audit_2026-10-29.md) records the KiCad label/pin check and provisional module data. The [full datasheet-based electrical audit](docs/electrical_audit_2026-10-29.md) recalculates the LM5164 and its ripple network, identifies gate-bias/2N7002 hot-leakage uncertainty, analyzes INA228 and 85-V transient coordination, and sets an **unqualified 20-A current-path check**. Neither review replaces native KiCad 10 ERC, real transient testing or bench/thermal validation.
