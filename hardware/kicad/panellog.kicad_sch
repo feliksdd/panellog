@@ -2470,7 +2470,7 @@
       (do_not_autoplace no)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "2.2uF 100V X7R"
+    (property "Value" "4.7uF 100V X7R C22877898"
       (at 30 31 0)
       (show_name no)
       (do_not_autoplace no)
@@ -3428,7 +3428,7 @@
       (do_not_autoplace no)
       (effects (font (size 1.0 1.0)))
     )
-    (property "Footprint" ""
+    (property "Footprint" "Diode_SMD:D_SMB"
     (at 30 115 0)
     (show_name no)
     (do_not_autoplace no)
@@ -3709,13 +3709,13 @@
       (do_not_autoplace no)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "220k 0.25W"
+    (property "Value" "47k 0.25W"
       (at 195 71 0)
       (show_name no)
       (do_not_autoplace no)
       (effects (font (size 1.0 1.0)))
     )
-    (property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+    (property "Footprint" "Resistor_SMD:R_1206_3216Metric"
     (at 195 75 0)
     (show_name no)
     (do_not_autoplace no)
@@ -3765,13 +3765,13 @@
       (do_not_autoplace no)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "10V VGS clamp"
+    (property "Value" "MMSZ4697 10V C2910058"
       (at 195 86 0)
       (show_name no)
       (do_not_autoplace no)
       (effects (font (size 1.0 1.0)))
     )
-    (property "Footprint" ""
+    (property "Footprint" "Diode_SMD:D_SOD-123"
     (at 195 90 0)
     (show_name no)
     (do_not_autoplace no)
@@ -3821,7 +3821,7 @@
       (do_not_autoplace no)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "100R"
+    (property "Value" "2.2k"
       (at 230 81 0)
       (show_name no)
       (do_not_autoplace no)
@@ -5869,7 +5869,271 @@
       )
     )
   )
-  (sheet_instances
+(symbol
+    (lib_id "PanelLog:C")
+    (at 30 135 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (fields_autoplaced yes)
+    (uuid "00000000-0000-4000-8000-000000001200")
+    (property "Reference" "C21"
+      (at 30 128.5 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "4.7uF 100V X7R C22877898"
+      (at 30 131 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects (font (size 1.0 1.0)))
+    )
+    (property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
+    (at 30 135 0)
+    (show_name no)
+    (do_not_autoplace no)
+    (hide yes)
+    (effects (font (size 1.27 1.27)))
+  )
+    (property "Datasheet" ""
+    (at 30 135 0)
+    (show_name no)
+    (do_not_autoplace no)
+    (hide yes)
+    (effects (font (size 1.27 1.27)))
+  )
+    (property "Description" ""
+    (at 30 135 0)
+    (show_name no)
+    (do_not_autoplace no)
+    (hide yes)
+    (effects (font (size 1.27 1.27)))
+  )
+    (pin "1" (uuid "00000000-0000-4000-8000-000000001201"))
+(pin "2" (uuid "00000000-0000-4000-8000-000000001202"))
+    (instances
+      (project "panellog"
+        (path "/00000000-0000-4000-8000-000000000001"
+          (reference "C21")
+          (unit 1)
+        )
+      )
+    )
+  )
+(symbol
+    (lib_id "PanelLog:C")
+    (at 65 135 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp no)
+    (fields_autoplaced yes)
+    (uuid "00000000-0000-4000-8000-000000001203")
+    (property "Reference" "C22"
+      (at 65 128.5 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "4.7uF 100V X7R C22877898"
+      (at 65 131 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects (font (size 1.0 1.0)))
+    )
+    (property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
+    (at 65 135 0)
+    (show_name no)
+    (do_not_autoplace no)
+    (hide yes)
+    (effects (font (size 1.27 1.27)))
+  )
+    (property "Datasheet" ""
+    (at 65 135 0)
+    (show_name no)
+    (do_not_autoplace no)
+    (hide yes)
+    (effects (font (size 1.27 1.27)))
+  )
+    (property "Description" ""
+    (at 65 135 0)
+    (show_name no)
+    (do_not_autoplace no)
+    (hide yes)
+    (effects (font (size 1.27 1.27)))
+  )
+    (pin "1" (uuid "00000000-0000-4000-8000-000000001204"))
+(pin "2" (uuid "00000000-0000-4000-8000-000000001205"))
+    (instances
+      (project "panellog"
+        (path "/00000000-0000-4000-8000-000000000001"
+          (reference "C22")
+          (unit 1)
+        )
+      )
+    )
+  )
+(symbol
+    (lib_id "PanelLog:R")
+    (at 115 205 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp yes)
+    (fields_autoplaced yes)
+    (uuid "00000000-0000-4000-8000-000000001206")
+    (property "Reference" "R23"
+      (at 115 198.5 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "DNP 10R snubber TBD"
+      (at 115 201 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects (font (size 1.0 1.0)))
+    )
+    (property "Footprint" "Resistor_SMD:R_1206_3216Metric"
+    (at 115 205 0)
+    (show_name no)
+    (do_not_autoplace no)
+    (hide yes)
+    (effects (font (size 1.27 1.27)))
+  )
+    (property "Datasheet" ""
+    (at 115 205 0)
+    (show_name no)
+    (do_not_autoplace no)
+    (hide yes)
+    (effects (font (size 1.27 1.27)))
+  )
+    (property "Description" ""
+    (at 115 205 0)
+    (show_name no)
+    (do_not_autoplace no)
+    (hide yes)
+    (effects (font (size 1.27 1.27)))
+  )
+    (pin "1" (uuid "00000000-0000-4000-8000-000000001207"))
+(pin "2" (uuid "00000000-0000-4000-8000-000000001208"))
+    (instances
+      (project "panellog"
+        (path "/00000000-0000-4000-8000-000000000001"
+          (reference "R23")
+          (unit 1)
+        )
+      )
+    )
+  )
+(symbol
+    (lib_id "PanelLog:C")
+    (at 150 205 0)
+    (unit 1)
+    (body_style 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (in_pos_files yes)
+    (dnp yes)
+    (fields_autoplaced yes)
+    (uuid "00000000-0000-4000-8000-000000001209")
+    (property "Reference" "C23"
+      (at 150 198.5 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "DNP 10nF 200V TBD"
+      (at 150 201 0)
+      (show_name no)
+      (do_not_autoplace no)
+      (effects (font (size 1.0 1.0)))
+    )
+    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
+    (at 150 205 0)
+    (show_name no)
+    (do_not_autoplace no)
+    (hide yes)
+    (effects (font (size 1.27 1.27)))
+  )
+    (property "Datasheet" ""
+    (at 150 205 0)
+    (show_name no)
+    (do_not_autoplace no)
+    (hide yes)
+    (effects (font (size 1.27 1.27)))
+  )
+    (property "Description" ""
+    (at 150 205 0)
+    (show_name no)
+    (do_not_autoplace no)
+    (hide yes)
+    (effects (font (size 1.27 1.27)))
+  )
+    (pin "1" (uuid "00000000-0000-4000-8000-000000001210"))
+(pin "2" (uuid "00000000-0000-4000-8000-000000001211"))
+    (instances
+      (project "panellog"
+        (path "/00000000-0000-4000-8000-000000000001"
+          (reference "C23")
+          (unit 1)
+        )
+      )
+    )
+  )
+(label "PV_PLUS"
+    (at 22.38 135 0)
+    (effects (font (size 0.9 0.9)))
+    (uuid "00000000-0000-4000-8000-000000001212")
+  )
+(label "GND"
+    (at 37.62 135 0)
+    (effects (font (size 0.9 0.9)))
+    (uuid "00000000-0000-4000-8000-000000001213")
+  )
+(label "PV_PLUS"
+    (at 57.38 135 0)
+    (effects (font (size 0.9 0.9)))
+    (uuid "00000000-0000-4000-8000-000000001214")
+  )
+(label "GND"
+    (at 72.62 135 0)
+    (effects (font (size 0.9 0.9)))
+    (uuid "00000000-0000-4000-8000-000000001215")
+  )
+(label "SHUNT_RETURN"
+    (at 107.38 205 0)
+    (effects (font (size 0.9 0.9)))
+    (uuid "00000000-0000-4000-8000-000000001216")
+  )
+(label "SNUBBER_MID"
+    (at 122.62 205 0)
+    (effects (font (size 0.9 0.9)))
+    (uuid "00000000-0000-4000-8000-000000001217")
+  )
+(label "SNUBBER_MID"
+    (at 142.38 205 0)
+    (effects (font (size 0.9 0.9)))
+    (uuid "00000000-0000-4000-8000-000000001218")
+  )
+(label "GND"
+    (at 157.62 205 0)
+    (effects (font (size 0.9 0.9)))
+    (uuid "00000000-0000-4000-8000-000000001219")
+  )
+    (sheet_instances
     (path "/"
       (page "1")
     )
