@@ -1,0 +1,13 @@
+(footprint "C_10uF_100V_DAMP_DRAFT"
+ (version 20241229)
+ (generator "pcbnew")
+ (layer "F.Cu")
+ (descr "DRAFT 10uF 100V input bulk; candidate size only, choose specific MPN before fabrication")
+ (property "Reference" "REF**" (at 0 -6.5 0) (layer "F.SilkS") (effects (font (size 0.8 0.8) (thickness 0.12))))
+ (property "Value" "C_10uF_100V_DAMP_DRAFT" (at 0 6.5 0) (layer "F.Fab") (effects (font (size 0.7 0.7) (thickness 0.1))))
+ (attr smd)
+ (fp_rect (start -5 -5) (end 5 5) (stroke (width 0.1) (type default)) (fill no) (layer "F.Fab") (uuid "c5b9e883-79ce-4c5b-8e19-000000000027"))
+ (fp_rect (start -5.4 -5.4) (end 5.4 5.4) (stroke (width 0.05) (type default)) (fill no) (layer "F.CrtYd") (uuid "c5b9e883-79ce-4c5b-8e19-000000000028"))
+  (pad "1" smd rect (at -4 0) (size 2.2 2.8)  (layers "F.Cu" "F.Paste" "F.Mask") (uuid "c5b9e883-79ce-4c5b-8e19-000000000025"))
+  (pad "2" smd rect (at 4 0) (size 2.2 2.8)  (layers "F.Cu" "F.Paste" "F.Mask") (uuid "c5b9e883-79ce-4c5b-8e19-000000000026"))
+)
