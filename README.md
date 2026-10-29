@@ -216,26 +216,30 @@ INA228 key maximum errors used here:
 
 Production current calibration removes the initial shunt tolerance and initial INA228 gain error as one combined gain term. Zero-current calibration removes the initial INA228 offset.
 
-For a conservative **60 K change from calibration temperature**, budget:
+The BVB data sheet specifies the ±20 ppm/K TCR for **20...60 °C**. Therefore the first guaranteed/data-sheet-derived budget uses a 40 K span inside that range. Wider temperature use must be validated by the two-temperature calibration described below; extrapolating ±20 ppm/K beyond the specified range is only an engineering assumption.
+
+For a 40 K change:
 
 | Contributor | Conservative residual |
 | --- | ---: |
-| BVB shunt TCR, ±20 ppm/K | 0.120% |
-| INA228 gain drift, ±20 ppm/K | 0.120% |
+| BVB shunt TCR, ±20 ppm/K | 0.080% |
+| INA228 gain drift, ±20 ppm/K | 0.080% |
 | production current reference / fixture allocation | 0.050% |
 | INA228 INL | 0.002% |
-| INA228 residual offset drift | 0.857 mA equivalent |
+| INA228 residual offset drift | 0.571 mA equivalent |
 
 Worst-case linear sum:
 
 | Module current | Offset-drift contribution | Current error |
 | ---: | ---: | ---: |
-| 1 A | 0.086% | **0.378%** |
-| 5 A | 0.017% | **0.309%** |
-| 12 A | 0.007% | **0.299%** |
-| 15 A | 0.006% | **0.298%** |
+| 1 A | 0.057% | **0.269%** |
+| 5 A | 0.011% | **0.223%** |
+| 12 A | 0.005% | **0.217%** |
+| 15 A | 0.004% | **0.216%** |
 
-The values are deliberately pessimistic: all signed maxima are added in the same direction. RSS values are about 0.20% at 1 A and 0.18% at 5...15 A.
+The values are deliberately pessimistic: all signed maxima are added in the same direction. RSS is about 0.16% at 1 A and about 0.14% at 5...15 A.
+
+For an **engineering 60 K extrapolation** using the same ±20 ppm/K shunt slope, the corresponding current totals would be about 0.378% at 1 A and 0.30% around 12...15 A. These 60 K values are not a manufacturer-guaranteed shunt specification.
 
 A zero measurement at the current operating temperature removes most of the offset-drift term.
 
@@ -243,40 +247,44 @@ A zero measurement at the current operating temperature removes most of the offs
 
 A factory 0 V + precision high-voltage calibration removes initial VBUS offset and gain error.
 
-For the same 60 K temperature excursion:
+For a 40 K temperature excursion:
 
 | Contributor | Conservative residual |
 | --- | ---: |
-| INA228 bus gain drift | 0.120% |
+| INA228 bus gain drift | 0.080% |
 | calibration voltage reference allocation | 0.050% |
 | INA228 INL | 0.002% |
-| bus-offset drift | 1.2 mV absolute |
+| bus-offset drift | 0.8 mV absolute |
 
 Worst-case voltage error is approximately:
 
-- 0.184% at 10 V
-- 0.178% at 20 V
-- 0.175% at 40 V
-- 0.174% at 60 V
+- 0.140% at 10 V
+- 0.136% at 20 V
+- 0.134% at 40 V
+- 0.133% at 60 V
+
+For a 60 K INA228 temperature excursion the corresponding 40 V voltage budget is about 0.175%. Unlike the BVB TCR extrapolation, the INA228 drift specification covers its operating temperature range.
 
 ### Calibrated DC power budget
 
 For `P = U * I`, conservative voltage and current worst-case errors are added:
 
-| Operating point | Conservative power error |
+| Operating point | Conservative power error, 40 K / data-sheet TCR range |
 | --- | ---: |
-| 40 V / 1 A | **0.553%** |
-| 40 V / 5 A | **0.484%** |
-| 40 V / 12 A | **0.474%** |
-| 40 V / 15 A | **0.473%** |
+| 40 V / 1 A | **0.403%** |
+| 40 V / 5 A | **0.357%** |
+| 40 V / 12 A | **0.351%** |
+| 40 V / 15 A | **0.350%** |
 
 Therefore the first hardware target is:
 
-> **<= 0.5% DC-power error for the useful PV power range after per-unit calibration**, with about 0.55% allowed around 1 A, for a 60 K excursion from calibration temperature.
+> **<= 0.4% DC-power error for the useful PV power range after per-unit calibration within a characterized 20...60 °C shunt-temperature range.**
+
+If the BVB ±20 ppm/K slope is extrapolated over 60 K, the corresponding engineering estimates are about 0.55% at 1 A and 0.47% around 12...15 A. Because the manufacturer's ±20 ppm/K number is specified for 20...60 °C, those wider-range figures are not a guaranteed data-sheet limit.
 
 This is an engineering error budget, not a guaranteed system specification. It excludes long-term shunt aging, thermal gradients between shunt and INA228, calibration-equipment errors beyond the allocated 0.05%, connector/contact thermoelectric effects and PCB/layout mistakes.
 
-A two-temperature current calibration can characterize the *effective* shunt + INA228 gain temperature coefficient of each assembled board. With that correction, the development target becomes **<= 0.3% DC-power error for I >= 1 A**, subject to prototype thermal validation.
+A two-temperature current calibration can characterize the *effective* shunt + INA228 gain temperature coefficient of each assembled board. After that characterization the development target becomes **<= 0.3% DC-power error for I >= 1 A over the validated outdoor temperature range**, subject to prototype thermal validation.
 
 ## Calibration strategy
 
@@ -296,6 +304,7 @@ Every PanelLog node gets a versioned calibration record stored in nonvolatile me
    - Determine one combined current scale factor; this absorbs initial shunt tolerance and INA228 gain error.
 
 3. **Voltage offset and gain**
+   - power the logic/INA228 from dedicated calibration/service pads so VBUS can independently be driven to 0 V.
    - 0 V point for VBUS offset.
    - one precision point around **35...45 V** for gain.
    - Reference-voltage uncertainty target: <=0.05%.
@@ -304,10 +313,11 @@ Every PanelLog node gets a versioned calibration record stored in nonvolatile me
    - minimum one-point calibration of the assembled probe/cable near room temperature.
    - use two temperature points if absolute module-temperature accuracy proves important.
 
-5. **Recommended two-temperature electrical calibration**
+5. **Two-temperature electrical calibration — required for the high-accuracy outdoor target**
    - repeat the current-gain point with the assembled board stabilized near about 20 °C and 60 °C.
    - fit one effective current-gain tempco in ppm/K.
-   - this is preferred over blindly programming the nominal shunt TCR into INA228 because the shunt TCR is signed/toleranced and INA die temperature is not exactly the shunt temperature.
+   - validate at an additional temperature outside those two points if the intended outdoor shunt temperature range extends beyond 20...60 °C.
+   - this is preferred over blindly programming the nominal shunt TCR into INA228 because the shunt TCR is signed/toleranced, the ±20 ppm/K manufacturer value is specified for 20...60 °C, and INA die temperature is not exactly the shunt temperature.
 
 Calibration record fields should include at least serial number, hardware revision, calibration format/version, UTC date, current gain, current zero, voltage gain, voltage zero, optional gain tempco, Pt1000 correction, reference-equipment ID/uncertainty and CRC.
 
@@ -367,7 +377,7 @@ The high-current path is a primary mechanical/electrical design feature, not ord
 - use wide, short copper for the MPPT-/shunt/MOSFET/PV- path; **2 oz copper is the initial PCB baseline**
 - size copper and thermal vias from actual hot-enclosure testing; no final trace width is frozen yet
 - keep the LM5164 switching loop physically away from the shunt/INA228 Kelvin pair
-- reserve input-TV S / transient-protection area near the PV cable entry
+- reserve input-TVS / transient-protection area near the PV cable entry
 - use PV-rated pigtails/connectors and strain relief; do not rely on a small generic PCB terminal for the 15 A path
 - conformal coating / enclosure materials must tolerate the expected hot-backside temperature and UV/moisture environment
 
@@ -396,7 +406,7 @@ Before the first fabrication/release:
 
 Planned:
 
-- `hardware/` - KiCad schematic/PCB and project-local libraries
+- `hardware/` - KiCad schematic/PCB, service/calibration pads and project-local libraries
 - `bom/` - selected components, sourcing and alternates
 - `firmware/` - nRF52840/Zigbee firmware
 - `docs/` - validation/calibration reports once measured hardware exists
