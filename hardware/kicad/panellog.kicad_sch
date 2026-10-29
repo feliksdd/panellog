@@ -3463,6 +3463,733 @@
         )
       )
     )
+
+(symbol "Device:Thermistor_NTC"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TH"
+				(at -4.445 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Thermistor_NTC"
+				(at 3.175 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Temperature dependent resistor, negative temperature coefficient"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "thermistor NTC resistor sensor RTD"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*NTC* *Thermistor* PIN?ARRAY* bornier* *Terminal?Block* R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Thermistor_NTC_0_1"
+				(arc
+					(start -3.048 2.159)
+					(mid -3.0495 2.3143)
+					(end -3.175 2.413)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -3.048 2.159)
+					(mid -2.9736 1.9794)
+					(end -2.794 1.905)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -3.048 2.794)
+					(mid -2.9736 2.6144)
+					(end -2.794 2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.794 1.905)
+					(mid -2.6144 1.9794)
+					(end -2.54 2.159)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.794 2.54)
+					(mid -2.4393 2.5587)
+					(end -2.159 2.794)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.794 3.048)
+					(mid -2.9736 2.9736)
+					(end -3.048 2.794)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.54 2.794)
+					(mid -2.6144 2.9736)
+					(end -2.794 3.048)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.016 2.54)
+					(end 1.016 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 2.159) (xy -2.54 2.794)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.54) (xy -1.778 1.524) (xy 1.778 -1.524) (xy 1.778 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -3.683) (xy -2.54 -1.397) (xy -2.794 -2.159) (xy -2.286 -2.159) (xy -2.54 -1.397) (xy -2.54 -1.651)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -1.397) (xy -1.778 -3.683) (xy -2.032 -2.921) (xy -1.524 -2.921) (xy -1.778 -3.683)
+						(xy -1.778 -3.429)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "Thermistor_NTC_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+(symbol "Connector_Generic:Conn_01x05" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (id 0) (at 0 7.62 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "Conn_01x05" (id 1) (at 0 -7.62 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (id 2) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (id 3) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "connector" (id 4) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)" (id 5) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "Connector*:*_1x??_*" (id 6) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "Conn_01x05_1_1"
+        (rectangle (start -1.27 -4.953) (end 0 -5.207)
+          (stroke (width 0.1524) (type default) (color 0 0 0 0))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 -2.413) (end 0 -2.667)
+          (stroke (width 0.1524) (type default) (color 0 0 0 0))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 0.127) (end 0 -0.127)
+          (stroke (width 0.1524) (type default) (color 0 0 0 0))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 2.667) (end 0 2.413)
+          (stroke (width 0.1524) (type default) (color 0 0 0 0))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 5.207) (end 0 4.953)
+          (stroke (width 0.1524) (type default) (color 0 0 0 0))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 6.35) (end 1.27 -6.35)
+          (stroke (width 0.254) (type default) (color 0 0 0 0))
+          (fill (type background))
+        )
+        (pin passive line (at -5.08 5.08 0) (length 3.81)
+          (name "Pin_1" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 2.54 0) (length 3.81)
+          (name "Pin_2" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 0 0) (length 3.81)
+          (name "Pin_3" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -2.54 0) (length 3.81)
+          (name "Pin_4" (effects (font (size 1.27 1.27))))
+          (number "4" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -5.08 0) (length 3.81)
+          (name "Pin_5" (effects (font (size 1.27 1.27))))
+          (number "5" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+(symbol "Device:Crystal"
+			(pin_numbers hide)
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Y"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Crystal"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Two pin crystal"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "quartz ceramic resonator oscillator"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Crystal*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Crystal_0_1"
+				(rectangle
+					(start -1.143 2.54)
+					(end 1.143 -2.54)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -1.905 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -1.27) (xy -1.905 1.27)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 -1.27) (xy 1.905 1.27)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 1.905 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Crystal_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 1.27)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+(symbol "power:PWR_FLAG"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
 )
 	(text "POWER: LM5164 0...60 V design target -> 3.3 V"
 		(exclude_from_sim no)
@@ -6670,8 +7397,8 @@
 		)
 	)
 	(symbol
-		(lib_id "PanelLog:Conn_01x02")
-		(at 195.58 35.56 0)
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 193.04 34.29 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6682,7 +7409,7 @@
 		(fields_autoplaced yes)
 		(uuid "00000000-0000-4000-8000-000000000257")
 		(property "Reference" "J1"
-			(at 195.58 29.06 0)
+			(at 193.04 27.79 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6692,7 +7419,7 @@
 			)
 		)
 		(property "Value" "PV MODULE IN / PV-rated pigtail"
-			(at 195.58 31.56 0)
+			(at 193.04 30.29 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6702,7 +7429,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 195.58 35.56 0)
+			(at 193.04 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6713,7 +7440,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 195.58 35.56 0)
+			(at 193.04 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6724,7 +7451,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 195.58 35.56 0)
+			(at 193.04 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6750,8 +7477,8 @@
 		)
 	)
 	(symbol
-		(lib_id "PanelLog:Conn_01x02")
-		(at 275.59 35.56 0)
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 273.05 34.29 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6762,7 +7489,7 @@
 		(fields_autoplaced yes)
 		(uuid "00000000-0000-4000-8000-000000000260")
 		(property "Reference" "J2"
-			(at 275.59 29.06 0)
+			(at 273.05 27.79 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6772,7 +7499,7 @@
 			)
 		)
 		(property "Value" "MPPT OUT / PV-rated pigtail"
-			(at 275.59 31.56 0)
+			(at 273.05 30.29 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6782,7 +7509,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 275.59 35.56 0)
+			(at 273.05 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6793,7 +7520,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 275.59 35.56 0)
+			(at 273.05 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6804,7 +7531,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 275.59 35.56 0)
+			(at 273.05 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8761,7 +9488,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PanelLog:Crystal")
+		(lib_id "Device:Crystal")
 		(at 340.36 149.86 0)
 		(unit 1)
 		(body_style 1)
@@ -9001,8 +9728,8 @@
 		)
 	)
 	(symbol
-		(lib_id "PanelLog:Conn_01x02")
-		(at 299.72 204.47 0)
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 297.18 203.2 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9013,7 +9740,7 @@
 		(fields_autoplaced yes)
 		(uuid "00000000-0000-4000-8000-000000000395")
 		(property "Reference" "J3"
-			(at 299.72 197.97 0)
+			(at 297.18 196.7 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9023,7 +9750,7 @@
 			)
 		)
 		(property "Value" "External Pt1000 probe"
-			(at 299.72 200.47 0)
+			(at 297.18 199.2 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9033,7 +9760,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 299.72 204.47 0)
+			(at 297.18 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9044,7 +9771,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 299.72 204.47 0)
+			(at 297.18 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9055,7 +9782,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 299.72 204.47 0)
+			(at 297.18 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9081,8 +9808,8 @@
 		)
 	)
 	(symbol
-		(lib_id "PanelLog:Pt1000")
-		(at 340.36 204.47 0)
+		(lib_id "Device:R")
+		(at 340.36 204.47 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9641,8 +10368,8 @@
 		)
 	)
 	(symbol
-		(lib_id "PanelLog:NTC")
-		(at 340.36 250.19 0)
+		(lib_id "Device:Thermistor_NTC")
+		(at 340.36 250.19 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9881,8 +10608,8 @@
 		)
 	)
 	(symbol
-		(lib_id "PanelLog:Conn_01x05")
-		(at 340.36 270.51 0)
+		(lib_id "Connector_Generic:Conn_01x05")
+		(at 337.82 270.51 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9893,7 +10620,7 @@
 		(fields_autoplaced yes)
 		(uuid "00000000-0000-4000-8000-000000000431")
 		(property "Reference" "J4"
-			(at 340.36 264.01 0)
+			(at 337.82 264.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9903,7 +10630,7 @@
 			)
 		)
 		(property "Value" "SWD pogo"
-			(at 340.36 266.51 0)
+			(at 337.82 266.51 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9913,7 +10640,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 340.36 270.51 0)
+			(at 337.82 270.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9924,7 +10651,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 340.36 270.51 0)
+			(at 337.82 270.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9935,7 +10662,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 340.36 270.51 0)
+			(at 337.82 270.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9970,8 +10697,8 @@
 		)
 	)
 	(symbol
-		(lib_id "PanelLog:PWR_FLAG")
-		(at 15.24 25.4 0)
+		(lib_id "power:PWR_FLAG")
+		(at 15.24 20.32 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9982,7 +10709,7 @@
 		(fields_autoplaced yes)
 		(uuid "00000000-0000-4000-8000-000000000433")
 		(property "Reference" "#FLG01"
-			(at 15.24 18.9 0)
+			(at 15.24 13.82 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9992,7 +10719,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 15.24 21.4 0)
+			(at 15.24 16.32 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10002,7 +10729,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 15.24 25.4 0)
+			(at 15.24 20.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10013,7 +10740,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 15.24 25.4 0)
+			(at 15.24 20.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10024,7 +10751,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 15.24 25.4 0)
+			(at 15.24 20.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10047,8 +10774,8 @@
 		)
 	)
 	(symbol
-		(lib_id "PanelLog:PWR_FLAG")
-		(at 25.4 25.4 0)
+		(lib_id "power:PWR_FLAG")
+		(at 25.4 20.32 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10059,7 +10786,7 @@
 		(fields_autoplaced yes)
 		(uuid "00000000-0000-4000-8000-000000000435")
 		(property "Reference" "#FLG02"
-			(at 25.4 18.9 0)
+			(at 25.4 13.82 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10069,7 +10796,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 25.4 21.4 0)
+			(at 25.4 16.32 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10079,7 +10806,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 25.4 25.4 0)
+			(at 25.4 20.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10090,7 +10817,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 25.4 25.4 0)
+			(at 25.4 20.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10101,7 +10828,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 25.4 25.4 0)
+			(at 25.4 20.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10124,8 +10851,8 @@
 		)
 	)
 	(symbol
-		(lib_id "PanelLog:PWR_FLAG")
-		(at 35.56 25.4 0)
+		(lib_id "power:PWR_FLAG")
+		(at 35.56 20.32 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10136,7 +10863,7 @@
 		(fields_autoplaced yes)
 		(uuid "00000000-0000-4000-8000-000000000437")
 		(property "Reference" "#FLG03"
-			(at 35.56 18.9 0)
+			(at 35.56 13.82 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10146,7 +10873,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 35.56 21.4 0)
+			(at 35.56 16.32 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10156,7 +10883,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 35.56 25.4 0)
+			(at 35.56 20.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10167,7 +10894,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 35.56 25.4 0)
+			(at 35.56 20.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10178,7 +10905,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 35.56 25.4 0)
+			(at 35.56 20.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11084,6 +11811,36 @@
   (pts (xy 38.1 115.57) (xy 38.1 134.62))
   (stroke (width 0) (type default))
   (uuid "9c3da771-9abc-4431-8a1d-000000000071")
+)
+(wire
+  (pts (xy 336.55 149.86) (xy 332.74 149.86))
+  (stroke (width 0) (type default))
+  (uuid "ed3d4b9a-5bc2-427b-b03d-000000000bb8")
+)
+(wire
+  (pts (xy 344.17 149.86) (xy 347.98 149.86))
+  (stroke (width 0) (type default))
+  (uuid "ed3d4b9a-5bc2-427b-b03d-000000000bb9")
+)
+(wire
+  (pts (xy 336.55 204.47) (xy 332.74 204.47))
+  (stroke (width 0) (type default))
+  (uuid "ed3d4b9a-5bc2-427b-b03d-000000000bba")
+)
+(wire
+  (pts (xy 344.17 204.47) (xy 347.98 204.47))
+  (stroke (width 0) (type default))
+  (uuid "ed3d4b9a-5bc2-427b-b03d-000000000bbb")
+)
+(wire
+  (pts (xy 336.55 250.19) (xy 332.74 250.19))
+  (stroke (width 0) (type default))
+  (uuid "ed3d4b9a-5bc2-427b-b03d-000000000bbc")
+)
+(wire
+  (pts (xy 344.17 250.19) (xy 347.98 250.19))
+  (stroke (width 0) (type default))
+  (uuid "ed3d4b9a-5bc2-427b-b03d-000000000bbd")
 )
 (sheet_instances
 		(path "/"
