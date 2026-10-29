@@ -1,5 +1,7 @@
 # PanelLog electrical design audit — 2026-10-29 (datasheet review)
 
+**Historical baseline:** this electrical audit describes the **pre-modification schematic** (R8=220 kΩ, R9=100 Ω, a single C1). The new native schematic values and additional parts are specified in [KiCad source-validation report](../hardware/kicad/VALIDATION_2026-10-29.md). The original calculations remain as the rationale for the 2026-10-29 change.
+
 **Status: preliminary / NOT released.** This is a source-based audit of the native KiCad 10 schematic on `main`, combined with manufacturer datasheets. The schematic itself, its netlist and its PCB have **not** been validated in KiCad 10; there is no bench/oscilloscope or thermal confirmation. Do not label these calculations “hardware proven”.
 
 ## Traceability / sources
