@@ -1,0 +1,47 @@
+name: Generate KiCad 10 schematic
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "hardware/panellog.yaml"
+      - "hardware/symbols/**"
+      - ".github/workflows/generate-kicad10.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "9.0.x"
+
+      - name: Build SchGen
+        run: |
+          git clone --depth 1 https://github.com/kidmosey/SchGen.git /tmp/SchGen
+          dotnet build /tmp/SchGen/src/Schgen.Cli/Schgen.Cli.csproj -c Release
+
+      - name: Validate source
+        run: |
+          dotnet run --project /tmp/SchGen/src/Schgen.Cli -- validate hardware/panellog.yaml
+
+      - name: Generate KiCad 10 schematic
+        run: |
+          rm -rf hardware/kicad
+          mkdir -p hardware/kicad
+          dotnet run --project /tmp/SchGen/src/Schgen.Cli -- build hardware/panellog.yaml --out hardware/kicad --schematic-only
+
+      - name: Commit generated KiCad files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hardware/kicad
+          if ! git diff --cached --quiet; then
+            git commit -m "hardware: generate KiCad 10 schematic"
+            git push
+          fi
