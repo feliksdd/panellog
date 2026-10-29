@@ -15,6 +15,18 @@ The current baseline is intentionally small and biased toward parts available fr
 | Q_GATE | 2N7002 | TBD stocked JLC part | function selected |
 | D_GS | 10 V zener, BZT52C10-class | TBD stocked JLC part | function selected |
 
+## Prototype candidates after short-MC4-lead review (2026-10-29)
+
+| Ref | Candidate | LCSC | Qualification status |
+| --- | --- | --- | --- |
+| C1 input-bank (3 parts total) | TDK CNA6P1X7R2A475KT000A, 4.7 µF, 100 V, X7R, 1210, soft-termination | **C22877898** | Three in parallel proposed to achieve >2.2 µF *effective* at 60 V (TDK bias curve ~−75%); confirm corner cases. Schematic still shows single 2.2-µF C1. |
+| D2 gate clamp | JSCJ MMSZ4697, nominal 10 V, SOD-123, low-current MMSZ4697 family test at 50 µA | **C2910058** | Prototype candidate; verify exact manufacturer's hot VZ/leakage over 50 µA to ~1.1 mA. |
+| R8 gate pull-up | **47 kΩ**, ≥1206, ≥0.25 W, voltage/temperature derated | TBD LCSC | Proposed; schematic still 220 kΩ. |
+| R9 gate series | **2.2 kΩ**, 0603 | TBD LCSC | Proposed slower switch-off; schematic still 100 Ω. |
+| D1 input TVS | **DNP**, optional footprint | — | No device fitted unless switching measurements show necessity; PV+ TVS alone does not protect Q1 VDS. |
+
+Source/calculation and user constraints: [2026-10-29 design decisions](../docs/design_decisions_short_pv_leads_2026-10-29.md). **No native KiCad 10 schematic/PCB change was made.**
+
 ## Selection notes
 
 - The 0.7 mOhm BVB is selected over larger shunts because it retains 0 +/-20 ppm/K TCR in the manufacturer table while INA228 resolution is still far more than sufficient.
