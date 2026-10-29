@@ -11892,6 +11892,11 @@
 (junction (at 292.1 160.02) (diameter 0) (color 0 0 0 0) (uuid "fd64f173-102a-4f63-8652-000000001f6a"))
 (junction (at 292.1 170.18) (diameter 0) (color 0 0 0 0) (uuid "fd64f173-102a-4f63-8652-000000001f6b"))
 (junction (at 292.1 234.95) (diameter 0) (color 0 0 0 0) (uuid "fd64f173-102a-4f63-8652-000000001f6c"))
+(junction (at 22.86 125.73) (diameter 0) (color 0 0 0 0) (uuid "a4e172bf-a118-4a77-909d-00000000238c"))
+(junction (at 212.09 175.26) (diameter 0) (color 0 0 0 0) (uuid "a4e172bf-a118-4a77-909d-00000000238d"))
+(junction (at 210.82 81.28) (diameter 0) (color 0 0 0 0) (uuid "a4e172bf-a118-4a77-909d-00000000238e"))
+(junction (at 217.17 85.09) (diameter 0) (color 0 0 0 0) (uuid "a4e172bf-a118-4a77-909d-00000000238f"))
+(junction (at 205.74 139.7) (diameter 0) (color 0 0 0 0) (uuid "a4e172bf-a118-4a77-909d-000000002390"))
 (sheet_instances
 		(path "/"
 			(page "1")
