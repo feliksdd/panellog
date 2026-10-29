@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "PanelLog")(type "KiCad")(uri "${KIPRJMOD}/../footprints/PanelLog.pretty")(options "")(descr "PanelLog project-local footprints"))
+)
