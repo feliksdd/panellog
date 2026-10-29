@@ -23,14 +23,14 @@ One node per PV module with:
 - PV- return path: MPPT- -> Isabellenhuette BVB 0.7 mOhm shunt -> IPT015N10N5 -> module PV-
 - INA228 differential Kelvin pickup through 10 ohm / 100 nF input filtering
 - LM5164 converting the PV module directly to 3.3 V
-- 9.0 V on / 8.4 V off UVLO target from 1 MOhm / 200 kOhm
+- 9.0 V on / 8.4 V off **typical** UVLO target from 1 MOhm / 200 kOhm (datasheet thresholds and component tolerances apply)
 - ~300 kHz LM5164 RON setting with 27.4 kOhm
 - 68 uH initial buck inductor value
 - Type-3 LM5164 ripple network: 150 kOhm / 3.3 nF / 150 pF
 - E73-2G4M08S1C / nRF52840 in normal-voltage mode with VDD and VDDH on 3.3 V; DCCH/USB VBUS are unused
 - external two-wire Pt1000 module probe, measured ratiometrically with a 14.7 kOhm precision reference
 - internal 10 kOhm NTC close to Q1 for hotspot/thermal protection
-- passive normally-ON Q1 gate bias with 10 V VGS clamp and MCU-controlled 2N7002 pull-down
+- passive normally-ON **intended** Q1 gate bias with nominal 10 V VGS zener and MCU-controlled 2N7002 pull-down; the 220-kOhm microamp-level clamp voltage, hot leakage and fault behavior remain unqualified
 - SWD pogo interface
 
 The TVS position D1 is intentionally present but DNP. Its actual part number and clamp voltage must not be frozen before the cold-Voc and transient envelope is checked for every deployed module type.
@@ -59,16 +59,16 @@ INA228 sense traces must leave directly from the dedicated Kelvin lands, not fro
 
 - exact PV cable / MC4-pigtail mechanics and PCB termination
 - TVS / surge-clamp part number
-- exact 68 uH inductor MPN and input damping capacitor
+- exact 68 uH inductor MPN, hot Isat, input MLCC DC-bias derating (C1), input damping capacitor and regulator exposed-pad footprint
 - footprints for BVB, IPT015N10N5 and PV cable interfaces
 - enclosure
-- exact gate-clamp zener MPN
+- exact gate-clamp zener and pull-down MOSFET MPN; test gate bias, hot leakage and brownout
 - exact Pt1000 probe encapsulation, cable and adhesive/protective patch stack
 
-These depend on cold-Voc/transient validation, PCB geometry and the first thermal/RF prototype.
+These depend on cold-Voc/transient validation, PCB geometry and the first thermal/RF prototype. The earlier 15-A power-path envelope is not generally sufficient for the bifacial Solarwatt model; perform a provisional 20-A thermal/current-path design check as described in [the detailed audit](../docs/electrical_audit_2026-10-29.md). The native schematic remains unchanged pending verified part choices.
 
 ## Validation status
 
 The schematic file and project-local library have been generated in KiCad 10 syntax and structurally checked for balanced S-expressions, unique UUIDs, complete reference instances, and explicit no-connects on unused E73 pins.
 
-A native `kicad-cli sch erc` run is still required after opening/saving with KiCad 10; the current execution environment does not provide KiCad 10.
+A native `kicad-cli sch erc` run is still required after opening/saving with KiCad 10; the current execution environment does not provide KiCad 10. See [datasheet-based electrical audit (2026-10-29)](../docs/electrical_audit_2026-10-29.md) for recalculations, source links and blockers.
