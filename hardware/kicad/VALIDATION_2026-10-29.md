@@ -1,3 +1,5 @@
+> **WICHTIGE KORREKTUR (29.10.2026, Commit b1f31a81086f):** Die frühere strukturelle Prüfung in diesem Dokument verwendete für die vertikale Position der Symbolpins eine falsche Koordinatentransformation. Die alte Aussage „alle Pins angeschlossen“ war **nicht** elektrisch zuverlässig. Der echte KiCad-10-ERC vom 29.10.2026 meldete **35 Fehler und 65 Warnungen**, u. a. vertauschte LM5164-, INA228-, nRF52840- und MOSFET-Anschlüsse. Das Schaltplanmodell wurde daraufhin anhand der tatsächlichen Pinpositionen vollständig umgeordnet und alle Symbolpositionen auf 1,27 mm gerastert. Die frühere Validierung unten dokumentiert nur den historischen Stand; sie darf **nicht** als Nachweis für den aktuellen Schaltplan herangezogen werden. Ein **neuer nativer ERC-Lauf ist erforderlich**. Siehe auch den korrigierten Schaltplan auf `main`.
+
 # KiCad 10 schematic change validation — 2026-10-29
 
 **Source:** `hardware/kicad/panellog.kicad_sch` on `main`, changed in commit `0f8eb1f1974f5979e496329e928d8e2c7cc5ce85`. Native KiCad 10/ERC **has NOT been run** in this environment; the following is a **source/static netlist audit**, not final PCB/sign-off.
