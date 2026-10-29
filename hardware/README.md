@@ -4,6 +4,8 @@ The root [README](../README.md) is the architecture, dimensioning, error-budget 
 
 > **ERC-Warnung (29.10.2026):** Ein echter KiCad-10-ERC fand im ursprünglich erzeugten Schaltplan **35 Fehler und 65 Warnungen**, darunter sicherheitskritische Fehlzuordnungen an U1/U2/Q1/Q2/U3. Der Schaltplan wurde daraufhin in Commit `b1f31a81086f` anhand der tatsächlichen Pinpositionen korrigiert und auf 1,27-mm-Raster ausgerichtet. Die korrigierte Anschlussgeometrie wurde statisch geprüft; ein **erneuter nativer KiCad ERC** steht weiterhin aus. Das frühere allgemeine Strukturprüfergebnis war unzureichend. [Detaillierter ERC-Befund](kicad/VALIDATION_2026-10-29.md).
 
+> **Aktualisierung 29.10.2026:** Die Schaltung nutzt jetzt bei allen 60 generischen Bauteilen KiCad-Standardsymbole (u.a. Device:R/C/L/D_Zener/Crystal/Thermistor_NTC, Transistor_FET:2N7002, Connector_Generic, power:PWR_FLAG). Nur die fünf speziellen Schaltungssymbole bleiben in der PanelLog-Projektbibliothek. Insgesamt sind 198 sichtbare Drahtsegmente und 20 Junctions eingezeichnet; 143 lokale Netlabels verbleiben für bereichsübergreifende Signale. Der automatische Netzvergleich gegen den Originalstand ergibt **193/193 identische Pin-Netzzuordnungen**. **Ein neuer nativer KiCad-10-ERC und eine optische Kontrolle sind noch erforderlich.** Siehe [Konvertierungs- und Validierungsbericht](kicad/STANDARD_SYMBOLS_WIRING_2026-10-29.md).
+
 ## KiCad 10 schematic
 
 The native KiCad 10 project is in `hardware/kicad/`:
