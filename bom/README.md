@@ -1,44 +1,50 @@
-# Selected components
+# PanelLog BOM — Revision 0, Reviewstand 29.10.2026
 
-The current baseline is intentionally small and biased toward parts available from JLCPCB/LCSC where practical.
+**Keine Fertigungs- oder Beschaffungsfreigabe.** Die maschinenlesbare, direkt aus dem neuesten KiCad-Schaltplan abgeleitete [Referenzliste (`panellog_rev0_selection.csv`)](panellog_rev0_selection.csv) umfasst **62 reale Referenzen: 61 PCB-Bauteile plus RT1 als externen Pt1000**. Die Felder `Disposition` und `Selection_notes` grenzen eine elektrische Bauteilauswahl von einem vollständig qualifizierten Hersteller-Bestellteil ab.
 
-| Ref/function | MPN | LCSC | Status |
+Alle Schaltplanwerte und DNP-Flags stammen aus `hardware/kicad/panellog.kicad_sch`. MPN-/LCSC-Zuordnungen wurden soweit angegeben mit Hersteller/LCSC abgeglichen; Kandidaten wurden nicht ohne Landpattern- und Strom-/Temperaturfreigabe in die Schaltung übernommen.
+
+## Vorläufig gewählte zentrale Komponenten
+
+| Ref | MPN / Zweck | LCSC | BOM-Status |
 | --- | --- | --- | --- |
-| U_MEAS | TI INA228AIDGSR | C2887910 | selected |
-| R_SHUNT | Isabellenhütte BVB-M-R0007-1.0, 0.7 mOhm | C5563922 | selected; stock must be checked before order |
-| Q_SW | Infineon IPT015N10N5 | C108964 | selected; 100 V, 1.5 mOhm max @10 V |
-| U_BUCK | TI LM5164DDAR | C477928 | selected |
-| U_MCU | Ebyte E73-2G4M08S1C | project/local | selected, shared platform with poa-sensor |
-| T_MODULE | YAGEO Nexensos M222 Pt1000 F0.15 / Class A, 32208572 | external cabled probe | selected sensor element; probe encapsulation required |
-| R_RTD_REF | Susumu RG1608N-1472-W-T1, 14.7 kohm 0.05% 10 ppm/K | C1721340 | selected |
-| T_INT | TDK NTCG163JF103FT1S or equivalent 10k NTC | JLC/LCSC stocked part | internal MOSFET hotspot monitor |
-| Q_GATE | 2N7002 | TBD stocked JLC part | function selected |
-| D_GS | 10 V zener, BZT52C10-class | TBD stocked JLC part | function selected |
+| U1 | TI LM5164DDAR, 100-V-Input Buck, 3,3 V direkt | C477928 | Elektrisch festgelegt; DDA-PowerPAD/Landpattern/EP9 offen |
+| U2 | TI INA228AIDGSR, Mess-ADC | C2887910 | Elektrisch festgelegt; Footprint DGS-10 verifizieren |
+| U3 | Ebyte E73-2G4M08S1C/nRF52840 | projektlokal | Modul gewählt; RF-Pad-Geometrie und Antennenfreiraum offen |
+| RSH1 | Isabellenhütte BVB-M-R0007-1.0, 0,7 mΩ | C5563922 | Widerstand gewählt; Force/Sense-Pads verifizieren |
+| Q1 | Infineon IPT015N10N5ATMA1, 100 V TOLL | C108964 | Elektrisch gewählt; Pad-Geometrie und 20-A-Thermik offen |
+| C1, C21, C22 | TDK CNA6P1X7R2A475KT000A, 4,7 µF 100 V X7R 1210 | C22877898 | Drei Stück im Eingang; Bias/Temperatur-Derating offen |
+| R18 | Susumu RG1608N-1472-W-T1, 14,7 kΩ 0,05 %, 10 ppm/K | C1721340 | Präzisions-R für Pt1000 |
+| D2 | JSCJ MMSZ4697, 10-V-Low-current-Zener | C2910058 | Test der tatsächlichen Q1-Gatespannung und Heißleckage notwendig |
+| RT1 | Nexensos M222 Pt1000 F0.15/Class A | extern | Sensorelement gewählt, feuchtefeste cabled-Probe und Leitung noch offen |
 
-## Prototype candidates after short-MC4-lead review (2026-10-29)
+## Neue überprüfte Kandidaten, noch nicht layoutfreigegeben
 
-| Ref | Candidate | LCSC | Qualification status |
+| Ref | Konkreter Kandidat | LCSC | Entscheidung/Restprüfung |
 | --- | --- | --- | --- |
-| C1 input-bank (3 parts total) | TDK CNA6P1X7R2A475KT000A, 4.7 µF, 100 V, X7R, 1210, soft-termination | **C22877898** | Three in parallel proposed to achieve >2.2 µF *effective* at 60 V (TDK bias curve ~−75%); confirm corner cases. Implemented as C1+C21+C22, three 4.7-µF /100-V MLCCs in parallel in the native KiCad schematic; full effective capacitance not yet qualified. |
-| D2 gate clamp | JSCJ MMSZ4697, nominal 10 V, SOD-123, low-current MMSZ4697 family test at 50 µA | **C2910058** | Prototype candidate; verify exact manufacturer's hot VZ/leakage over 50 µA to ~1.1 mA. |
-| R8 gate pull-up | **47 kΩ**, ≥1206, ≥0.25 W, voltage/temperature derated | TBD LCSC | Implemented 47 kΩ with 1206 footprint; exact resistor MPN not chosen. |
-| R9 gate series | **2.2 kΩ**, 0603 | TBD LCSC | Implemented 2.2 kΩ with 0603 footprint; SOA/switching behavior unqualified. |
-| D1 input TVS | **DNP**, optional footprint | — | No device fitted unless switching measurements show necessity; PV+ TVS alone does not protect Q1 VDS. |
+| L1 | Shun Xiang Nuo **SMMS1040-680MT**, 68 µH | **C286354** | 2 A Nennstrom, 3,8 A Isat, 220 mΩ DCR, 11,5×10 mm; das bisherige **10×10-mm-Draft-Footprint ist geometrisch unpassend**. Hersteller-Landpattern, Isat bei Hitze und DCR prüfen |
+| C3 | Panasonic **EEEFN2A100P**, 10 µF 100 V, SMD-Alu | **C494873** | 8×10,2 mm, ESR 1,3 Ω bei 100 kHz, Ripple 130 mA (LCSC). **Polarisiert!** Der gegenwärtige 2-Pad-Draft ist nicht geeignet. Dämpfung, Temperatur/Lifetime und Polung prüfen |
+| RT2 | TDK **NTCG163JF103FT1S**, 10 kΩ NTC | **C406719** | 0603, B25/50=3380 K; Firmware-Kennlinie und thermische Anbindung an Q1 prüfen |
+| Q2 | onsemi **2N7002** | **C124475** | SOT-23, Worst-Case-Heißleckstrom/Fail-ON, G1/S2/D3 und VGS-Festigkeit freigeben |
+| Y1 | Jauch **Q 0,032768-JTX310-12,5-10-T1-HMR-LF** | **C5848533** | 32,768 kHz / CL12,5 pF / 3215-2P; ESR und externe C16/C17 gegen nRF52840-LFCLK prüfen |
+| R8 | VO **1206 ±5% 47K**, 250 mW / 200 V | **C2889758** | 47 kΩ Gate-Pull-up; elektrische/thermische Reserve im Worst Case und Toleranz prüfen |
 
-Source/calculation and user constraints: [2026-10-29 design decisions](../docs/design_decisions_short_pv_leads_2026-10-29.md). Native KiCad 10 **schematic updated**; PCB not created. See [static validation](../hardware/kicad/VALIDATION_2026-10-29.md); native KiCad 10 ERC still pending.
+Keine vorzeitige BOM-Festlegung: Die Katalogdaten von LCSC sind keine Garantie für Herstellerlandpattern, Qualifikation, gleichbleibenden Lieferbestand oder Heißkennwerte.
 
-## PCB/footprint release status (2026-10-29)
+## Weiter offen: mechanisch und konstruktiv
 
-A [61-part KiCad PCB placement draft](../hardware/kicad/panellog.kicad_pcb) now exists, but **nine project-local review-stage footprint definitions** (TOLL Q1, BVB RSH1, E73 U3, LM5164 DDA U1, two PV pigtail pads, L1 envelope, C3, J3, J4) are **not certified against final manufacturer land patterns**. The standard library pads in this generated PCB also require updating to the installed KiCad-10 footprints. In particular select the 68-µH inductor MPN, cable interface/strain relief and optional C3 before any fabrication. Detailed status: [PCB footprint matrix](../hardware/kicad/PCB_LAYOUT_REV0_DRAFT.md).
+- J1/J2: MC4-Leitungssatz, Leiterplatten-Anschlüsse, 20-A-Strompfad und mechanische Zugentlastung. Ein blankes Pigtail-Lötpad genügt nicht.
+- J3: externes Pt1000-Kabel und dessen wetterfeste Kabeleinführung.
+- J4: SWD-Pogo-Adapter (Spannungstrennung im verbauten System).
+- U1/U3/RSH1/Q1 und L1/C3: endgültige Original-Hersteller-Footprints, Assemblierung/Lötpaste und DRC.
+- Generische R/C: **38 spezifizierte Werte**, aber noch ohne endgültige Herstellernummern, Spannungstoleranz-/Temperatur-Derating und teils LCSC-Bestellnummer; für eine platzierte JLCPCB-BOM sind diese Positionen nicht fertig.
 
-## Selection notes
+**Nicht bestücken (DNP):** D1 TVS, R23/C23 Q1-Snubber. Die Entscheidung ist bewusst provisorisch; Oszilloskopprüfung der PV-Überspannung und des Schaltverhaltens bleibt Pflicht.
 
-- The 0.7 mOhm BVB is selected over larger shunts because it retains 0 +/-20 ppm/K TCR in the manufacturer table while INA228 resolution is still far more than sufficient.
-- IPT015N10N5 is a good low-loss candidate **if** 10 V gate drive is achieved: its 1.5 mOhm maximum RDS(on) is specified at VGS=10 V. The present 220-kOhm gate resistor sources only ~136 uA at 40 V assuming a 10-V clamp; the generic 10-V zener and 2N7002 hot leakage are **not qualified**. Do not claim a guaranteed 10-V gate drive.
-- LM5164 now generates 3.3 V directly. The former 5 V + TPS7A20 stage is removed.
-- The external Pt1000 is a leaded M222 element built into a weather-protected cabled probe and thermally bonded to the module backsheet.
-- INA228 die temperature plus an inexpensive NTC next to QSW provide internal thermal information; no separate precision digital PCB temperature sensor is required initially.
+## Aktuelle CAD-Prüfung
 
-Before BOM freeze, qualify the exact zener/Q2 and the C1 high-voltage MLCC DC-bias characteristics, the LM5164 L1 MPN/hot saturation and exposed-pad footprint, TVS coordination with INA228's 85-V limit, and a provisional 20-A power-path scenario. See [electrical audit](../docs/electrical_audit_2026-10-29.md).
+Der native ERC des Nutzers vom 29.10.2026 22:47:52 lautet **0 Fehler, 0 Warnungen**. Das PCB hat laut DRC um 22:48:04 **39 Bibliotheksabweichungen und 131 offene Verbindungen**. Davon wurden 18 Standard-Footprints durch bekannte KiCad-10-kompatible Gegenstücke auf der Platine ersetzt; das Ergebnis muss erneut mit KiCad 10 geprüft werden.
 
-Do not substitute the shunt or current monitor without re-running the root-README error budget.
+Details: [`hardware/kicad/FOOTPRINT_BOM_REVIEW_2026-10-29.md`](../hardware/kicad/FOOTPRINT_BOM_REVIEW_2026-10-29.md).
+
+Erst wenn der revidierte BOM-Typ mechanisch, elektrisch und thermisch freigegeben ist und KiCad-ERC/DRC ohne nicht akzeptierte Verstöße besteht, darf ein PCB-Auftrag vorbereitet werden.

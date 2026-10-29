@@ -1,0 +1,63 @@
+Ref,Value,Footprint,MPN_or_candidate,LCSC,Disposition,Selection_notes
+C1,4.7uF 100V X7R C22877898,Capacitor_SMD:C_1210_3225Metric,TDK CNA6P1X7R2A475KT000A,C22877898,SELECTED_PROTOTYPE,Effective C at 60V still subject to bias/temperature tolerance.
+C2,100nF 100V X7R,Capacitor_SMD:C_0805_2012Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C3,10uF 100V electrolytic,PanelLog:C_10uF_100V_DAMP_DRAFT,Panasonic EEEFN2A100P,C494873,CANDIDATE_REVIEW,10uF 100V polarized SMD D8x10.2; 1.3ohm ESR at 100kHz; existing unpolarized draft footprint INVALID; sizing/lifetime and damping review.
+C4,2.2nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C5,22uF 10V X7R,Capacitor_SMD:C_0805_2012Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C6,22uF 10V X7R,Capacitor_SMD:C_0805_2012Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C7,100nF 10V,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C8,3.3nF X7R,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C9,150pF C0G,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C10,100nF differential,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C11,10nF 100V,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C12,100nF,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C13,1uF,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C14,100nF,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C15,4.7uF,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C16,22pF C0G,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C17,22pF C0G,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C18,100nF,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C19,100nF,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C20,100nF,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+C21,4.7uF 100V X7R C22877898,Capacitor_SMD:C_1210_3225Metric,TDK CNA6P1X7R2A475KT000A,C22877898,SELECTED_PROTOTYPE,Three-cap parallel HV input bank with C1/C22.
+C22,4.7uF 100V X7R C22877898,Capacitor_SMD:C_1210_3225Metric,TDK CNA6P1X7R2A475KT000A,C22877898,SELECTED_PROTOTYPE,Three-cap parallel HV input bank with C1/C21.
+C23,DNP 10nF 200V TBD,Capacitor_SMD:C_1206_3216Metric,,,DNP,"Optional RC snubber capacitor; 200V rating desired, not selected."
+D1,DNP TVS - select after cold-Voc/transient validation,Diode_SMD:D_SMB,,,DNP,PV+ TVS deliberately not installed; choose only after measured overvoltages.
+D2,MMSZ4697 10V C2910058,Diode_SMD:D_SOD-123,JSCJ MMSZ4697,C2910058,SELECTED_PROTOTYPE,10V Zener at 50uA nominal: hot leakage and actual Q1 VGS must be tested.
+J1,PV MODULE IN / PV-rated pigtail,PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT,MC4 PV-rated cable assemblies,,MECHANICAL_UNRESOLVED,External PV input 2x wires high-current; pigtail solder pads lack strain relief/cable validation.
+J2,MPPT OUT / PV-rated pigtail,PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT,MC4 PV-rated cable assemblies,,MECHANICAL_UNRESOLVED,MPPT output; 20A cable entry and PCB pad strain relief unqualified.
+J3,External Pt1000 probe,PanelLog:Pt1000_Cable_2pin_DRAFT,Weatherproof Pt1000 sensor cable,,MECHANICAL_UNRESOLVED,"Connector/cable termination, surge/ESD ingress, encapsulation and polarity verify."
+J4,SWD pogo,PanelLog:SWD_1x05_Pogo_DRAFT,SWD pogo 1x05 (fixture),,MECHANICAL_UNRESOLVED,"Pad pitch, mechanical tooling and grounded debug host isolation open."
+L1,68uH Isat>=1.8A,PanelLog:L_68uH_ENVELOPE_DRAFT,Shun Xiang Nuo SMMS1040-680MT,C286354,CANDIDATE_REVIEW,"68uH 2A rated 3.8A Isat 220mohm, 11.5x10mm; existing 10x10mm footprint INVALID; confirm temperature-dependent Isat, land pattern."
+Q1,IPT015N10N5,PanelLog:IPT015N10N5_TOLL_DRAFT,Infineon IPT015N10N5ATMA1,C108964,SELECTED_PROTOTYPE,PG-HSOF-8 TOLL pad 9 drain; land geometry and 20A thermals open.
+Q2,2N7002,Package_TO_SOT_SMD:SOT-23,onsemi 2N7002,C124475,CANDIDATE_REVIEW,SOT-23 gate1 source2 drain3; qualify high-temperature drain leakage in gate-control fault case.
+R1,1.0M 1%,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R2,200k 1%,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R3,27.4k 1%,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R4,175k 0.1%,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R5,100k 0.1%,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R6,150k 1%,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R7,47k,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R8,47k 0.25W,Resistor_SMD:R_1206_3216Metric,VO 1206 ±5% 47K,C2889758,CANDIDATE_REVIEW,47kohm 1206 250mW 200V; verify worst-case power/thermal derating and zener knee.
+R9,2.2k,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R10,100k,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R11,10R,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R12,10R,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R13,10R,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R14,10k,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R15,10k,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R16,10k,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R17,10k,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R18,14.7k 0.05% 10ppm/K,Resistor_SMD:R_0603_1608Metric,Susumu RG1608N-1472-W-T1,C1721340,SELECTED_PROTOTYPE,14.7k 0.05% 10ppm/K for ratiometric Pt1000 reference.
+R19,1k,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R20,1k,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R21,10k 1%,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R22,1k,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
+R23,DNP 10R snubber TBD,Resistor_SMD:R_1206_3216Metric,,,DNP,Optional RC snubber resistor; first capture Q1 switching transient.
+RSH1,BVB-M-R0007-1.0 0.7mR,PanelLog:BVB_M_R0007_Kelvin,Isabellenhuette BVB-M-R0007-1.0,C5563922,SELECTED_PROTOTYPE,4-force/sense lands matched to OEM PCB layout; project draft pad geometry NOT yet frozen.
+RT1,M222 Pt1000 Class A external probe,,Nexensos M222 Pt1000 F0.15 Class A 32208572,,EXTERNAL_SENSOR,"Off board: external 2-wire probe, encapsulation, cable, weather sealing and lead resistance compensation pending."
+RT2,10k NTC near Q1,Resistor_SMD:R_0603_1608Metric,TDK NTCG163JF103FT1S,C406719,CANDIDATE_REVIEW,"10kohm@25C, beta25/50 3380K +-1%, 0603; ADC calibration beta and thermal coupling."
+U1,LM5164DDAR,PanelLog:LM5164_DDA_PowerPAD_DRAFT,TI LM5164DDAR,C477928,SELECTED_PROTOTYPE,"DDA8 exposed pad physical package pad 9 vs schematic 1 duplication; require drawing, stencil/thermal vias."
+U2,INA228AIDGSR,PanelLog:INA228_DGS10,TI INA228AIDGSR,C2887910,SELECTED_PROTOTYPE,Validate INA228 DGS recommended land pattern.
+U3,E73-2G4M08S1C,PanelLog:E73_2G4M08S1C_DRAFT,Ebyte E73-2G4M08S1C,,SELECTED_PROTOTYPE,43-pad project-local footprint draft not OEM-verified; ceramic antenna proper keepout mandatory.
+Y1,32.768kHz CL=12.5pF,Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm,"Jauch Q 0,032768-JTX310-12,5-10-T1-HMR-LF",C5848533,CANDIDATE_REVIEW,"32.768kHz 12.5pF SMD3215 2pad; verify ESR<=nRF52840 LFCLK budget, pad geometry and C16/C17 load."
