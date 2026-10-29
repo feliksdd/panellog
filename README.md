@@ -14,7 +14,7 @@ One PanelLog node is used per module. Different MPPT inputs are never tied toget
 PV+ IN ---------------------------------------------------- PV+ OUT / MPPT+
    |                         |
    |                         +--> INA228 VBUS
-   +--> LM5164 5 V --> 3.3 V --> MCU / INA228 / Zigbee
+   +--> LM5164 (direct 3.3 V) --> MCU / INA228 / Zigbee
 
 MPPT- / PV- OUT --> 0.7 mOhm 4-wire shunt --> D  QSW  S --> PV- IN / local GND
                      |              |
@@ -174,7 +174,7 @@ LM5164 is rated 6...100 V and has 10.5 µA no-load input quiescent current. A pr
 - VOUT = 3.3 V
 - nominal FSW = 300 kHz
 - `RRON ~= 3.3 V * 2500 / 300 kHz = 27.5 kΩ` -> start with **27.4 kΩ, 1%**
-- feedback divider ratio `Rtop/Rbottom = 3.3/1.2 - 1 = 1.75`; start with **174 kΩ / 100 kΩ** for about 3.29 V nominal
+- feedback divider ratio `Rtop/Rbottom = 3.3/1.2 - 1 = 1.75`; the KiCad 10 schematic uses **175 kΩ / 100 kΩ** for about 3.30 V nominal
 - input UVLO target about 9.0 V on / 8.4 V off
 - using TI's UVLO equations, **1.0 MΩ / 200 kΩ** remains the initial UVLO network
 
@@ -338,7 +338,7 @@ Calibration record fields should include at least serial number, hardware revisi
 
 ### Runtime calibration
 
-- On boot / sunrise, hold QSW OFF briefly and refresh the zero-current value before connecting the module.
+- At boot / sunrise QSW is **passively ON** until the MCU actively asserts `SWITCH_OFF`; firmware cannot guarantee OFF before it starts. Once running, firmware may request a brief OFF calibration interval if the operating strategy permits, verify the zero-current condition and then release QSW.
 - Whenever BatteryFlex intentionally curtails the module, use the OFF interval to refresh zero offset.
 - Record INA228 die temperature with every calibration/measurement batch.
 - Apply the stored effective temperature coefficient only after prototype measurements establish the relation between INA temperature and actual shunt temperature.
@@ -399,6 +399,10 @@ The high-current path is a primary mechanical/electrical design feature, not ord
 ### RF placement
 
 A PV laminate and aluminium rail are poor surroundings for a 2.4 GHz ceramic antenna. Mount the node near a module edge and orient the E73 antenna away from aluminium and the module backsheet as far as practical. Link-margin testing in the final mechanical installation is a release gate; if it is inadequate, change to an external-antenna nRF52840 module variant rather than increasing TX power blindly.
+
+## Current schematic review
+
+The [2026-10-29 engineering audit](docs/schematic_audit_2026-10-29.md) records a pin/net-label static check, manufacturer-data-based cold-`Voc` estimates, a preliminary LM5164 ripple-network calculation, and outstanding release blockers. This is **not** a substitute for a KiCad 10 ERC run, transient validation, or bench measurements.
 
 ## Release gates
 
