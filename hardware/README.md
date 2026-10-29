@@ -55,6 +55,10 @@ INA228 sense traces must leave directly from the dedicated Kelvin lands, not fro
 7. Keep the E73 antenna at a module/enclosure edge and out of the aluminium-rail shadow.
 8. A grounded debugger can bypass the low-side measurement; installed-system SWD must be isolated or the PV/inverter circuit disconnected.
 
+## Updated field-installation assumptions (2026-10-29)
+
+The intended PV connection uses only **1–2 m MC4 cables** per single module and infrequent, slow Q1 switching. A continuously imposed >85-V PV-module voltage is not expected from the nominal cold `Voc`, but inductive switching peaks at **Q1 drain**, MPPT input-capacitor resonance, and unrelated induced surges cannot be excluded by `Voc`. Given the explicitly accepted modest surge-protection requirement, **retain D1 as DNP**, reserve Q1-snubber space if possible, and scope the actual transients before ordering a TVS. The provisional 20-A thermal/current case remains. The proposed capacitor/zener/gate value changes and actual LCSC numbers are in [short-lead PV decisions](../docs/design_decisions_short_pv_leads_2026-10-29.md); schematic is not yet modified.
+
 ## Not yet release-frozen
 
 - exact PV cable / MC4-pigtail mechanics and PCB termination
