@@ -6615,7 +6615,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:LM5164_DDA_PowerPAD_DRAFT"
 			(at 91.44 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -6876,7 +6876,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:C_10uF_100V_DAMP_DRAFT"
 			(at 49.53 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -7277,7 +7277,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:L_68uH_ENVELOPE_DRAFT"
 			(at 129.54 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -7834,7 +7834,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT"
 			(at 82.55 217.17 0)
 			(hide yes)
 			(show_name no)
@@ -7913,7 +7913,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT"
 			(at 83.82 203.2 0)
 			(hide yes)
 			(show_name no)
@@ -7992,7 +7992,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:IPT015N10N5_TOLL_DRAFT"
 			(at 130.81 186.69 0)
 			(hide yes)
 			(show_name no)
@@ -8672,7 +8672,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:E73_2G4M08S1C_DRAFT"
 			(at 345.44 87.63 0)
 			(hide yes)
 			(show_name no)
@@ -8874,7 +8874,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:Pt1000_Cable_2pin_DRAFT"
 			(at 220.98 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -9427,7 +9427,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:SWD_1x05_Pogo_DRAFT"
 			(at 377.19 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -10392,7 +10392,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm"
 			(at 284.48 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -10627,7 +10627,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:BVB_M_R0007_Kelvin"
 			(at 97.79 194.31 0)
 			(hide yes)
 			(show_name no)
