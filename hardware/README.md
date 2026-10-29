@@ -2,6 +2,8 @@
 
 The root [README](../README.md) is the architecture, dimensioning, error-budget and calibration source of truth.
 
+> **ERC-Warnung (29.10.2026):** Ein echter KiCad-10-ERC fand im ursprünglich erzeugten Schaltplan **35 Fehler und 65 Warnungen**, darunter sicherheitskritische Fehlzuordnungen an U1/U2/Q1/Q2/U3. Der Schaltplan wurde daraufhin in Commit `b1f31a81086f` anhand der tatsächlichen Pinpositionen korrigiert und auf 1,27-mm-Raster ausgerichtet. Die korrigierte Anschlussgeometrie wurde statisch geprüft; ein **erneuter nativer KiCad ERC** steht weiterhin aus. Das frühere allgemeine Strukturprüfergebnis war unzureichend. [Detaillierter ERC-Befund](kicad/VALIDATION_2026-10-29.md).
+
 ## KiCad 10 schematic
 
 The native KiCad 10 project is in `hardware/kicad/`:
