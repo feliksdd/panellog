@@ -48,6 +48,10 @@ RSH1 is deliberately represented as a **two-pin / two-net** resistor in the sche
 
 INA228 sense traces must leave directly from the dedicated Kelvin lands, not from the high-current copper. This preserves an electrically correct two-net model while enforcing true Kelvin routing on the PCB.
 
+## PCB placement draft (2026-10-29)
+
+A first native KiCad PCB now exists at [`kicad/panellog.kicad_pcb`](kicad/panellog.kicad_pcb): **61 placed components, 191 pads, 32 nets, 116×86-mm provisional outline, two pilot copper segments**. The external RT1 and ERC PWR_FLAGs remain off-board by design. An independent schematic-derived pad/net check found no mismatches or overlapping pads belonging to different nets. However, **this is NOT a routed, DRC-clean, 20-A/60-V-qualified or fabrication-ready board**. Nine local footprints are prototype candidates only, with major MPN/mechanical issues still open. Mandatory next step is the native KiCad 10 PCB DRC with schematic parity and completion of Kelvin sensing, return current path, buck/RF wiring, copper/via thermal design. See [PCB design status and footprint matrix](kicad/PCB_LAYOUT_REV0_DRAFT.md).
+
 ## Layout priorities
 
 1. Treat the 15 A current path as power hardware, not ordinary PCB routing.
