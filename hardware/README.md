@@ -8,10 +8,10 @@ One PCB per PV module with:
 
 - PV+ pass-through and direct INA228 VBUS measurement
 - PV-/return path: MPPT- -> BVB 0.7 mOhm Kelvin shunt -> BSC034N10LS5 -> module PV-
-- LM5164 PV-powered 5 V rail before the power switch
-- TPS7A2033 3.3 V rail
+- LM5164 PV-powered **3.3 V rail directly** before the power switch
 - E73-2G4M08S1C / nRF52840 Zigbee node
-- external two-wire Pt1000 module probe
+- external cabled Pt1000 module probe based on a leaded M222 Class A element
+- internal 10 kΩ NTC close to QSW for hotspot/thermal protection
 - passive normally-ON gate bias plus MCU-controlled active pull-down
 - SWD plus dedicated calibration/service power pads
 
@@ -33,6 +33,6 @@ One PCB per PV module with:
 - LM5164 inductor and final ripple-injection network
 - enclosure
 - exact gate-bias/zener part numbers
-- exact Pt1000 probe encapsulation and adhesive stack
+- exact Pt1000 probe encapsulation, cable and adhesive/protective patch stack
 
 These depend on cold-Voc/transient validation, PCB geometry and the first thermal/RF prototype.
