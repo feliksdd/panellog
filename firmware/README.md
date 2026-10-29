@@ -18,7 +18,7 @@ Target platform: nRF52840 / E73-2G4M08S1C as a Zigbee end device.
 
 ## Calibration lifecycle
 
-On boot/sunrise, keep QSW OFF long enough to acquire a fresh zero-current offset before connecting the module. Every later deliberate OFF interval can refresh the zero.
+At boot/sunrise, QSW is passively **ON** by hardware default until the MCU is able to command it OFF. Firmware must not assume that it held QSW OFF throughout startup. Once the MCU is running, it can request a short OFF interval to measure the zero-current offset, provided the operating strategy permits it and a plausibility check supports zero current. Later deliberate OFF intervals can refresh the zero; on MCU reset or lease expiry, return to ON.
 
 Factory calibration data are versioned and CRC-protected and include current/voltage scale and offset, effective current gain tempco when characterized, Pt1000 correction, calibration date and hardware revision.
 
