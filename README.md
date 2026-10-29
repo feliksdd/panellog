@@ -400,6 +400,10 @@ The high-current path is a primary mechanical/electrical design feature, not ord
 
 A PV laminate and aluminium rail are poor surroundings for a 2.4 GHz ceramic antenna. Mount the node near a module edge and orient the E73 antenna away from aluminium and the module backsheet as far as practical. Link-margin testing in the final mechanical installation is a release gate; if it is inadequate, change to an external-antenna nRF52840 module variant rather than increasing TX power blindly.
 
+## Field-specific component decisions (2026-10-29)
+
+For the actual **1–2 m MC4 single-module installation**, with rare switching, LCSC preferred, and an accepted non-industrial surge risk profile, see [short-lead PV electrical decisions](docs/design_decisions_short_pv_leads_2026-10-29.md). **Prototype candidates** are TDK **CNA6P1X7R2A475KT000A** (LCSC C22877898) **3× 4.7 µF / 100 V in parallel** at LM5164 VIN because TDK's DC-bias curve shows ~−75% at 60 V; low-current **MMSZ4697** zener (JSCJ C2910058), **R8 47 kΩ**, and **R9 2.2 kΩ**. D1 TVS stays **DNP** unless switching tests establish a need for targeted clamping. **No schematic values or footprints have yet been changed.** Continue the provisional **20-A** current-path check.
+
 ## Current schematic review
 
 The [initial source-structural review](docs/schematic_audit_2026-10-29.md) records the KiCad label/pin check and provisional module data. The [full datasheet-based electrical audit](docs/electrical_audit_2026-10-29.md) recalculates the LM5164 and its ripple network, identifies gate-bias/2N7002 hot-leakage uncertainty, analyzes INA228 and 85-V transient coordination, and sets an **unqualified 20-A current-path check**. Neither review replaces native KiCad 10 ERC, real transient testing or bench/thermal validation.
