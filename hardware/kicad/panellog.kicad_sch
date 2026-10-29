@@ -14573,21 +14573,258 @@
 			)
 		)
 	)
-(label "VDC"
-		(at 25.4 20.32 0)
-		(effects (font (size 0.9 0.9)))
-		(uuid "28f47f00-1155-455e-a3ab-000000000001")
+
+
+
+(symbol
+		(lib_id "power:VDC")
+		(at 25.4 27.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "90474fb5-aa51-4b27-a44c-000000000001")
+		(property "Reference" "#PWR036"
+			(at 25.4 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VDC"
+			(at 25.4 22.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 25.4 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VDC\""
+			(at 25.4 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "90474fb5-aa51-4b27-a44c-000000000002")
+		)
+		(instances
+			(project "panellog"
+				(path "/00000000-0000-4000-8000-000000000001"
+					(reference "#PWR036")
+					(unit 1)
+				)
+			)
+		)
 	)
-(label "GND"
-		(at 45.72 20.32 0)
-		(effects (font (size 0.9 0.9)))
-		(uuid "28f47f00-1155-455e-a3ab-000000000002")
+(symbol
+		(lib_id "power:GND")
+		(at 45.72 27.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "90474fb5-aa51-4b27-a44c-000000000004")
+		(property "Reference" "#PWR037"
+			(at 45.72 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 45.72 33.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 45.72 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 45.72 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "90474fb5-aa51-4b27-a44c-000000000005")
+		)
+		(instances
+			(project "panellog"
+				(path "/00000000-0000-4000-8000-000000000001"
+					(reference "#PWR037")
+					(unit 1)
+				)
+			)
+		)
 	)
-(label "+3V3"
-		(at 66.04 20.32 0)
-		(effects (font (size 0.9 0.9)))
-		(uuid "28f47f00-1155-455e-a3ab-000000000003")
+(symbol
+		(lib_id "power:+3V3")
+		(at 66.04 27.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "90474fb5-aa51-4b27-a44c-000000000007")
+		(property "Reference" "#PWR038"
+			(at 66.04 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 66.04 22.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 66.04 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "90474fb5-aa51-4b27-a44c-000000000008")
+		)
+		(instances
+			(project "panellog"
+				(path "/00000000-0000-4000-8000-000000000001"
+					(reference "#PWR038")
+					(unit 1)
+				)
+			)
+		)
 	)
+(wire
+ (pts (xy 25.4 20.32) (xy 25.4 27.94))
+ (stroke (width 0) (type default))
+ (uuid "90474fb5-aa51-4b27-a44c-000000000003")
+)
+(wire
+ (pts (xy 45.72 20.32) (xy 45.72 27.94))
+ (stroke (width 0) (type default))
+ (uuid "90474fb5-aa51-4b27-a44c-000000000006")
+)
+(wire
+ (pts (xy 66.04 20.32) (xy 66.04 27.94))
+ (stroke (width 0) (type default))
+ (uuid "90474fb5-aa51-4b27-a44c-000000000009")
+)
 (sheet_instances
 		(path "/"
 			(page "1")
