@@ -1,6 +1,6 @@
 # PanelLog design decisions after field-installation constraints (2026-10-29)
 
-Status: **reviewed/provisional decisions; schematic and PCB not yet modified or released.** This supplements, and where explicitly stated **supersedes**, `docs/electrical_audit_2026-10-29.md`. All source-specific facts below are linked; calculations and design assumptions are identified as such.
+Status: **reviewed/provisional decisions now implemented in KiCad-10 schematic**, after the original decision record. **PCB and native ERC are not complete; component selection is not released.** This supplements, and where explicitly stated **supersedes**, `docs/electrical_audit_2026-10-29.md`. All source-specific facts below are linked; calculations and design assumptions are identified as such.
 
 ## User-defined installation and risk profile
 
@@ -84,4 +84,4 @@ Still for engineering execution, not requiring new user constraints:
 - KiCad 10 ERC, actual footprint and netlist verification, SOA, thermal and PCB validation.
 - If measured >85-V on INA228 or >100-V on Q1/LM5164, reconsider corresponding **targeted** damping/clamp (D1 alone cannot protect all stressed nodes).
 
-**Not yet changed:** native schematic, BOM footprints or netlist. Apply the schematic/BOM revisions together after resolving the exact zener/hot Q2 datasheets, then run KiCad 10 ERC.
+**Implemented on main:** C1/C21/C22, R8/D2/R9, D1 SMB DNP footprint and Q1 series RC snubber R23/C23 (both DNP), as documented in [KiCad source-based validation](../hardware/kicad/VALIDATION_2026-10-29.md). The exact zener/hot-Q2 behavior, inductor/capacitor qualification, footprints and KiCad 10 ERC still require review. The native PCB is not created.
