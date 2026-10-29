@@ -260,7 +260,7 @@ A zero measurement at the current operating temperature removes most of the offs
 
 ### Calibrated voltage budget
 
-A factory 0 V + precision high-voltage calibration removes initial VBUS offset and gain error.
+A two-point precision-voltage calibration at two non-zero VBUS values solves both initial VBUS offset and gain error without a separate service supply. The baseline calibration points are approximately 12...15 V and 40...50 V.
 
 For a 40 K temperature excursion:
 
@@ -319,10 +319,10 @@ Every PanelLog node gets a versioned calibration record stored in nonvolatile me
    - Determine one combined current scale factor; this absorbs initial shunt tolerance and INA228 gain error.
 
 3. **Voltage offset and gain**
-   - power the logic/INA228 from dedicated calibration/service pads so VBUS can independently be driven to 0 V.
-   - 0 V point for VBUS offset.
-   - one precision point around **35...45 V** for gain.
-   - Reference-voltage uncertainty target: <=0.05%.
+   - apply two traceable, non-zero module-input voltages, nominally one around **12...15 V** and one around **40...50 V**.
+   - solve the affine correction `U_cal = a * U_raw + b`; this determines gain and offset simultaneously while PanelLog remains powered from its normal PV input.
+   - Reference-voltage uncertainty target: <=0.05% at both points.
+   - A separate calibration/service power input is therefore not required.
 
 4. **Pt1000**
    - minimum one-point calibration of the assembled probe/cable near room temperature.
