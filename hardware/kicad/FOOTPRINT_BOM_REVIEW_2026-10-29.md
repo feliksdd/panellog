@@ -68,3 +68,16 @@ Maschinenlesbare komplette aktuelle Schaltplanliste: [`bom/panellog_rev0_selecti
 - E73 https://devzone.nordicsemi.com/cfs-file/__key/support-attachments/beef5d1b77644c448dabff31668f3a47-501ceb3d34d541b591f720b20ce1b1ba/E73_2D00_2G4M08S1C_5F00_Usermanual_5F00_v1.9.pdf
 
 **Keine Fertigungsfreigabe:** ERC ist sauber, PCB noch weitgehend ungeroutet; die verbleibenden 21 Mismatches sind nicht nachweislich beseitigt. Reale Hersteller-Landpatterns und KiCad-10-DRC/Parität sind verpflichtend.
+
+
+## Nachtrag: Native KiCad-10-DRC 23:09:53 und weitere zehn Standardgehäuse
+
+Der neue Nutzerbericht `panellog-pcb-drc-footprints.rpt` vom **29.10.2026 23:09:53** bestätigt **genau 21 `lib_footprint_mismatch`**, **131 `unconnected_items`** und **0 Footprint-/Schaltplan-Paritätsfehler**. Die zuvor 18 korrigierten Standard-Footprints wurden damit bestätigt; außerdem meldet DRC keine Kurzschlüsse oder Lötmaskenbrücken.
+
+Nach Eingang dieses Berichts wurden **die zehn verbliebenen KiCad-Standardgehäuse ebenfalls auf KiCad-10-Bibliotheksdefinitionen übertragen**: `C1,C21,C22` (1210), `C2,C5,C6` (0805), `C23` (1206), `D1` (SMB), `Q2` (SOT-23), `Y1` (3215-Quarz). Grundlage: KiCad-10-Bibliotheksdateien aus [KiCad-Footprints-GitLab](https://gitlab.com/kicad/libraries/kicad-footprints), lesbar gespiegelt in `edprojekt/kicad-footprints` (Revision v10, Footprint-Dateiformat 20260206). Referenzen, Platzierung, Footprint-UUIDs, Schaltplanpfade, DNP und **alle 191 Pad-Netzzuordnungen** wurden programmatisch auf unveränderte Werte geprüft.
+
+Damit bleiben **voraussichtlich 11 Bibliothekswarnungen** für `U1,C3,L1,J1,J2,RSH1,Q1,U2,U3,J3,J4`; deren DRAFT-Geometrie muss separat mit Herstellerdaten kontrolliert werden. Die aktuelle DRC-Zahl nach diesem zweiten Update ist **noch nicht gemessen**. Die 131 offenen Verbindungen wurden absichtlich nicht angetastet. Die offizielle KiCad-10-Library-Revision kann von der lokal installierten 10.0.7 abweichen; daher muss der nächste native DRC den Abgleich nachweisen, gegebenenfalls gezieltes „Footprints aus Bibliothek aktualisieren“ mit der installierten Version.
+
+**WICHTIG:** Abgleich der Standardbibliothek bedeutet weder verifizierte elektrische Einsatzgrenzen noch die Freigabe der DRAFT-Spezialfootprints oder der 20-A-Stromführung.
+
+**Paralleländerung:** Während des Standard-Footprint-Abgleichs wurde auf `main` der Commit `16982fab9d9e93158a1bdf365e96a5584ce72541` („reorders PWR_FLAGs“) eingespielt. Er ändert den Schaltplan und eine `.kicad_prl`, jedoch **nicht das PCB** oder diese BOM. Die neuen PCB-Footprint-Daten basieren weiterhin auf exakt dem unveränderten PCB-Blob `dee0563babe9db9dc1287717cbee137ecde39910`; der zuletzt geänderte Schaltplan ist vor dem weiteren Routing erneut per ERC/DRC-Parität zu validieren.

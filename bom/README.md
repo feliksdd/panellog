@@ -48,3 +48,6 @@ Der native ERC des Nutzers vom 29.10.2026 22:47:52 lautet **0 Fehler, 0 Warnunge
 Details: [`hardware/kicad/FOOTPRINT_BOM_REVIEW_2026-10-29.md`](../hardware/kicad/FOOTPRINT_BOM_REVIEW_2026-10-29.md).
 
 Erst wenn der revidierte BOM-Typ mechanisch, elektrisch und thermisch freigegeben ist und KiCad-ERC/DRC ohne nicht akzeptierte Verstöße besteht, darf ein PCB-Auftrag vorbereitet werden.
+
+
+**Update 23:09 Uhr:** Der neue native KiCad-10-DRC bestätigte **21 statt 39 Footprint-Bibliothekswarnungen** und unverändert **131 unverbundene Verbindungen**. Danach wurden auch die letzten **zehn Standard-Footprints** aus KiCad-10-Bibliotheksdefinitionen aktualisiert (SOT-23, D_SMB, 0805/1206/1210 und Y1). Die verbleibenden **11 projektlokalen Spezialfootprints** sind mechanisch noch zu validieren; ein weiterer nativer DRC nach diesem Update steht aus. Siehe [Footprint-Review](../hardware/kicad/FOOTPRINT_BOM_REVIEW_2026-10-29.md).
