@@ -47,11 +47,11 @@ The 60 V design target is not a substitute for the final cold-`Voc` check. Befor
 | --- | --- | --- | --- |
 | Current / bus-voltage monitor | TI **INA228AIDGSR** | 20-bit, ±40.96 mV range, ±1 µV max offset, ±0.05% max gain error, 85 V bus/common-mode | LCSC **C2887910** |
 | Current shunt | Isabellenhütte **BVB-M-R0007-1.0** | 0.7 mΩ, true 4-terminal, ±20 ppm/K TCR, 8 W | LCSC **C5563922**; stock must be rechecked before ordering |
-| PV switch | Infineon **BSC034N10LS5** | 100 V logic-level N-MOSFET, max 4.6 mΩ at VGS=4.5 V | LCSC **C534326** |
-| PV-to-5-V buck | TI **LM5164DDAR** | 6...100 V input, synchronous 1 A buck, low no-load IQ | LCSC **C477928** |
-| 3.3-V rail | TI **TPS7A2033PDBVR** | 3.3 V / 300 mA, low-IQ LDO | LCSC **C2862740** |
+| PV switch | Infineon **IPT015N10N5** | 100 V OptiMOS 5, max 1.5 mΩ at VGS=10 V; TOLL/HSOF-8 gives low loss and good thermal margin | LCSC **C108964** |
+| PV-to-3.3-V buck | TI **LM5164DDAR** | 6...100 V input, synchronous 1 A buck, 10.5 µA no-load input IQ; direct 3.3 V avoids a second regulator | LCSC **C477928** |
 | Radio / MCU | Ebyte **E73-2G4M08S1C** | nRF52840, common platform with poa-sensor, Zigbee-capable | project-local footprint |
-| Module-temperature element | Vishay **PTS120601B1K00P100** | Pt1000, IEC 60751, class F0.3, -55...155 °C | external probe assembly |
+| External module-temperature element | YAGEO Nexensos **M222 Pt1000 F0.15 / Class A**, order 32208572 | leaded Pt1000, DIN EN 60751, intended for a cabled probe bonded to the module backsheet | external probe assembly |
+| Internal hotspot sensor | TDK **NTCG163JF103FT1S** or equivalent 10 kΩ NTC | cheap local MOSFET/PCB thermal protection; precision is not required | PCB SMD |
 | RTD reference resistor | Susumu **RG1608N-1472-W-T1** | 14.7 kΩ, ±0.05%, ±10 ppm/K | LCSC **C1721340** |
 | Gate pull-down switch | **2N7002** | simple MCU-controlled open-drain pull-down | generic/JLC part |
 | Gate clamp | **10 V zener**, e.g. BZT52C10-class | limits QSW VGS for passive fail-ON bias | select stocked JLC part at schematic release |
@@ -60,10 +60,9 @@ Primary data sheets:
 
 - INA228: https://www.ti.com/lit/ds/symlink/ina228.pdf
 - BVB: https://www.isabellenhuette.com/hubfs/Files/Data-sheets/BVB.pdf
-- BSC034N10LS5: https://www.infineon.com/assets/row/public/documents/24/49/infineon-bsc034n10ls5-datasheet-en.pdf
+- IPT015N10N5: https://www.infineon.com/dgdl/Infineon-IPT015N10N5-DataSheet-v02_04-EN.pdf
 - LM5164: https://www.ti.com/lit/ds/symlink/lm5164.pdf
-- TPS7A20: https://www.ti.com/lit/ds/symlink/tps7a20.pdf
-- PTS series: https://www.vishay.com/docs/28762/ptsserie.pdf
+- YAGEO Nexensos M222: https://www.heraeus.com/media/media/hne/datasheets/m_sensors/en_10/m_222_e.pdf
 
 ### Why 0.7 mΩ rather than 2 mΩ
 
@@ -116,33 +115,31 @@ A grounded USB/SWD debugger can create an unintended current path around the low
 
 ## MOSFET switch and loss
 
-BSC034N10LS5 is specified to 100 V. Its maximum RDS(on) is 3.4 mΩ at 10 V gate drive and 4.6 mΩ at 4.5 V.
+IPT015N10N5 is specified to 100 V and is a better fit than the earlier BSC034N10LS5 because PanelLog already provides an approximately 10 V passive gate bias. Logic-level operation is therefore unnecessary. IPT015N10N5 specifies maximum RDS(on) = 1.5 mΩ at VGS=10 V and 2.0 mΩ at VGS=6 V.
 
-Using the conservative 4.6 mΩ 25 °C limit:
+Using the 1.5 mΩ / 10 V maximum at 25 °C:
 
 ```text
-P_QSW(12 A) = 12^2 * 4.6 mOhm = 0.662 W
-P_QSW(15 A) = 15^2 * 4.6 mOhm = 1.035 W
+P_QSW(12 A) = 12^2 * 1.5 mOhm = 0.216 W
+P_QSW(15 A) = 15^2 * 1.5 mOhm = 0.338 W
 ```
 
-The MOSFET resistance rises with junction temperature, so the PCB must be thermally designed and tested for substantially more than the 25 °C values. A **1.5...2 W thermal design allowance** is the initial engineering target until enclosure and hot-module measurements exist.
-
-Shunt + MOSFET at 12 A, using the 25 °C maximum MOSFET value:
+Shunt + MOSFET at 12 A:
 
 ```text
-Rpath = 0.7 + 4.6 = 5.3 mOhm
-Vdrop = 63.6 mV
-Ploss = 0.763 W
+Rpath = 0.7 + 1.5 = 2.2 mOhm
+Vdrop = 26.4 mV
+Ploss = 0.317 W
 ```
 
 At 15 A:
 
 ```text
-Vdrop = 79.5 mV
-Ploss = 1.19 W
+Vdrop = 33.0 mV
+Ploss = 0.495 W
 ```
 
-These values exclude connector, cable and PCB-copper losses and the temperature increase of RDS(on).
+RDS(on) still rises with junction temperature. Until the first hot-module prototype is measured, size the PCB thermal path for roughly **2x the 25 °C MOSFET resistance** as a conservative engineering allowance; at 15 A that gives about 0.83 W for shunt + MOSFET before connector/copper losses. The TOLL/HSOF-8 footprint is larger than SuperSO8, but that is beneficial here because switching is rare and conduction/thermal performance dominate gate charge and footprint.
 
 ### Gate behavior / fail state
 
@@ -165,34 +162,52 @@ The sensor supply is connected directly across module PV+ / PV- **before QSW**, 
 Baseline:
 
 ```text
-PV 0...60 V --> LM5164 --> 5.0 V --> TPS7A2033 --> 3.3 V
+PV 0...60 V --> LM5164 --> 3.3 V --> MCU / INA228 / sensors
 ```
 
-LM5164 is rated 6...100 V. A preliminary operating point is:
+A switching regulator is strongly preferred over a high-voltage linear regulator: at 40 V input a linear regulator would dissipate about 0.37 W already at only 10 mA average load, and about 0.73 W during a 20 mA load interval. That is unnecessary heat behind the PV module. A resistor/zener supply is also unsuitable because the radio load is strongly dynamic.
 
-- VOUT = 5.0 V
+The former 5 V + LDO architecture is therefore removed. INA228 accepts 2.7...5.5 V and the nRF52840 module operates from the 3.3 V rail, so a second regulator does not buy useful accuracy. Use normal local decoupling at INA228; add an RC/ferrite only if prototype EMI testing shows a need.
+
+LM5164 is rated 6...100 V and has 10.5 µA no-load input quiescent current. A preliminary direct-3.3-V operating point is:
+
+- VOUT = 3.3 V
 - nominal FSW = 300 kHz
-- `RRON ~= 5 V * 2500 / 300 kHz = 41.7 kΩ` -> start with **42.2 kΩ, 1%**
-- feedback divider ratio `Rtop/Rbottom = 5/1.2 - 1 = 3.1667`; e.g. **316 kΩ / 100 kΩ** gives about 4.99 V nominal
+- `RRON ~= 3.3 V * 2500 / 300 kHz = 27.5 kΩ` -> start with **27.4 kΩ, 1%**
+- feedback divider ratio `Rtop/Rbottom = 3.3/1.2 - 1 = 1.75`; start with **174 kΩ / 100 kΩ** for about 3.29 V nominal
 - input UVLO target about 9.0 V on / 8.4 V off
-- using TI's UVLO equations, **1.0 MΩ / 200 kΩ** gives 9.0 V turn-on and 8.4 V turn-off
+- using TI's UVLO equations, **1.0 MΩ / 200 kΩ** remains the initial UVLO network
 
 The inductor/ripple-injection network and input transient suppression are **not release-frozen yet**. They must be finalized from the actual maximum load, layout and cold-`Voc`/surge envelope using the current LM5164 Rev. D design procedure. The initial PCB should reserve generous input-decoupling and TVS area.
 
-## Module temperature channel
+## Temperature channels
 
-The external temperature probe uses a **Pt1000** rather than an NTC so all modules have a standardized, stable transfer function.
+### External PV-module temperature
 
-Selected element: Vishay PTS120601B1K00P100:
+The module-temperature sensor is **not a PCB SMD component**. It is a cabled Pt1000 probe bonded to the PV-module backsheet near a representative cell area.
 
-- IEC 60751 platinum characteristic, 3850 ppm/K
-- class F0.3: `±(0.30 + 0.005*|T|) °C`
-- -55...155 °C
-- recommended continuous measurement current for the 1 kΩ PTS1206: 0.1...0.25 mA
+Baseline sensor element: YAGEO Nexensos **M222 Pt1000, class F0.15 / Class A, order 32208572**:
 
-A 14.7 kΩ ±0.05%, ±10 ppm/K reference resistor limits current to about 0.21 mA around room temperature and remains below 0.25 mA over the specified temperature range. Excitation is switched only for measurements. The nRF52840 SAADC reads the divider ratiometrically; firmware must compensate the actual excitation/supply reading rather than assuming an exact 3.3 V rail.
+- DIN EN 60751 / IEC platinum characteristic, 3850 ppm/K
+- class F0.15 (A), valid -50...300 °C
+- 2.3 x 2.1 x about 0.9 mm ceramic sensor body with 10 mm leads
+- recommended Pt1000 measuring current 0.1...0.3 mA
+- the bare element itself is for dry environments, so the PanelLog probe must encapsulate it and provide cable strain relief/weather protection
 
-The target is **better than ±0.5 °C after probe calibration near the operating range**, but the dominant error is expected to be thermal coupling to the PV backsheet rather than ADC quantization. The probe mechanics and adhesive/insulation stack require prototype validation.
+Use a fixed short cable and calibrate **sensor + cable + analog channel as one probe**. For a roughly 0.5...1 m cable, a 2-wire Pt1000 is adequate for the target because Pt1000 sensitivity is about 3.85 Ω/K and the cable resistance is both small and removed by the per-probe calibration. If later cable lengths become several metres, move to a true 4-wire probe/measurement rather than compensating nominal cable resistance in software.
+
+A 14.7 kΩ ±0.05%, ±10 ppm/K reference resistor keeps excitation near 0.2 mA. Excitation is switched only for measurements. The target remains **better than ±0.5 °C after calibration**, with the dominant uncertainty expected to be thermal coupling to the backsheet rather than the platinum element.
+
+Mechanically, use a thin thermally conductive electrically insulating adhesive layer and a small protective aluminium/polyimide patch; validate the complete assembly against a reference sensor. Commercial PV backsheet sensors use the same general approach: a Pt1000 element in a small bonded aluminium body.
+
+### Internal temperatures
+
+No extra precision digital temperature IC is required initially:
+
+1. **INA228 die temperature** is already available digitally and is specified to ±1 °C at 25 °C. Use it for measurement-chain temperature logging and for correlation with the shunt during temperature calibration.
+2. Add one cheap **10 kΩ SMD NTC next to QSW** and read it with the nRF52840 SAADC. This is a hotspot / thermal-protection channel, not a precision ambient sensor. It is more useful than placing a precision sensor elsewhere on the PCB because QSW is the dominant controllable heat source.
+
+If prototype measurements later show that true enclosure ambient temperature is needed independently of shunt and MOSFET temperature, TMP117 is a suitable optional I2C part (up to ±0.1 °C around room temperature), but it is not justified for revision 0.
 
 ## DC measurement error budget
 
