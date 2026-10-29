@@ -6995,7 +6995,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:LM5164_DDA_PowerPAD_DRAFT"
 			(at 64.77 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -7253,7 +7253,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:C_10uF_100V_DAMP_DRAFT"
 			(at 30.48 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -7653,7 +7653,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:L_68uH_ENVELOPE_DRAFT"
 			(at 110.49 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -8533,7 +8533,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT"
 			(at 193.04 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -8613,7 +8613,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT"
 			(at 273.05 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -8693,7 +8693,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:BVB_M_R0007_Kelvin"
 			(at 229.87 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -8773,7 +8773,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:IPT015N10N5_TOLL_DRAFT"
 			(at 275.59 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -9941,7 +9941,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:E73_2G4M08S1C_DRAFT"
 			(at 340.36 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -10624,7 +10624,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm"
 			(at 340.36 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -10864,7 +10864,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:Pt1000_Cable_2pin_DRAFT"
 			(at 297.18 203.2 0)
 			(hide yes)
 			(show_name no)
@@ -11744,7 +11744,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PanelLog:SWD_1x05_Pogo_DRAFT"
 			(at 337.82 270.51 0)
 			(hide yes)
 			(show_name no)
