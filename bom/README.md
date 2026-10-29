@@ -18,9 +18,11 @@ The current baseline is intentionally small and biased toward parts available fr
 ## Selection notes
 
 - The 0.7 mOhm BVB is selected over larger shunts because it retains 0 +/-20 ppm/K TCR in the manufacturer table while INA228 resolution is still far more than sufficient.
-- IPT015N10N5 is preferred because the passive gate network provides about 10 V; its 1.5 mOhm maximum RDS(on) materially reduces behind-module heat versus the earlier logic-level choice.
+- IPT015N10N5 is a good low-loss candidate **if** 10 V gate drive is achieved: its 1.5 mOhm maximum RDS(on) is specified at VGS=10 V. The present 220-kOhm gate resistor sources only ~136 uA at 40 V assuming a 10-V clamp; the generic 10-V zener and 2N7002 hot leakage are **not qualified**. Do not claim a guaranteed 10-V gate drive.
 - LM5164 now generates 3.3 V directly. The former 5 V + TPS7A20 stage is removed.
 - The external Pt1000 is a leaded M222 element built into a weather-protected cabled probe and thermally bonded to the module backsheet.
 - INA228 die temperature plus an inexpensive NTC next to QSW provide internal thermal information; no separate precision digital PCB temperature sensor is required initially.
+
+Before BOM freeze, qualify the exact zener/Q2 and the C1 high-voltage MLCC DC-bias characteristics, the LM5164 L1 MPN/hot saturation and exposed-pad footprint, TVS coordination with INA228's 85-V limit, and a provisional 20-A power-path scenario. See [electrical audit](../docs/electrical_audit_2026-10-29.md).
 
 Do not substitute the shunt or current monitor without re-running the root-README error budget.
