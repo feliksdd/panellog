@@ -33,7 +33,7 @@ Initial design envelope for one node:
 
 - module operating voltage: nominally about 30...45 V
 - PCB design target: **0...60 V continuous**
-- current measurement range: **0...15 A**
+- historical current-measurement target: **0...15 A**; **not a released power-path maximum**. Solarwatt bifacial Isc can exceed it. Audit now requires a provisional **20-A current-path check** (not a qualified continuous-current rating).
 - power-switch semiconductor rating: **100 V**
 - INA228 bus/common-mode limit: **85 V**
 - DC/DC input rating: **100 V**
@@ -146,12 +146,12 @@ RDS(on) still rises with junction temperature. Until the first hot-module protot
 The intended switch is **normally ON** and actively pulled OFF:
 
 - QSW gate receives a passive bias from PV+.
-- a gate-source zener clamps VGS to about 10 V.
+- a gate-source zener is intended to limit VGS toward nominally 10 V; **its actual voltage at the available 45–227 µA must be validated**, rather than inferred from a mA-rated zener specification.
 - a high-value series resistor limits clamp current.
 - a small 2N7002-class MOSFET pulls QSW gate to PV- when the MCU commands OFF.
-- the 2N7002 gate has a hardware pull-down, so MCU reset/high-Z releases QSW back to ON.
+- the 2N7002 gate has a hardware pull-down, so MCU reset/high-Z **intends** to release QSW back to ON, provided the passive bias and leakage allow sufficient gate drive.
 
-This has a stronger availability property than deriving the gate pull-up only from the regulated 5 V rail: loss of the MCU or buck does not by itself command the PV module OFF. Exact gate-bias resistor and zener values are to be frozen together with the final module-voltage/transient envelope.
+Unlike a gate bias that depends on the 3.3-V rail, the passive PV-fed bias is available without the MCU or buck. This is **not a guarantee for an arbitrary MCU hang or component failure**: a stuck-HIGH switch-off GPIO, a shorted pull-down transistor, or high-temperature leakage can still hold QSW OFF. The 220-kΩ resistor and nominal 10-V zener are provisional; refer to the [detailed electrical audit](docs/electrical_audit_2026-10-29.md) before freezing them.
 
 The switch is an **operational curtailment actuator, not a safety isolator or maintenance disconnect**.
 
@@ -402,7 +402,7 @@ A PV laminate and aluminium rail are poor surroundings for a 2.4 GHz ceramic ant
 
 ## Current schematic review
 
-The [2026-10-29 engineering audit](docs/schematic_audit_2026-10-29.md) records a pin/net-label static check, manufacturer-data-based cold-`Voc` estimates, a preliminary LM5164 ripple-network calculation, and outstanding release blockers. This is **not** a substitute for a KiCad 10 ERC run, transient validation, or bench measurements.
+The [initial source-structural review](docs/schematic_audit_2026-10-29.md) records the KiCad label/pin check and provisional module data. The [full datasheet-based electrical audit](docs/electrical_audit_2026-10-29.md) recalculates the LM5164 and its ripple network, identifies gate-bias/2N7002 hot-leakage uncertainty, analyzes INA228 and 85-V transient coordination, and sets an **unqualified 20-A current-path check**. Neither review replaces native KiCad 10 ERC, real transient testing or bench/thermal validation.
 
 ## Release gates
 
