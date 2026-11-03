@@ -66,4 +66,6 @@
 (pad "" smd circle (at 1.7999999999999998 0.20999999999999996) (size 1 1) (layers "F.Paste"))
 (pad "" smd circle (at 2.999999999999999 0.20999999999999996) (size 1 1) (layers "F.Paste"))
 (pad "" smd circle (at 4.2 0.20999999999999996) (size 1 1) (layers "F.Paste"))
+
+(model "${KIPRJMOD}/../3dmodels/generated/IPT015N10N5_ENVELOPE.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )

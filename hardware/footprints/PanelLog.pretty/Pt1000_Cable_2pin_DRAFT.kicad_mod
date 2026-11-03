@@ -10,4 +10,6 @@
  (fp_rect (start -2.9 -3.4) (end 2.9 3.4) (stroke (width 0.05) (type default)) (fill no) (layer "F.CrtYd") (uuid "c5b9e883-79ce-4c5b-8e19-00000000002c"))
   (pad "1" thru_hole circle (at 0 -1.27) (size 2.2 2.2) (drill 1.1) (layers "*.Cu" "*.Mask") (uuid "c5b9e883-79ce-4c5b-8e19-000000000029"))
   (pad "2" thru_hole circle (at 0 1.27) (size 2.2 2.2) (drill 1.1) (layers "*.Cu" "*.Mask") (uuid "c5b9e883-79ce-4c5b-8e19-00000000002a"))
+
+(model "${KIPRJMOD}/../3dmodels/generated/PT1000_SOLDER_WIRES_ENVELOPE.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )

@@ -1,0 +1,450 @@
+[
+  {
+    "ref": "H1",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/generated/Spelsberg_12741501_BASE_ENVELOPE.step",
+      "${KIPRJMOD}/../3dmodels/generated/Spelsberg_12741501_LID_ENVELOPE.step"
+    ],
+    "status": "optional enclosure visualization; hidden by default"
+  },
+  {
+    "ref": "C8",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R7",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R6",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C11",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C9",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C10",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R14",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C17",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C14",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R21",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R19",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C16",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "H4",
+    "models": [],
+    "status": "no physical component: hole or service pads"
+  },
+  {
+    "ref": "H3",
+    "models": [],
+    "status": "no physical component: hole or service pads"
+  },
+  {
+    "ref": "R13",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R17",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R15",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "H2",
+    "models": [],
+    "status": "no physical component: hole or service pads"
+  },
+  {
+    "ref": "D2",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Diode_SMD.3dshapes/D_SOD-123.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R18",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R10",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R20",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R8",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_1206_3216Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R16",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C15",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "U1",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/generated/LM5164_DDA_ENVELOPE.step"
+    ],
+    "status": "simplified project envelope"
+  },
+  {
+    "ref": "C1",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_1210_3225Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C2",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0805_2012Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C3",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/generated/Panasonic_F_8x10p2_ENVELOPE.step"
+    ],
+    "status": "simplified project envelope"
+  },
+  {
+    "ref": "R1",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R2",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R3",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C4",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "L1",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/generated/Wurth_7447709680_ENVELOPE.step"
+    ],
+    "status": "simplified project envelope"
+  },
+  {
+    "ref": "C5",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0805_2012Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C6",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0805_2012Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C7",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R4",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R5",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "D1",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Diode_SMD.3dshapes/D_SMB.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "J1",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/generated/PV_SOLDER_WIRES_ENVELOPE.step"
+    ],
+    "status": "simplified project envelope"
+  },
+  {
+    "ref": "J2",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/generated/PV_SOLDER_WIRES_ENVELOPE.step"
+    ],
+    "status": "simplified project envelope"
+  },
+  {
+    "ref": "RSH1",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/generated/BVB_M_ENVELOPE.step"
+    ],
+    "status": "simplified project envelope"
+  },
+  {
+    "ref": "Q1",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/generated/IPT015N10N5_ENVELOPE.step"
+    ],
+    "status": "simplified project envelope"
+  },
+  {
+    "ref": "R9",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "Q2",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Package_TO_SOT_SMD.3dshapes/SOT-23.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "U2",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/generated/INA228_DGS10_ENVELOPE.step"
+    ],
+    "status": "simplified project envelope"
+  },
+  {
+    "ref": "R11",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R12",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C12",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C13",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "U3",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/generated/E73_2G4M08S1C_ENVELOPE.step"
+    ],
+    "status": "simplified project envelope"
+  },
+  {
+    "ref": "Y1",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/generated/Crystal_3215_ENVELOPE.step"
+    ],
+    "status": "simplified project envelope"
+  },
+  {
+    "ref": "J3",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/generated/PT1000_SOLDER_WIRES_ENVELOPE.step"
+    ],
+    "status": "simplified project envelope"
+  },
+  {
+    "ref": "C18",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C19",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "RT2",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R22",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C20",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "J4",
+    "models": [],
+    "status": "no physical component: hole or service pads"
+  },
+  {
+    "ref": "C21",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_1210_3225Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C22",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_1210_3225Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "R23",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_1206_3216Metric.step"
+    ],
+    "status": "KiCad standard model"
+  },
+  {
+    "ref": "C23",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_1206_3216Metric.step"
+    ],
+    "status": "KiCad standard model"
+  }
+]

@@ -1,3 +1,5 @@
+> [Lokale STEP-Modelle und Gehäusevorschau](3dmodels/README.md) sind vollständig im Projekt hinterlegt.
+
 > Gehäuserevision: [Spelsberg 12741501, Platine 150 × 104 mm und Kabelmontage](../docs/enclosure_2026-11-03.md).
 
 > Latest routed prototype and actual KiCad 10.0.8 ERC/DRC: [review 2026-11-03](../docs/review_2026-11-03.md). Production release remains pending.
