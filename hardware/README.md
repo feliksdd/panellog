@@ -1,3 +1,5 @@
+> Latest routed prototype and actual KiCad 10.0.8 ERC/DRC: [review 2026-11-03](../docs/review_2026-11-03.md). Production release remains pending.
+
 # Hardware
 
 The root [README](../README.md) is the architecture, dimensioning, error-budget and calibration source of truth.
@@ -84,3 +86,4 @@ These depend on cold-Voc/transient validation, PCB geometry and the first therma
 The schematic file and project-local library have been generated in KiCad 10 syntax and structurally checked for balanced S-expressions, unique UUIDs, complete reference instances, and explicit no-connects on unused E73 pins.
 
 A native `kicad-cli sch erc` run is still required after opening/saving with KiCad 10; the current execution environment does not provide KiCad 10. See [datasheet-based electrical audit (2026-10-29)](../docs/electrical_audit_2026-10-29.md) for recalculations, source links and blockers.
+

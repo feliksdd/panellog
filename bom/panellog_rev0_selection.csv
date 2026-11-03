@@ -1,7 +1,7 @@
 Ref,Value,Footprint,MPN_or_candidate,LCSC,Disposition,Selection_notes
 C1,4.7uF 100V X7R C22877898,Capacitor_SMD:C_1210_3225Metric,TDK CNA6P1X7R2A475KT000A,C22877898,SELECTED_PROTOTYPE,Effective C at 60V still subject to bias/temperature tolerance.
 C2,100nF 100V X7R,Capacitor_SMD:C_0805_2012Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
-C3,10uF 100V electrolytic,PanelLog:C_10uF_100V_DAMP_DRAFT,Panasonic EEEFN2A100P,C494873,CANDIDATE_REVIEW,10uF 100V polarized SMD D8x10.2; 1.3ohm ESR at 100kHz; existing unpolarized draft footprint INVALID; sizing/lifetime and damping review.
+C3,10uF 100V EEEFN2A100P,PanelLog:Panasonic_F_8x10p2,Panasonic EEEFN2A100P,C494873,CANDIDATE_REVIEW,Polarized symbol and Panasonic F 8x10.2 land pattern corrected; lifetime/ESR suitability still requires verification.
 C4,2.2nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
 C5,22uF 10V X7R,Capacitor_SMD:C_0805_2012Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
 C6,22uF 10V X7R,Capacitor_SMD:C_0805_2012Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
@@ -28,8 +28,8 @@ J1,PV MODULE IN / PV-rated pigtail,PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT,MC4 PV-ra
 J2,MPPT OUT / PV-rated pigtail,PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT,MC4 PV-rated cable assemblies,,MECHANICAL_UNRESOLVED,MPPT output; 20A cable entry and PCB pad strain relief unqualified.
 J3,External Pt1000 probe,PanelLog:Pt1000_Cable_2pin_DRAFT,Weatherproof Pt1000 sensor cable,,MECHANICAL_UNRESOLVED,"Connector/cable termination, surge/ESD ingress, encapsulation and polarity verify."
 J4,SWD pogo,PanelLog:SWD_1x05_Pogo_DRAFT,SWD pogo 1x05 (fixture),,MECHANICAL_UNRESOLVED,"Pad pitch, mechanical tooling and grounded debug host isolation open."
-L1,68uH Isat>=1.8A,PanelLog:L_68uH_ENVELOPE_DRAFT,Shun Xiang Nuo SMMS1040-680MT,C286354,CANDIDATE_REVIEW,"68uH 2A rated 3.8A Isat 220mohm, 11.5x10mm; existing 10x10mm footprint INVALID; confirm temperature-dependent Isat, land pattern."
-Q1,IPT015N10N5,PanelLog:IPT015N10N5_TOLL_DRAFT,Infineon IPT015N10N5ATMA1,C108964,SELECTED_PROTOTYPE,PG-HSOF-8 TOLL pad 9 drain; land geometry and 20A thermals open.
+L1,68uH 7447709680 120V,PanelLog:Wurth_7447709680,Wurth 7447709680,,SELECTED_PROTOTYPE,Replaces 30V-rated SXN candidate; manufacturer 68uH/120V part and land pattern. Confirm sourcing and thermal performance.
+Q1,IPT015N10N5,PanelLog:IPT015N10N5_TOLL,Infineon IPT015N10N5ATMA1,C108964,SELECTED_PROTOTYPE,"OEM PG-HSOF-8 land geometry; pad 1 gate, 2-8 source, 9 drain. 20A thermal validation pending."
 Q2,2N7002,Package_TO_SOT_SMD:SOT-23,onsemi 2N7002,C124475,CANDIDATE_REVIEW,SOT-23 gate1 source2 drain3; qualify high-temperature drain leakage in gate-control fault case.
 R1,1.0M 1%,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
 R2,200k 1%,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
@@ -54,10 +54,10 @@ R20,1k,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/f
 R21,10k 1%,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
 R22,1k,Resistor_SMD:R_0603_1608Metric,,,SPEC_ONLY_MPN_PENDING,Electrical value/footprint specified; manufacturer ordering MPN and derating to be selected.
 R23,DNP 10R snubber TBD,Resistor_SMD:R_1206_3216Metric,,,DNP,Optional RC snubber resistor; first capture Q1 switching transient.
-RSH1,BVB-M-R0007-1.0 0.7mR,PanelLog:BVB_M_R0007_Kelvin,Isabellenhuette BVB-M-R0007-1.0,C5563922,SELECTED_PROTOTYPE,4-force/sense lands matched to OEM PCB layout; project draft pad geometry NOT yet frozen.
+RSH1,BVB-M-R0007-1.0 0.7mR,PanelLog:BVB_M_R0007_Kelvin,Isabellenhuette BVB-M-R0007-1.0,C5563922,SELECTED_PROTOTYPE,OEM force/sense geometry; separate nets for pads 1/2 force and 3/4 sense. Four-wire calibration required.
 RT1,M222 Pt1000 Class A external probe,,Nexensos M222 Pt1000 F0.15 Class A 32208572,,EXTERNAL_SENSOR,"Off board: external 2-wire probe, encapsulation, cable, weather sealing and lead resistance compensation pending."
 RT2,10k NTC near Q1,Resistor_SMD:R_0603_1608Metric,TDK NTCG163JF103FT1S,C406719,CANDIDATE_REVIEW,"10kohm@25C, beta25/50 3380K +-1%, 0603; ADC calibration beta and thermal coupling."
-U1,LM5164DDAR,PanelLog:LM5164_DDA_PowerPAD_DRAFT,TI LM5164DDAR,C477928,SELECTED_PROTOTYPE,"DDA8 exposed pad physical package pad 9 vs schematic 1 duplication; require drawing, stencil/thermal vias."
+U1,LM5164DDAR,PanelLog:LM5164_DDA,TI LM5164DDAR,C477928,SELECTED_PROTOTYPE,DDA0008B land pattern; distinct grounded EP pad 9; divided paste and thermal vias. Filled/capped via-in-pad process required.
 U2,INA228AIDGSR,PanelLog:INA228_DGS10,TI INA228AIDGSR,C2887910,SELECTED_PROTOTYPE,Validate INA228 DGS recommended land pattern.
-U3,E73-2G4M08S1C,PanelLog:E73_2G4M08S1C_DRAFT,Ebyte E73-2G4M08S1C,,SELECTED_PROTOTYPE,43-pad project-local footprint draft not OEM-verified; ceramic antenna proper keepout mandatory.
+U3,E73-2G4M08S1C,PanelLog:E73_2G4M08S1C,Ebyte E73-2G4M08S1C,,SELECTED_PROTOTYPE,Ebyte manual v1.9 top-view pad placement; two-layer antenna copper/track/via keepout.
 Y1,32.768kHz CL=12.5pF,Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm,"Jauch Q 0,032768-JTX310-12,5-10-T1-HMR-LF",C5848533,CANDIDATE_REVIEW,"32.768kHz 12.5pF SMD3215 2pad; verify ESR<=nRF52840 LFCLK budget, pad geometry and C16/C17 load."
