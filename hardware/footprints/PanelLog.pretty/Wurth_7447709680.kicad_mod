@@ -7,5 +7,7 @@
 (pad "1" smd rect (at -4.95 0) (size 2.9 5.4) (layers "F.Cu" "F.Paste" "F.Mask") )
 (pad "2" smd rect (at 4.95 0) (size 2.9 5.4) (layers "F.Cu" "F.Paste" "F.Mask") )
 
-(model "${KIPRJMOD}/../3dmodels/generated/Wurth_7447709680_ENVELOPE.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
+
+
+(model "${KIPRJMOD}/../3dmodels/manufacturer/Wurth_WE-PD_1210.stp" (offset (xyz 0 0 0.2)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )

@@ -1,4 +1,4 @@
-> [Lokale STEP-Modelle und Gehäusevorschau](3dmodels/README.md) sind vollständig im Projekt hinterlegt.
+> [Externe STEP-Modelle und Originalgehäuse](3dmodels/README.md): aktuelle Zuordnungen auf Basis `130ec6e`; U3, RSH1 und Y1 bleiben ohne verifiziertes Modell.
 
 > Gehäuserevision: [Spelsberg 12741501, Platine 150 × 104 mm und Kabelmontage](../docs/enclosure_2026-11-03.md).
 

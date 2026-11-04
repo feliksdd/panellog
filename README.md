@@ -1,5 +1,7 @@
 # PanelLog
 
+[3D model status](hardware/3dmodels/README.md): verified external models and original enclosure; E73, BVB shunt and JTX310 models remain missing.
+
 Per-module PV DC logger and curtailment node for BatteryFlex.
 
 PanelLog is installed **inline with one PV module**. Each node measures module voltage, module current, DC power/energy and module backsheet temperature. It can also disconnect that module from its inverter/MPPT input for slow BatteryFlex curtailment. The node is powered directly from the PV module and communicates wirelessly over Zigbee.

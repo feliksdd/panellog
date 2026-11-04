@@ -55,5 +55,7 @@
  (fill (thermal_gap .3) (thermal_bridge_width .3))
  (polygon (pts (xy -9.5 -12) (xy 9.5 -12) (xy 9.5 -5.2) (xy -9.5 -5.2))))
 
-(model "${KIPRJMOD}/../3dmodels/generated/E73_2G4M08S1C_ENVELOPE.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
+
+
+
 )

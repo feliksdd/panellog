@@ -1,0 +1,14 @@
+{
+  "base_commit": "130ec6e6e619249bba21afbcd5ff13154846e356",
+  "scope": "3D model assignments only",
+  "footprint_count": 65,
+  "routing_zones_drawings_unchanged": true,
+  "footprint_non_model_tokens_unchanged": true,
+  "missing_verified_models": [
+    "U3",
+    "RSH1",
+    "Y1"
+  ],
+  "erc_drc_rerun": false,
+  "reason": "KiCad 10 CLI is unavailable in this execution environment; older reports do not validate this input revision."
+}
