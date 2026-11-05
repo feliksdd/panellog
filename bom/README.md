@@ -4,6 +4,8 @@
 
 Alle Schaltplanwerte und DNP-Flags stammen aus `hardware/kicad/panellog.kicad_sch`. MPN-/LCSC-Zuordnungen wurden soweit angegeben mit Hersteller/LCSC abgeglichen; Kandidaten wurden nicht ohne Landpattern- und Strom-/Temperaturfreigabe in die Schaltung übernommen.
 
+Die separate [Mechanikstückliste für das Kradex Z74JH ABS](../docs/enclosure_kradex_z74.md) enthält Gehäuse, Befestigung und Kabeldurchführungen.
+
 ## Vorläufig gewählte zentrale Komponenten
 
 | Ref | MPN / Zweck | LCSC | BOM-Status |

@@ -176,10 +176,8 @@
   },
   {
     "ref": "H1",
-    "models": [
-      "${KIPRJMOD}/../3dmodels/manufacturer/Spelsberg_12741501.stp"
-    ],
-    "status": "available"
+    "models": [],
+    "status": "no_component_body_required"
   },
   {
     "ref": "H2",

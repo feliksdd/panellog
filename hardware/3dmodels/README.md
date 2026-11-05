@@ -7,7 +7,6 @@
 | Referenz | Externes Modell | Prüfung und Herkunft |
 |---|---|---|
 | U1 LM5164DDAR | `manufacturer/TI_DDA0008B.stp` | **Neu am 2026-11-04:** direktes TI-STEP aus der Suchergebniszeile LM5164DDAR → DDA/8 → DDA0008B. Unveränderte Originaldatei, zehn gültige Solids, Körper 3,9 × 4,9 mm, Gesamthöhe 1,57 mm, Anschlussraster 1,27 mm, Gesamtspanne 6,028 mm. Modell steht auf Z=0; keine Skalierung oder Rotation erforderlich. |
-| Gehäuse, optional an H1 | `manufacturer/Spelsberg_12741501.stp` | Vom Nutzer bereitgestellte Originaldatei, bytegleich übernommen; sechs Volumenkörper: Unterteil, Deckel, vier Schrauben; 130 × 180 × 62,5 mm. Header: CADENAS, CC BY-ND 4.0. Attribution: Spelsberg/CADENAS, https://www.spelsberg.de/industrieleergehaeuse/mit-/-ohne-metrische-vorpraegungen/12741501/ |
 | L1 7447709680 | `manufacturer/Wurth_WE-PD_1210.stp` | Originaldownload aus der Tabellenzeile **7447709680** auf der Würth-WE-PD-Produktseite. 12 × 12 mm, Z=-0,20…9,26 mm. Modellverschiebung Z=+0,20 mm bringt tiefsten Anschluss auf die Platine. Kein 1280-Modell verwenden! |
 | C3 EEEFN2A100P | `manufacturer/Panasonic_Size_F.stp` | Offizieller CAD-Link auf der exakten Panasonic-Produktseite: `DS_Alumi_F.zip`, Originaldatei „Ø8 SIZE CODE F.stp“. Geometrie 9,7 mm inklusive Anschlüssen, Sockelbreite 8,3 mm, Höhe 10,201 mm. Modell steht im Original auf Y und wird in KiCad um X=-90° gedreht. |
 | Q1 IPT015N10N5 | `standard/Package_TO_SOT_SMD.3dshapes/Infineon_PG-HSOF-8-1.step` | Original KiCad-Bibliotheksmodell der passenden Infineon-Bauform PG-HSOF-8-1; Höhe 2,32 mm. Mit KiCad-Originalfootprint verglichen: dessen Pin 1 bei (-5,25;-4,2) entspricht nach Drehung der Pin-1-Seite des Projektfootprints (-4,2;+5,29). KiCad-Modellrotation Z=-90°. Kein herstellerspezifisch markierter MPN-Körper behauptet. |
@@ -26,15 +25,11 @@ Die externen Dateien wurden geometrisch **nicht verändert**. Drehung und Versch
 
 Damit wird keine vollständige 3D-Bestückung oder vollständige Kollisionsfreiheit behauptet. Für die drei offenen Positionen werden passende Originaldateien oder ein regulärer Anbieterdownload benötigt.
 
-## Gehäuseplatzierung
+## Kradex Z74JH ABS
 
-Die Originaldatei besitzt X=−65…65, Y=−90…90, Z=−44,5…18 mm. Die vier inneren Befestigungsachsen liegen bei X=±45/Y=±50 mm; Domoberkante Z=−33,5 mm. Das bestätigt das vorhandene Platinenraster **100 × 90 mm** nach Drehung ins Querformat.
+Originale ACIS-Körper, Ausrichtung zur Platine und Montagepunkte sind in der [Gehäusedokumentation](../../docs/enclosure_kradex_z74.md) verlinkt. Der KiCad-STEP-Export enthält die bestückte Platine mit den verfügbaren Bauteilmodellen. Für die Gehäusemontage diese mit den SAT-Körpern in MCAD zusammenführen.
 
-Physische Baugruppenplatzierung: Rz=+90°, Verschiebung (75;−55;+23,9) mm, PCB-Oberseite Z=0, Unterseite Z=−1,6. Domoberkanten liegen damit bei Z=−9,6 mm: 8-mm-Abstandhalter bis zur PCB-Unterseite. Keine neu erfundenen Dommaße mehr.
-
-In KiCad ist das unveränderte Original am **H1 → Eigenschaften → 3D-Modelle** hinterlegt und standardmäßig ausgeblendet. Die abweichenden Transformationswerte dort berücksichtigen den H1-Ursprung und die KiCad-Modellrotationskonvention. Ein Modell enthält bereits den Deckel; es gibt keine künstlich getrennten Gehäusehälften mehr.
-
-Die Baugruppe lässt sich mit `python tools/export_3d_assembly.py` aus dem aktuellen Board und der unveränderten Original-Gehäusegeometrie erzeugen (KiCad 10 CLI und CadQuery). Drei Bauteilmodelle bleiben fehlend. Der Exportgenerator erzeugt keine Ersatzgeometrie. Veraltete Baugruppen und Vorschauen wurden entfernt; für den aktuellen GitHub-Stand wird kein bereits erneuerter Gesamtexport behauptet.
+Das Spelsberg-Original `manufacturer/Spelsberg_12741501.stp` (Spelsberg/CADENAS, CC BY-ND 4.0) und `tools/fit_spelsberg_enclosure.py` dokumentieren die frühere Revision. Das aktuelle PCB und der Export verwenden sie nicht. Quelle: https://www.spelsberg.de/industrieleergehaeuse/mit-/-ohne-metrische-vorpraegungen/12741501/
 
 ## Downloads / Nachweise / Lizenzen
 
@@ -43,7 +38,6 @@ Die Baugruppe lässt sich mit `python tools/export_3d_assembly.py` aus dem aktue
 - Panasonic-MPN/CAD: https://industrial.panasonic.com/sa/products/pt/aluminum-cap-smd/models/EEEFN2A100P/cad
 - Panasonic-Datei: https://industrial.panasonic.com/ww/system/files/data/download/cad/DS_Alumi_F.zip
 - KiCad-Originale: https://github.com/KiCad/kicad-packages3D ; Lizenz `standard/LICENSE.md` (CC BY-SA 4.0 mit Bibliotheksausnahme); Originalheader erhalten.
-- Gehäuse: vom Nutzer bereitgestellt; CC BY-ND 4.0 laut Originalheader. Originaldatei unverändert, Herkunftsangabe oben. https://creativecommons.org/licenses/by-nd/4.0/
 - TI-Gehäusebezeichnung U2: https://www.ti.com/product/INA228
 - `validation.json`: SHA256 und tatsächliche Solid-Importprüfung der vorhandenen STEP-Dateien. `model_inventory.json`: Zuordnung/Missing-Status je Referenz.
 - Frühere KiCad-10.0.8-Berichte gehören zum damaligen Layoutstand. Nach dem neuen Eingangscommit `130ec6e` wurde hier kein ERC/DRC ausgeführt; KiCad 10 CLI ist in dieser Ausführungsumgebung nicht verfügbar.
@@ -63,4 +57,3 @@ Die erneute Recherche der Ebyte-Downloadliste und Produktseite, der Isabellenhü
 - BVB: https://www.isabellenhuetteusa.com/product/bvb/ und https://www.isabellenhuette.com/hubfs/Files/Data-sheets/BVB.pdf
 - Jauch: https://www.jauch.com/en-GB/products/frequency_control_components
 
-Die neu beigefügte Gehäusedatei wurde per SHA256 mit dem Projektmodell verglichen: identisch (`9ef3a4fc45162f3478714c5e47d83ea0cc0a5cb1739be936485dd786eb6a6808`). Die Modellzuordnungen wurden auf GitHub-Commit `130ec6e6e619249bba21afbcd5ff13154846e356` mit den neuesten Positionierungs- und Routingänderungen angewendet. Alle 65 Footprints wurden abgeglichen: Nur die Modellknoten wurden ersetzt. Leiterbahnen, Vias, Zonen, Zeichnungen und alle übrigen Footprint-Inhalte bleiben erhalten. Nachweis: `integration_2026-11-04.json`. Ein erneuter Gesamtexport steht für diesen Stand noch aus.

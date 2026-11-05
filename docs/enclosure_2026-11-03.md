@@ -1,6 +1,8 @@
 # PanelLog: Gehäuse und direkt angelötete Kabel
 
-Ausgewählt: **Spelsberg TK PC 1813-6f-m, 12741501**, grau, 180 × 130 × 63 mm. UV-beständiges glasfaserverstärktes Polycarbonat, IP66, IK08. Herstellerfreigabe: **geschützter Außenbereich**, Montage unter PV-Modul oder Regendach, ohne stehendes Wasser. Keine Freigabe für ungeschützte Dauerbewitterung behauptet.
+Historische Revision. Aktuelle Konstruktion: [Kradex Z74JH ABS](enclosure_kradex_z74.md).
+
+Damals ausgewählt: **Spelsberg TK PC 1813-6f-m, 12741501**, grau, 180 × 130 × 63 mm. UV-beständiges glasfaserverstärktes Polycarbonat, IP66, IK08. Herstellerfreigabe: **geschützter Außenbereich**, Montage unter PV-Modul oder Regendach, ohne stehendes Wasser. Keine Freigabe für ungeschützte Dauerbewitterung behauptet.
 
 ## Platine und Befestigung
 

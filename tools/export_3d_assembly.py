@@ -1,4 +1,4 @@
-"""Assemble unmodified external STEP files. No generated component geometry.
+"""Export the populated PCB with available STEP models for the Kradex assembly.
 Requires KiCad 10 CLI on PATH and CadQuery; missing components remain missing.
 """
 from pathlib import Path
@@ -8,8 +8,7 @@ ROOT=Path(__file__).resolve().parents[1];r=ROOT/'hardware/3dmodels';out=r/'assem
 tmp=Path(tempfile.gettempdir())/'panellog_real_populated.step'
 subprocess.run(['kicad-cli','pcb','export','step','--no-dnp','--force','-o',str(tmp),str(ROOT/'hardware/kicad/panellog.kicad_pcb')],check=True)
 pcb=cq.importers.importStep(str(tmp)).val().translate((0,0,-1.6))
-enclosure=cq.importers.importStep(str(r/'manufacturer/Spelsberg_12741501.stp')).val().rotate((0,0,0),(0,0,1),90).translate((75,-55,23.9))
-a=cq.Assembly(name='PanelLog_external_models_INCOMPLETE');a.add(pcb,name='PCB_available_models');a.add(enclosure,name='Spelsberg_12741501_original');a.save(str(out/'PanelLog_external_models_INCOMPLETE.step'))
+a=cq.Assembly(name='PanelLog_external_models_INCOMPLETE');a.add(pcb,name='PCB_available_models');a.save(str(out/'PanelLog_external_models_INCOMPLETE.step'))
 checks=[]
 for p in sorted(r.rglob('*.st*')):
  if 'assembly' in p.parts:continue

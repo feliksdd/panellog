@@ -1,6 +1,8 @@
 # PanelLog
 
-[3D model status](hardware/3dmodels/README.md): verified external models and original enclosure; E73, BVB shunt and JTX310 models remain missing.
+[3D model status](hardware/3dmodels/README.md): verified external component models; E73, BVB shunt and JTX310 models remain missing.
+
+[Kradex Z74JH ABS enclosure and 118 × 90 mm PCB](docs/enclosure_kradex_z74.md)
 
 Per-module PV DC logger and curtailment node for BatteryFlex.
 
