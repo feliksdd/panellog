@@ -1,11 +1,13 @@
 # Externe 3D-Modelle – recherchierte Revision
 
-**Keine selbst erzeugten Bauteil- oder Gehäusenäherungen mehr.** Die bisherigen `generated/`-Dateien, der Generator und die darauf beruhende Vorschau wurden entfernt. Die aktuelle Baugruppe ist ausdrücklich **unvollständig**: U3, RSH1 und Y1 besitzen noch kein verifiziertes Modell. Lötanschlüsse J1/J2/J3, SWD-Pads J4 und Bohrungen benötigen keinen erfundenen Bauteilkörper.
+**Keine selbst erzeugten Bauteil- oder Gehäusenäherungen mehr.** Die bisherigen `generated/`-Dateien, der Generator und die darauf beruhende Vorschau wurden entfernt. Die aktuelle Baugruppe ist ausdrücklich **unvollständig**: Für Y1 fehlt ein Modell. Für U3 besteht eine Abweichung zwischen STEP und Footprint. RSH1 verwendet ein Variantenmodell. Lötanschlüsse J1/J2/J3, SWD-Pads J4 und Bohrungen benötigen keinen erfundenen Bauteilkörper.
 
 ## Verwendete externe Dateien
 
 | Referenz | Externes Modell | Prüfung und Herkunft |
 |---|---|---|
+| U3 E73-2G4M08S1C | `manufacturer/E73-2G4M08S1C.step` | Bereitgestelltes STEP, 13 × 18 × 3,10 mm. Antenne am Keepout. Vor Fertigung die seitlichen Kontaktreihen prüfen: Kontakt 1 liegt im Modell bei lokalem PCB-Y = −5,03 mm, im Footprint bei −4,03 mm. Die inneren stirnseitigen Kontakte stimmen bei Y = 6,90 mm überein. |
+| RSH1 BVB-M-R0007-1.0 | `manufacturer/BVB-M-R001-1.0.step` | Bereitgestelltes Modell der 1-mΩ-Variante, 6,90 × 6,60 × 3,05 mm. Die vier Lötflächen überdecken die Force- und Sense-Pads. Die Bauhöhe der 0,7-mΩ-Variante ist separat zu prüfen. |
 | U1 LM5164DDAR | `manufacturer/TI_DDA0008B.stp` | **Neu am 2026-11-04:** direktes TI-STEP aus der Suchergebniszeile LM5164DDAR → DDA/8 → DDA0008B. Unveränderte Originaldatei, zehn gültige Solids, Körper 3,9 × 4,9 mm, Gesamthöhe 1,57 mm, Anschlussraster 1,27 mm, Gesamtspanne 6,028 mm. Modell steht auf Z=0; keine Skalierung oder Rotation erforderlich. |
 | L1 7447709680 | `manufacturer/Wurth_WE-PD_1210.stp` | Originaldownload aus der Tabellenzeile **7447709680** auf der Würth-WE-PD-Produktseite. 12 × 12 mm, Z=-0,20…9,26 mm. Modellverschiebung Z=+0,20 mm bringt tiefsten Anschluss auf die Platine. Kein 1280-Modell verwenden! |
 | C3 EEEFN2A100P | `manufacturer/Panasonic_Size_F.stp` | Offizieller CAD-Link auf der exakten Panasonic-Produktseite: `DS_Alumi_F.zip`, Originaldatei „Ø8 SIZE CODE F.stp“. Geometrie 9,7 mm inklusive Anschlüssen, Sockelbreite 8,3 mm, Höhe 10,201 mm. Modell steht im Original auf Y und wird in KiCad um X=-90° gedreht. |
@@ -19,11 +21,9 @@ Die externen Dateien wurden geometrisch **nicht verändert**. Drehung und Versch
 
 | Referenz | Ergebnis | Warum nicht eingesetzt |
 |---|---|---|
-| U3 E73-2G4M08S1C | Vorhandenes Community-STEP in AcheronProject/acheron_3D; Quelle laut Projekt GrabCAD. https://github.com/AcheronProject/acheron_3D | Datei tatsächlich heruntergeladen und als sechs Solids geprüft: 18,288 × 13 × 3,05 mm inklusive Unterseite. Außenlänge weicht von Ebytes 18-mm-Angabe ab. Ohne sichere Erklärung der Abweichung nicht zugeordnet und nicht im Projekt als passend ausgegeben. SnapMagic listet den MPN ebenfalls, direkter verifizierter Download fehlt. |
-| RSH1 BVB-M-R0007-1.0 | Hersteller-/Distributordaten und Modellportale recherchiert. Exakter MPN: https://www.digikey.com/en/products/detail/isabellenhuette-usa/BVB-M-R0007-1-0/16836861 | Kein verifizierter frei herunterladbarer STEP für den genauen vierpoligen BVB-Typ gefunden. Kein gewöhnliches 2725-Widerstandsmodell als Ersatz. EasyEDA-Produkt-API lieferte 403; keine Umgehung versucht. |
 | Y1 Jauch JTX310 | SamacSys/ComponentSearchEngine listet die JTX310-Familie mit 3D-Angebot: https://componentsearchengine.com/part-view/Q%200%2C032768-JTX310-12%2C5-20-T1-HMR-LF/Jauch%20Quartz | Anbieterdownload erfordert Benutzerzugang. Weiterer GitHub-Kandidat rhinodavid/rhinodavid_kicad enthält JTX310.step, aber keine erkennbare Weitergabelizenz; daher nicht übernommen. Jauch nennt 3,2 × 1,5 × 0,9 mm. |
 
-Damit wird keine vollständige 3D-Bestückung oder vollständige Kollisionsfreiheit behauptet. Für die drei offenen Positionen werden passende Originaldateien oder ein regulärer Anbieterdownload benötigt.
+Damit wird keine vollständige 3D-Bestückung oder vollständige Kollisionsfreiheit behauptet. Für Y1 fehlt weiterhin eine passende Datei.
 
 ## Kradex Z74JH ABS
 
@@ -51,7 +51,7 @@ Der direkte TI-Paketdownload löst die bisherige U1-Lücke ohne Ultra-Librarian-
 
 Ein zusätzlich geprüfter KiCad-Kandidat `HSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.1mm.step` besitzt nur 1,1 mm Höhe und wurde ebenfalls nicht übernommen. Ein passender Name allein reicht nicht aus.
 
-Die erneute Recherche der Ebyte-Downloadliste und Produktseite, der Isabellenhütte-BVB-Produktseite und des Jauch-Produktportals ergab für U3/RSH1/Y1 keinen zusätzlich verifiziert herunterladbaren Original-STEP. Das ist kein Nachweis, dass solche Dateien nicht existieren. Die drei Positionen bleiben sichtbar als fehlend dokumentiert; es werden keine geschätzten Ersatzkörper eingefügt.
+Die erneute Recherche der Ebyte-Downloadliste und Produktseite, der Isabellenhütte-BVB-Produktseite und des Jauch-Produktportals ergab für U3/RSH1/Y1 keinen zusätzlich verifiziert herunterladbaren Original-STEP. Das ist kein Nachweis, dass solche Dateien nicht existieren. Die später bereitgestellten STEP-Dateien für U3 und RSH1 sind oben aufgeführt.
 
 - Ebyte: https://www.cdebyte.com/products/E73-2G4M08S1C/3 und https://www.ebyte.com/datadown/SPISOC.html
 - BVB: https://www.isabellenhuetteusa.com/product/bvb/ und https://www.isabellenhuette.com/hubfs/Files/Data-sheets/BVB.pdf

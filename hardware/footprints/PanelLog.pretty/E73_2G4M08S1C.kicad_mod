@@ -54,8 +54,9 @@
  (keepout (tracks not_allowed) (vias not_allowed) (pads not_allowed) (copperpour not_allowed) (footprints allowed))
  (fill (thermal_gap .3) (thermal_bridge_width .3))
  (polygon (pts (xy -9.5 -12) (xy 9.5 -12) (xy 9.5 -5.2) (xy -9.5 -5.2))))
-
-
-
-
+(model "${KIPRJMOD}/../3dmodels/manufacturer/E73-2G4M08S1C.step"
+	(offset (xyz 0 0 0))
+	(scale (xyz 1 1 1))
+	(rotate (xyz -90 0 0))
+)
 )

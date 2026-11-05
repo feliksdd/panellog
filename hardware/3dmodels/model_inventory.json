@@ -401,8 +401,10 @@
   },
   {
     "ref": "RSH1",
-    "models": [],
-    "status": "missing_verified_model"
+    "models": [
+      "${KIPRJMOD}/../3dmodels/manufacturer/BVB-M-R001-1.0.step"
+    ],
+    "status": "available_package_variant"
   },
   {
     "ref": "RT2",
@@ -427,8 +429,10 @@
   },
   {
     "ref": "U3",
-    "models": [],
-    "status": "missing_verified_model"
+    "models": [
+      "${KIPRJMOD}/../3dmodels/manufacturer/E73-2G4M08S1C.step"
+    ],
+    "status": "available_pad_alignment_discrepancy"
   },
   {
     "ref": "Y1",
