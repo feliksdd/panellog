@@ -15,7 +15,7 @@
 | L3 · In2.Cu | Signalrouting, kurze Versorgungsquerungen und Modulstrompfade |
 | L4 · B.Cu | GND-Fläche mit getrennten Modulstrompfaden |
 
-VDC verbindet J1.1 mit J2.1 auf jeder Lage. Auf L3 führt die Leiterbahn um die Querung der 3,3-V-Versorgung und der Gate-Ansteuerung. Der negative Modulstrompfad führt über GND, Q1, SHUNT_RETURN, RSH1 und MPPT_MINUS. Die Kupferbereiche auf beiden Seiten des Shunts bleiben getrennt. Durchkontaktierungen verbinden die gleichnamigen Kupferbereiche aller vier Lagen. Die Antennen- und Schraubfreiräume gelten durch den ganzen Lagenaufbau. Vor dem Fertigungsexport die Zonen in KiCad 10 neu füllen und den DRC ausführen.
+VDC verbindet J1.1 mit J2.1 auf jeder Lage. Das 9 mm breite VDC-Band liegt bei Y = 61 mm. Zwischen den parallelen Zonenkanten bleiben 15 mm zum GND-Hochstromrückleiter, 14 mm zu SHUNT_RETURN und 15,5 mm zu MPPT_MINUS. Die Anschlüsse an die Lötpads J1.1/J2.1 bei Y = 66 mm und die Versorgungsabzweige sind lokale Ausnahmen. Für die angrenzende GND-Fläche gilt weiterhin der reguläre Zonenabstand von 0,5 mm. Auf L3 führt die Leiterbahn um die Querung der 3,3-V-Versorgung und der Gate-Ansteuerung. Der negative Modulstrompfad führt über GND, Q1, SHUNT_RETURN, RSH1 und MPPT_MINUS. Die Kupferbereiche auf beiden Seiten des Shunts bleiben getrennt. Durchkontaktierungen verbinden die gleichnamigen Kupferbereiche aller vier Lagen. Die Antennen- und Schraubfreiräume gelten durch den ganzen Lagenaufbau. Vor dem Fertigungsexport die Zonen in KiCad 10 neu füllen und den DRC ausführen.
 
 The root [README](../README.md) is the architecture, dimensioning, error-budget and calibration source of truth.
 
