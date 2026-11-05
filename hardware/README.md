@@ -6,6 +6,17 @@
 
 # Hardware
 
+## Kupferlagen der PanelLog-Platine
+
+| Lage | Funktion |
+|---|---|
+| L1 · F.Cu | VDC, Spannungsversorgung, kurze SMD-Anbindungen und lokale Rückstrompfade |
+| L2 · In1.Cu | GND-Fläche mit getrennten Modulstrompfaden |
+| L3 · In2.Cu | Signalrouting, kurze Versorgungsquerungen und Modulstrompfade |
+| L4 · B.Cu | GND-Fläche mit getrennten Modulstrompfaden |
+
+VDC verbindet J1.1 mit J2.1 auf jeder Lage. Auf L3 führt die Leiterbahn um die Querung der 3,3-V-Versorgung und der Gate-Ansteuerung. Der negative Modulstrompfad führt über GND, Q1, SHUNT_RETURN, RSH1 und MPPT_MINUS. Die Kupferbereiche auf beiden Seiten des Shunts bleiben getrennt. Durchkontaktierungen verbinden die gleichnamigen Kupferbereiche aller vier Lagen. Die Antennen- und Schraubfreiräume gelten durch den ganzen Lagenaufbau. Vor dem Fertigungsexport die Zonen in KiCad 10 neu füllen und den DRC ausführen.
+
 The root [README](../README.md) is the architecture, dimensioning, error-budget and calibration source of truth.
 
 > **ERC-Warnung (29.10.2026):** Ein echter KiCad-10-ERC fand im ursprünglich erzeugten Schaltplan **35 Fehler und 65 Warnungen**, darunter sicherheitskritische Fehlzuordnungen an U1/U2/Q1/Q2/U3. Der Schaltplan wurde daraufhin in Commit `b1f31a81086f` anhand der tatsächlichen Pinpositionen korrigiert und auf 1,27-mm-Raster ausgerichtet. Die korrigierte Anschlussgeometrie wurde statisch geprüft; ein **erneuter nativer KiCad ERC** steht weiterhin aus. Das frühere allgemeine Strukturprüfergebnis war unzureichend. [Detaillierter ERC-Befund](kicad/VALIDATION_2026-10-29.md).
