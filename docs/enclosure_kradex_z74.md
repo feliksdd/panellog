@@ -33,6 +33,14 @@ Für MCAD mit KiCad-Platinenoberseite als Z = 0, X nach rechts, Y nach oben und 
 - Y = −55 − X_SAT
 - Z = 46,05 − Y_SAT
 
+### STEP-Modelle in KiCad
+
+[Unterteil](../hardware/3dmodels/manufacturer/Kradex_Z74_base.step) und [Deckel](../hardware/3dmodels/manufacturer/Kradex_Z74_cover.step) sind aus den beiden SAT-Körpern konvertiert. Ebenen, Zylinder, Kanten und Freiformflächen stammen aus der Herstellergeometrie. Vier schmale Übergangsflächen am Unterteil sind bei der Konvertierung als Regelflächen zwischen ihren originalen Randkurven angenähert.
+
+Beide Modelle sind am Board-Footprint H1 hinterlegt. Für die KiCad-Ansicht ist der Deckel auf 25 % Deckkraft eingestellt. In den 3D-Modelleigenschaften von H1 können Unterteil und Deckel einzeln ausgeblendet werden. Die STEP-Dateien haben eine gemeinsame, für KiCad gedrehte Achslage. Der Offset an H1 beträgt für beide (45,848 / −40,125 / 46,05) mm bei Einheitsmaßstab und 0° Drehung.
+
+Der STEP-Rückimport ergibt je einen gültigen Volumenkörper mit 301 Flächen am Unterteil und 131 am Deckel. Die vier inneren Dome berühren die PCB-Unterseite. Für den 118 × 90 × 1,6 mm großen Platinenkörper mit den vier Montagebohrungen ergibt die Volumenprüfung 0 mm³ Überschneidung mit beiden Teilen. Der kleinste Abstand der nackten Platine zum Deckel beträgt 29,09 mm. In der ursprünglichen relativen Lage von Unterteil und Deckel überschneiden sich die konvertierten Gehäusehälften insgesamt um rund 17 mm³. Ursache und Passung am Muster prüfen.
+
 Die KiCad-Draufsicht auf User.Drawings zeigt Boden und Platinenauflagen. Bei direkter Auflage liegt die PCB-Unterseite auf Z = −1,6 mm. Die kleinste nominale Distanz des Platinenumrisses zur projizierten inneren Bodenkontur beträgt rund 5,8 mm. Die acht äußeren Platinenauflagen liegen außerhalb der Platine.
 
 Geprüft wurden geschlossene Kontur, Übereinstimmung der vier Lochachsen mit der DXF, elektrische Pads, Leiterbahnen, Vias und Kupferfreiräume um die Schrauben. Native KiCad-10-Zonenfüllung und DRC mit Schaltplanabgleich sind für diese Revision noch auszuführen. Ein vollständiger Zusammenbau mit Kabeln, Schrauben und allen Bauteilen sowie eine Passprobe am Originalgehäuse stehen aus.

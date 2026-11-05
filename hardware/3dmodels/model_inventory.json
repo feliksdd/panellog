@@ -176,8 +176,11 @@
   },
   {
     "ref": "H1",
-    "models": [],
-    "status": "no_component_body_required"
+    "models": [
+      "${KIPRJMOD}/../3dmodels/manufacturer/Kradex_Z74_base.step",
+      "${KIPRJMOD}/../3dmodels/manufacturer/Kradex_Z74_cover.step"
+    ],
+    "status": "available"
   },
   {
     "ref": "H2",

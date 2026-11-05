@@ -27,7 +27,7 @@ Damit wird keine vollständige 3D-Bestückung oder vollständige Kollisionsfreih
 
 ## Kradex Z74JH ABS
 
-Originale ACIS-Körper, Ausrichtung zur Platine und Montagepunkte sind in der [Gehäusedokumentation](../../docs/enclosure_kradex_z74.md) verlinkt. Der KiCad-STEP-Export enthält die bestückte Platine mit den verfügbaren Bauteilmodellen. Für die Gehäusemontage diese mit den SAT-Körpern in MCAD zusammenführen.
+Unterteil und Deckel sind als separate STEP-Modelle am H1-Footprint ausgerichtet. Beide werden mit dem Board exportiert. Die ursprünglichen SAT-Körper, Koordinaten und Prüfergebnisse sind in der [Gehäusedokumentation](../../docs/enclosure_kradex_z74.md) verlinkt.
 
 Das Spelsberg-Original `manufacturer/Spelsberg_12741501.stp` (Spelsberg/CADENAS, CC BY-ND 4.0) und `tools/fit_spelsberg_enclosure.py` dokumentieren die frühere Revision. Das aktuelle PCB und der Export verwenden sie nicht. Quelle: https://www.spelsberg.de/industrieleergehaeuse/mit-/-ohne-metrische-vorpraegungen/12741501/
 

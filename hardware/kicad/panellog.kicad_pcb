@@ -149,6 +149,17 @@
 			(uuid "af381288-a4a9-45fb-a008-d19216b6c95d")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../3dmodels/manufacturer/Kradex_Z74_base.step"
+			(offset (xyz 45.848 -40.125 46.05))
+			(scale (xyz 1 1 1))
+			(rotate (xyz 0 0 0))
+		)
+		(model "${KIPRJMOD}/../3dmodels/manufacturer/Kradex_Z74_cover.step"
+			(opacity 0.25)
+			(offset (xyz 45.848 -40.125 46.05))
+			(scale (xyz 1 1 1))
+			(rotate (xyz 0 0 0))
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
