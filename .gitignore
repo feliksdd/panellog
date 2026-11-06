@@ -1,0 +1,12 @@
+# KiCad: Versionshistorie
+hardware/kicad/.history/
+
+# KiCad: Sperrdateien
+hardware/kicad/*.lck
+
+# KiCad: Lokale Benutzerkonfiguration
+*.kicad_prl
+
+# KiCad: Temporäre Dateien
+*-backups/
+*.bak
