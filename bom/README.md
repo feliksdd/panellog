@@ -1,58 +1,21 @@
-Current procurement: [four-board BOM](panellog_c6_procurement_4boards.csv). Exact selected MPNs and LCSC IDs are authoritative in [selection CSV](panellog_rev0_selection.csv). See [revision report](../docs/c6_cost_revision_2026-11-06.md) for qualifications and savings limits. Y1/C16/C17 are removed.
+# PanelLog – aktuelle Stückliste
 
-# PanelLog BOM — Revision 0, Reviewstand 29.10.2026
+Die [Auswahlstückliste](panellog_rev0_selection.csv) führt Referenzen, MPNs, LCSC-Nummern und Qualifikationsstatus. Die [Beschaffungsstückliste für vier Platinen](panellog_c6_procurement_4boards.csv) gruppiert die bestückten Teile; Bestellmengen müssen zusätzlich Mindestmengen und Bestückungsverluste berücksichtigen.
 
-**Keine Fertigungs- oder Beschaffungsfreigabe.** Die maschinenlesbare, direkt aus dem neuesten KiCad-Schaltplan abgeleitete [Referenzliste (`panellog_rev0_selection.csv`)](panellog_rev0_selection.csv) umfasst **62 reale Referenzen: 61 PCB-Bauteile plus RT1 als externen Pt1000**. Die Felder `Disposition` und `Selection_notes` grenzen eine elektrische Bauteilauswahl von einem vollständig qualifizierten Hersteller-Bestellteil ab.
+## Kostenrevision vom 06.11.2026
 
-Alle Schaltplanwerte und DNP-Flags stammen aus `hardware/kicad/panellog.kicad_sch`. MPN-/LCSC-Zuordnungen wurden soweit angegeben mit Hersteller/LCSC abgeglichen; Kandidaten wurden nicht ohne Landpattern- und Strom-/Temperaturfreigabe in die Schaltung übernommen.
+- R8: VO SCR1206F47K, C5140109, 47 kΩ ±1 %, 250 mW, 200 V, 1206.
+- C1/C21/C22: FH 1210B475K101NT, nun C7500895 statt C2840282; identische Herstellerteilenummer.
+- Q2: onsemi 2N7002 C124475 bleibt. JSCJ C8545 ist mangels garantierter 3,3-V-/Heißkennwerte noch nicht übernommen. Auch die bisherige Auswahl erfordert die dokumentierte Gatepfad-Qualifikation.
+- L1: Würth 7447709680 bleibt; Sumida C2452974 benötigt eine Bestätigung der zulässigen Betriebsspannung sowie ein angepasstes Landpattern mit Sperrfläche.
+- INA228, 0,7-mΩ-Shunt und IPT015N10N5 bleiben unverändert.
 
-Die separate [Mechanikstückliste für das Kradex Z74JH ABS](../docs/enclosure_kradex_z74.md) enthält Gehäuse, Befestigung und Kabeldurchführungen.
+Prüfung, Preise und offene Punkte: [Kosten-Folgeprüfung](../docs/cost_followup_2026-11-06.md). Vorherige Änderungen: [C6-/LM5163-Revision](../docs/c6_cost_revision_2026-11-06.md).
 
-## Vorläufig gewählte zentrale Komponenten
+## Qualifikationsstand
 
-| Ref | MPN / Zweck | LCSC | BOM-Status |
-| --- | --- | --- | --- |
-| U1 | TI LM5163DDAR, 100-V-Input Buck, 3,3 V direkt | C2873264 | Elektrisch festgelegt; DDA-PowerPAD/Landpattern/EP9 offen |
-| U2 | TI INA228AIDGSR, Mess-ADC | C2887910 | Elektrisch festgelegt; Footprint DGS-10 verifizieren |
-| U3 | Espressif ESP32-C6-MINI-1-N4 | projektlokal | Modul gewählt; RF-Pad-Geometrie und Antennenfreiraum offen |
-| RSH1 | Isabellenhütte BVB-M-R0007-1.0, 0,7 mΩ | C5563922 | Widerstand gewählt; Force/Sense-Pads verifizieren |
-| Q1 | Infineon IPT015N10N5ATMA1, 100 V TOLL | C108964 | Elektrisch gewählt; Pad-Geometrie und 20-A-Thermik offen |
-| C1, C21, C22 | FH 1210B475K101NT, 4,7 µF 100 V X7R 1210 | C2840282 | Drei Stück im Eingang; Bias/Temperatur-Derating offen |
-| R18 | Susumu RG1608N-1472-W-T1, 14,7 kΩ 0,05 %, 10 ppm/K | C1721340 | Präzisions-R für Pt1000 |
-| D2 | JSCJ MMSZ4697, 10-V-Low-current-Zener | C2910058 | Test der tatsächlichen Q1-Gatespannung und Heißleckage notwendig |
-| RT1 | Nexensos M222 Pt1000 F0.15/Class A | extern | Sensorelement gewählt, feuchtefeste cabled-Probe und Leitung noch offen |
+Dies ist weiterhin ein Prototypenstand. Insbesondere FH-Kapazität unter DC-Bias, Gatepfad über Temperatur, Schalttransienten, Thermik und Kabelzugentlastung müssen praktisch qualifiziert werden. D1 und R23/C23 sind DNP. Y1/C16/C17 sind entfernt. J4 ist die UART-/BOOT-Pogo-Schnittstelle.
 
-## Neue überprüfte Kandidaten, noch nicht layoutfreigegeben
+Die letzte native KiCad-Prüfung vor dieser reinen Bestelldatenänderung ergab ERC 0 Fehler/0 Warnungen, keine offenen PCB-Verbindungen und keine Schaltplan-Paritätsfehler. Die vorhandenen DRC-Restbefunde stehen im [C6-Review](../hardware/kicad/review_2026-11-06/validation.json). Diese Folgeänderung wurde strukturell geprüft; kein neuer nativer ERC/DRC ausgeführt.
 
-| Ref | Konkreter Kandidat | LCSC | Entscheidung/Restprüfung |
-| --- | --- | --- | --- |
-| L1 | Shun Xiang Nuo **SMMS1040-680MT**, 68 µH | **C286354** | 2 A Nennstrom, 3,8 A Isat, 220 mΩ DCR, 11,5×10 mm; das bisherige **10×10-mm-Draft-Footprint ist geometrisch unpassend**. Hersteller-Landpattern, Isat bei Hitze und DCR prüfen |
-| C3 | Panasonic **EEEFN2A100P**, 10 µF 100 V, SMD-Alu | **C494873** | 8×10,2 mm, ESR 1,3 Ω bei 100 kHz, Ripple 130 mA (LCSC). **Polarisiert!** Der gegenwärtige 2-Pad-Draft ist nicht geeignet. Dämpfung, Temperatur/Lifetime und Polung prüfen |
-| RT2 | TDK **NTCG163JF103FT1S**, 10 kΩ NTC | **C406719** | 0603, B25/50=3380 K; Firmware-Kennlinie und thermische Anbindung an Q1 prüfen |
-| Q2 | onsemi **2N7002** | **C124475** | SOT-23, Worst-Case-Heißleckstrom/Fail-ON, G1/S2/D3 und VGS-Festigkeit freigeben |
-| R8 | VO **1206 ±5% 47K**, 250 mW / 200 V | **C2889758** | 47 kΩ Gate-Pull-up; elektrische/thermische Reserve im Worst Case und Toleranz prüfen |
-
-Keine vorzeitige BOM-Festlegung: Die Katalogdaten von LCSC sind keine Garantie für Herstellerlandpattern, Qualifikation, gleichbleibenden Lieferbestand oder Heißkennwerte.
-
-## Weiter offen: mechanisch und konstruktiv
-
-- J1/J2: MC4-Leitungssatz, Leiterplatten-Anschlüsse, 20-A-Strompfad und mechanische Zugentlastung. Ein blankes Pigtail-Lötpad genügt nicht.
-- J3: externes Pt1000-Kabel und dessen wetterfeste Kabeleinführung.
-- J4: UART-Pogo-Adapter (Spannungstrennung im verbauten System).
-- U1/U3/RSH1/Q1 und L1/C3: endgültige Original-Hersteller-Footprints, Assemblierung/Lötpaste und DRC.
-- Generische R/C: **38 spezifizierte Werte**, aber noch ohne endgültige Herstellernummern, Spannungstoleranz-/Temperatur-Derating und teils LCSC-Bestellnummer; für eine platzierte JLCPCB-BOM sind diese Positionen nicht fertig.
-
-**Nicht bestücken (DNP):** D1 TVS, R23/C23 Q1-Snubber. Die Entscheidung ist bewusst provisorisch; Oszilloskopprüfung der PV-Überspannung und des Schaltverhaltens bleibt Pflicht.
-
-## Aktuelle CAD-Prüfung
-
-Der native ERC des Nutzers vom 29.10.2026 22:47:52 lautet **0 Fehler, 0 Warnungen**. Das PCB hat laut DRC um 22:48:04 **39 Bibliotheksabweichungen und 131 offene Verbindungen**. Davon wurden 18 Standard-Footprints durch bekannte KiCad-10-kompatible Gegenstücke auf der Platine ersetzt; das Ergebnis muss erneut mit KiCad 10 geprüft werden.
-
-Details: [`hardware/kicad/FOOTPRINT_BOM_REVIEW_2026-10-29.md`](../hardware/kicad/FOOTPRINT_BOM_REVIEW_2026-10-29.md).
-
-Erst wenn der revidierte BOM-Typ mechanisch, elektrisch und thermisch freigegeben ist und KiCad-ERC/DRC ohne nicht akzeptierte Verstöße besteht, darf ein PCB-Auftrag vorbereitet werden.
-
-
-**Update 23:09 Uhr:** Der neue native KiCad-10-DRC bestätigte **21 statt 39 Footprint-Bibliothekswarnungen** und unverändert **131 unverbundene Verbindungen**. Danach wurden auch die letzten **zehn Standard-Footprints** aus KiCad-10-Bibliotheksdefinitionen aktualisiert (SOT-23, D_SMB, 0805/1206/1210 und Y1). Die verbleibenden **11 projektlokalen Spezialfootprints** sind mechanisch noch zu validieren; ein weiterer nativer DRC nach diesem Update steht aus. Siehe [Footprint-Review](../hardware/kicad/FOOTPRINT_BOM_REVIEW_2026-10-29.md).
-
-
+Gehäuse, Befestigung und Kabeldurchführungen: [Mechanikstückliste](../docs/enclosure_kradex_z74.md). Historische CAD-Befunde vom Oktober sind im [damaligen Review](../hardware/kicad/FOOTPRINT_BOM_REVIEW_2026-10-29.md) dokumentiert.

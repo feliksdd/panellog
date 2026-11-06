@@ -5717,7 +5717,7 @@
         (font
           (size 1 1))
         (hide yes)))
-    (property "LCSC" "C2840282"
+    (property "LCSC" "C7500895"
       (at 0 0 0)
       (effects
         (font
@@ -7972,7 +7972,7 @@
         (font
           (size 1 1))
         (hide yes)))
-    (property "LCSC" "C2840282"
+    (property "LCSC" "C7500895"
       (at 0 0 0)
       (effects
         (font
@@ -8042,7 +8042,7 @@
         (font
           (size 1 1))
         (hide yes)))
-    (property "LCSC" "C2840282"
+    (property "LCSC" "C7500895"
       (at 0 0 0)
       (effects
         (font
@@ -10198,7 +10198,7 @@
         (font
           (size 1.27 1.27))
         (justify right)))
-    (property "Value" "47k 0.25W"
+    (property "Value" "47k 1% 0.25W"
       (at 69.85 176.53 0)
       (show_name no)
       (do_not_autoplace no)
@@ -10238,7 +10238,9 @@
       (project "panellog"
         (path "/00000000-0000-4000-8000-000000000001"
           (reference "R8")
-          (unit 1)))))
+          (unit 1))))
+    (property "MPN" "SCR1206F47K" (at 0 0 0) (effects (font (size 1 1)) (hide yes)))
+    (property "LCSC" "C5140109" (at 0 0 0) (effects (font (size 1 1)) (hide yes))))
   (symbol
     (lib_id "power:VDC")
     (at 347.98 180.34 0)

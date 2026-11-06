@@ -1,5 +1,5 @@
 Ref,Value,Footprint,MPN_or_candidate,LCSC,Disposition,Selection_notes
-C1,4.7uF 100V X7R,Capacitor_SMD:C_1210_3225Metric,1210B475K101NT,C2840282,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
+C1,4.7uF 100V X7R,Capacitor_SMD:C_1210_3225Metric,1210B475K101NT,C7500895,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 C2,100nF 100V X7R,Capacitor_SMD:C_0805_2012Metric,CL21B104KCFNNNE,C28233,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 C3,10uF 100V EEEFN2A100P,PanelLog:Panasonic_F_8x10p2,Panasonic EEEFN2A100P,C494873,CANDIDATE_REVIEW,Polarized symbol and Panasonic F 8x10.2 land pattern corrected; lifetime/ESR suitability still requires verification.
 C4,2.2nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B222KB8NNNC,C16033,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
@@ -19,8 +19,8 @@ C17,22pF C0G,Capacitor_SMD:C_0603_1608Metric,,,REMOVED,C6 module uses internal L
 C18,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CC0603KRX7R9BB104,C14663,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 C19,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CC0603KRX7R9BB104,C14663,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 C20,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CC0603KRX7R9BB104,C14663,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
-C21,4.7uF 100V X7R,Capacitor_SMD:C_1210_3225Metric,1210B475K101NT,C2840282,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
-C22,4.7uF 100V X7R,Capacitor_SMD:C_1210_3225Metric,1210B475K101NT,C2840282,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
+C21,4.7uF 100V X7R,Capacitor_SMD:C_1210_3225Metric,1210B475K101NT,C7500895,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
+C22,4.7uF 100V X7R,Capacitor_SMD:C_1210_3225Metric,1210B475K101NT,C7500895,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 C23,DNP 10nF 200V TBD,Capacitor_SMD:C_1206_3216Metric,,,DNP,"Optional RC snubber capacitor; 200V rating desired, not selected."
 D1,DNP TVS - select after cold-Voc/transient validation,Diode_SMD:D_SMB,,,DNP,PV+ TVS deliberately not installed; choose only after measured overvoltages.
 D2,MMSZ4697 10V C2910058,Diode_SMD:D_SOD-123,JSCJ MMSZ4697,C2910058,SELECTED_PROTOTYPE,10V Zener at 50uA nominal: hot leakage and actual Q1 VGS must be tested.
@@ -38,7 +38,7 @@ R4,174k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1743T5E,C22890,SELECTED_PROTOTY
 R5,100k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1003T5E,C25803,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 R6,150k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1503T5E,C22807,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 R7,47k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF4702T5E,C25819,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
-R8,47k 0.25W,Resistor_SMD:R_1206_3216Metric,VO 1206 ±5% 47K,C2889758,CANDIDATE_REVIEW,47kohm 1206 250mW 200V; verify worst-case power/thermal derating and zener knee.
+R8,47k 1% 0.25W,Resistor_SMD:R_1206_3216Metric,VO SCR1206F47K,C5140109,SELECTED_PROTOTYPE,47kohm 1% 1206 250mW 200V; 77.4mW at 60V with Q2 on and minimum resistance at 25C. Verify hot derating and zener knee; see docs/cost_followup_2026-11-06.md.
 R9,2.2k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF2201T5E,C4190,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 R10,100k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1003T5E,C25803,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 R11,10R 1%,Resistor_SMD:R_0603_1608Metric,0603WAF100JT5E,C22859,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
