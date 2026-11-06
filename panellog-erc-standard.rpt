@@ -1,0 +1,192 @@
+ERC report (2026-10-29T18:56:28, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+[lib_symbol_mismatch]: Symbol "PWR_FLAG" stimmt nicht mit Kopie in Bibliothek "power" überein
+    ; warning
+    @(15.24 mm, 20.32 mm): Symbol #FLG01 [PWR_FLAG]
+[lib_symbol_mismatch]: Symbol "PWR_FLAG" stimmt nicht mit Kopie in Bibliothek "power" überein
+    ; warning
+    @(25.40 mm, 20.32 mm): Symbol #FLG02 [PWR_FLAG]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(30.48 mm, 35.56 mm): Symbol C1 [C]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(30.48 mm, 44.45 mm): Symbol C2 [C]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(30.48 mm, 54.61 mm): Symbol C3 [C]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(30.48 mm, 69.85 mm): Symbol R1 [R]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(30.48 mm, 80.01 mm): Symbol R2 [R]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(30.48 mm, 90.17 mm): Symbol R3 [R]
+[lib_symbol_mismatch]: Symbol "D_Zener" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(30.48 mm, 115.57 mm): Symbol D1 [D_Zener]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(30.48 mm, 134.62 mm): Symbol C21 [C]
+[lib_symbol_mismatch]: Symbol "PWR_FLAG" stimmt nicht mit Kopie in Bibliothek "power" überein
+    ; warning
+    @(35.56 mm, 20.32 mm): Symbol #FLG03 [PWR_FLAG]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(64.77 mm, 134.62 mm): Symbol C22 [C]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(105.41 mm, 39.37 mm): Symbol C4 [C]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(105.41 mm, 95.25 mm): Symbol R6 [R]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(105.41 mm, 115.57 mm): Symbol R7 [R]
+[lib_symbol_mismatch]: Symbol "L" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(110.49 mm, 64.77 mm): Symbol L1 [L]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(115.57 mm, 204.47 mm): Symbol R23 [R]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(144.78 mm, 39.37 mm): Symbol C5 [C]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(144.78 mm, 49.53 mm): Symbol C6 [C]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(144.78 mm, 59.69 mm): Symbol C7 [C]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(144.78 mm, 74.93 mm): Symbol R4 [R]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(144.78 mm, 85.09 mm): Symbol R5 [R]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(144.78 mm, 100.33 mm): Symbol C8 [C]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(144.78 mm, 110.49 mm): Symbol C9 [C]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(149.86 mm, 204.47 mm): Symbol C23 [C]
+[lib_symbol_mismatch]: Symbol "Conn_01x02" stimmt nicht mit Kopie in Bibliothek "Connector_Generic" überein
+    ; warning
+    @(193.04 mm, 34.29 mm): Symbol J1 [Conn_01x02]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(195.58 mm, 74.93 mm): Symbol R8 [R]
+[lib_symbol_mismatch]: Symbol "D_Zener" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(195.58 mm, 90.17 mm): Symbol D2 [D_Zener]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(195.58 mm, 110.49 mm): Symbol R10 [R]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(195.58 mm, 139.70 mm): Symbol R11 [R]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(195.58 mm, 149.86 mm): Symbol R12 [R]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(195.58 mm, 160.02 mm): Symbol C10 [C]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(195.58 mm, 175.26 mm): Symbol R13 [R]
+[lib_symbol_mismatch]: Symbol "2N7002" stimmt nicht mit Kopie in Bibliothek "Transistor_FET" überein
+    ; warning
+    @(227.33 mm, 102.87 mm): Symbol Q2 [2N7002]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(229.87 mm, 85.09 mm): Symbol R9 [R]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(229.87 mm, 175.26 mm): Symbol C11 [C]
+[lib_symbol_mismatch]: Symbol "Conn_01x02" stimmt nicht mit Kopie in Bibliothek "Connector_Generic" überein
+    ; warning
+    @(273.05 mm, 34.29 mm): Symbol J2 [Conn_01x02]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(275.59 mm, 180.34 mm): Symbol C12 [C]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(275.59 mm, 190.50 mm): Symbol C13 [C]
+[lib_symbol_mismatch]: Symbol "Conn_01x02" stimmt nicht mit Kopie in Bibliothek "Connector_Generic" überein
+    ; warning
+    @(297.18 mm, 203.20 mm): Symbol J3 [Conn_01x02]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(299.72 mm, 149.86 mm): Symbol R14 [R]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(299.72 mm, 160.02 mm): Symbol R15 [R]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(299.72 mm, 170.18 mm): Symbol R16 [R]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(299.72 mm, 180.34 mm): Symbol R17 [R]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(299.72 mm, 219.71 mm): Symbol R18 [R]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(299.72 mm, 234.95 mm): Symbol R20 [R]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(299.72 mm, 250.19 mm): Symbol R21 [R]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(304.80 mm, 35.56 mm): Symbol C14 [C]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(304.80 mm, 44.45 mm): Symbol C15 [C]
+[lib_symbol_mismatch]: Symbol "Conn_01x05" stimmt nicht mit Kopie in Bibliothek "Connector_Generic" überein
+    ; warning
+    @(337.82 mm, 270.51 mm): Symbol J4 [Conn_01x05]
+[lib_symbol_mismatch]: Symbol "Crystal" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(340.36 mm, 149.86 mm): Symbol Y1 [Crystal]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(340.36 mm, 204.47 mm): Symbol RT1 [R]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(340.36 mm, 219.71 mm): Symbol R19 [R]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(340.36 mm, 234.95 mm): Symbol C19 [C]
+[lib_symbol_mismatch]: Symbol "Thermistor_NTC" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(340.36 mm, 250.19 mm): Symbol RT2 [Thermistor_NTC]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(374.65 mm, 144.78 mm): Symbol C16 [C]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(374.65 mm, 154.94 mm): Symbol C17 [C]
+[lib_symbol_mismatch]: Symbol "R" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(374.65 mm, 250.19 mm): Symbol R22 [R]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(374.65 mm, 265.43 mm): Symbol C20 [C]
+[lib_symbol_mismatch]: Symbol "C" stimmt nicht mit Kopie in Bibliothek "Device" überein
+    ; warning
+    @(379.73 mm, 219.71 mm): Symbol C18 [C]
+
+ ** ERC messages: 60  Errors 0  Warnings 60
+
+ ** Ignored checks:
+    - Global label only appears once in the schematic
+    - Four connection points are joined together
+    - SPICE model issue
+    - Assigned footprint doesn't match footprint filters
