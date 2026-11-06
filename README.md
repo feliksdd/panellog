@@ -1,6 +1,6 @@
 # PanelLog
 
-[3D model status](hardware/3dmodels/README.md): verified external component models; E73, BVB shunt and JTX310 models remain missing.
+[C6 revision and qualification status](docs/c6_cost_revision_2026-11-06.md). ESP32-C6-MINI-1 manufacturer model included; external 32 kHz crystal removed.
 
 [Kradex Z74JH ABS enclosure and 118 × 90 mm PCB](docs/enclosure_kradex_z74.md)
 
@@ -18,7 +18,7 @@ One PanelLog node is used per module. Different MPPT inputs are never tied toget
 PV+ IN ---------------------------------------------------- PV+ OUT / MPPT+
    |                         |
    |                         +--> INA228 VBUS
-   +--> LM5164 (direct 3.3 V) --> MCU / INA228 / Zigbee
+   +--> LM5163 (direct 3.3 V) --> MCU / INA228 / Zigbee
 
 MPPT- / PV- OUT --> 0.7 mOhm 4-wire shunt --> D  QSW  S --> PV- IN / local GND
                      |              |
@@ -52,8 +52,8 @@ The 60 V design target is not a substitute for the final cold-`Voc` check. Befor
 | Current / bus-voltage monitor | TI **INA228AIDGSR** | 20-bit, ±40.96 mV range, ±1 µV max offset, ±0.05% max gain error, 85 V bus/common-mode | LCSC **C2887910** |
 | Current shunt | Isabellenhütte **BVB-M-R0007-1.0** | 0.7 mΩ, true 4-terminal, ±20 ppm/K TCR, 8 W | LCSC **C5563922**; stock must be rechecked before ordering |
 | PV switch | Infineon **IPT015N10N5** | 100 V OptiMOS 5, max 1.5 mΩ at VGS=10 V; TOLL/HSOF-8 gives low loss and good thermal margin | LCSC **C108964** |
-| PV-to-3.3-V buck | TI **LM5164DDAR** | 6...100 V input, synchronous 1 A buck, 10.5 µA no-load input IQ; direct 3.3 V avoids a second regulator | LCSC **C477928** |
-| Radio / MCU | Ebyte **E73-2G4M08S1C** | nRF52840, common platform with poa-sensor, Zigbee-capable | project-local footprint |
+| PV-to-3.3-V buck | TI **LM5163DDAR** | 6...100 V input, synchronous 500 mA buck, 10.5 µA no-load input IQ; direct 3.3 V avoids a second regulator | LCSC **C2873264** |
+| Radio / MCU | Espressif **ESP32-C6-MINI-1-N4** | ESP32-C6, 4 MB flash, Wi-Fi / BLE / IEEE 802.15.4; firmware port required | project-local footprint |
 | External module-temperature element | YAGEO Nexensos **M222 Pt1000 F0.15 / Class A**, order 32208572 | leaded Pt1000, DIN EN 60751, intended for a cabled probe bonded to the module backsheet | external probe assembly |
 | Internal hotspot sensor | TDK **NTCG163JF103FT1S** or equivalent 10 kΩ NTC | cheap local MOSFET/PCB thermal protection; precision is not required | PCB SMD |
 | RTD reference resistor | Susumu **RG1608N-1472-W-T1** | 14.7 kΩ, ±0.05%, ±10 ppm/K | LCSC **C1721340** |
@@ -65,7 +65,7 @@ Primary data sheets:
 - INA228: https://www.ti.com/lit/ds/symlink/ina228.pdf
 - BVB: https://www.isabellenhuette.com/hubfs/Files/Data-sheets/BVB.pdf
 - IPT015N10N5: https://www.infineon.com/dgdl/Infineon-IPT015N10N5-DataSheet-v02_04-EN.pdf
-- LM5164: https://www.ti.com/lit/ds/symlink/lm5164.pdf
+- LM5163: https://www.ti.com/lit/ds/symlink/lm5163.pdf
 - YAGEO Nexensos M222: https://www.heraeus.com/media/media/hne/datasheets/m_sensors/en_10/m_222_e.pdf
 
 ### Why 0.7 mΩ rather than 2 mΩ
@@ -115,7 +115,7 @@ MPPT- --> shunt --> QSW drain --> QSW source --> PV- / local GND
 
 This keeps QSW source at the electronics reference potential. INA228 `IN+` is connected to the MPPT side of the shunt and `IN-` to the MOSFET side.
 
-A grounded USB/SWD debugger can create an unintended current path around the low-side measurement. Debugging an installed node therefore requires an **isolated debugger / isolated bench setup**, or the PV circuit must be disconnected from the inverter.
+A grounded USB/UART programmer can create an unintended current path around the low-side measurement. Debugging an installed node therefore requires an **isolated debugger / isolated bench setup**, or the PV circuit must be disconnected from the inverter.
 
 ## MOSFET switch and loss
 
@@ -166,23 +166,23 @@ The sensor supply is connected directly across module PV+ / PV- **before QSW**, 
 Baseline:
 
 ```text
-PV 0...60 V --> LM5164 --> 3.3 V --> MCU / INA228 / sensors
+PV 0...60 V --> LM5163 --> 3.3 V --> MCU / INA228 / sensors
 ```
 
 A switching regulator is strongly preferred over a high-voltage linear regulator: at 40 V input a linear regulator would dissipate about 0.37 W already at only 10 mA average load, and about 0.73 W during a 20 mA load interval. That is unnecessary heat behind the PV module. A resistor/zener supply is also unsuitable because the radio load is strongly dynamic.
 
-The former 5 V + LDO architecture is therefore removed. INA228 accepts 2.7...5.5 V and the nRF52840 module operates from the 3.3 V rail, so a second regulator does not buy useful accuracy. Use normal local decoupling at INA228; add an RC/ferrite only if prototype EMI testing shows a need.
+The former 5 V + LDO architecture is therefore removed. INA228 accepts 2.7...5.5 V and the ESP32-C6 module operates from the 3.3 V rail, so a second regulator does not buy useful accuracy. Use normal local decoupling at INA228; add an RC/ferrite only if prototype EMI testing shows a need.
 
-LM5164 is rated 6...100 V and has 10.5 µA no-load input quiescent current. A preliminary direct-3.3-V operating point is:
+LM5163 is rated 6...100 V and has 10.5 µA no-load input quiescent current. A preliminary direct-3.3-V operating point is:
 
 - VOUT = 3.3 V
 - nominal FSW = 300 kHz
 - `RRON ~= 3.3 V * 2500 / 300 kHz = 27.5 kΩ` -> start with **27.4 kΩ, 1%**
-- feedback divider ratio `Rtop/Rbottom = 3.3/1.2 - 1 = 1.75`; the KiCad 10 schematic uses **175 kΩ / 100 kΩ** for about 3.30 V nominal
+- feedback divider ratio `Rtop/Rbottom = 1.74`; the KiCad 10 schematic uses **174 kΩ / 100 kΩ** for about 3.288 V nominal
 - input UVLO target about 9.0 V on / 8.4 V off
 - using TI's UVLO equations, **1.0 MΩ / 200 kΩ** remains the initial UVLO network
 
-The inductor/ripple-injection network and input transient suppression are **not release-frozen yet**. They must be finalized from the actual maximum load, layout and cold-`Voc`/surge envelope using the current LM5164 Rev. D design procedure. The initial PCB should reserve generous input-decoupling and TVS area.
+The inductor/ripple-injection network and input transient suppression are **not release-frozen yet**. They must be finalized from the actual maximum load, layout and cold-`Voc`/surge envelope using the current LM5163 Rev. D design procedure. The initial PCB should reserve generous input-decoupling and TVS area.
 
 ## Temperature channels
 
@@ -200,7 +200,7 @@ Baseline sensor element: YAGEO Nexensos **M222 Pt1000, class F0.15 / Class A, or
 
 Use a fixed short cable and calibrate **sensor + cable + analog channel as one probe**. For a roughly 0.5...1 m cable, a 2-wire Pt1000 is adequate for the target because Pt1000 sensitivity is about 3.85 Ω/K and the cable resistance is both small and removed by the per-probe calibration. If later cable lengths become several metres, move to a true 4-wire probe/measurement rather than compensating nominal cable resistance in software.
 
-A 14.7 kΩ ±0.05%, ±10 ppm/K reference resistor keeps excitation near 0.2 mA. Excitation is switched only for measurements. The target remains **better than ±0.5 °C after calibration**, with the dominant uncertainty expected to be thermal coupling to the backsheet rather than the platinum element.
+A 14.7 kΩ ±0.05%, ±10 ppm/K reference resistor keeps excitation near 0.2 mA. Excitation is continuous in this hardware revision. The previous ±0.5 °C system target is not a verified C6 specification: ADC calibration, nonlinearity and sensor mounting require a new temperature error budget. R20/R24 divide the rail by two; firmware must reconstruct Vrail = 2 × VCC_MON_ADC after settling.
 
 Mechanically, use a thin thermally conductive electrically insulating adhesive layer and a small protective aluminium/polyimide patch; validate the complete assembly against a reference sensor. Commercial PV backsheet sensors use the same general approach: a Pt1000 element in a small bonded aluminium body.
 
@@ -209,7 +209,7 @@ Mechanically, use a thin thermally conductive electrically insulating adhesive l
 No extra precision digital temperature IC is required initially:
 
 1. **INA228 die temperature** is already available digitally and is specified to ±1 °C at 25 °C. Use it for measurement-chain temperature logging and for correlation with the shunt during temperature calibration.
-2. Add one cheap **10 kΩ SMD NTC next to QSW** and read it with the nRF52840 SAADC. This is a hotspot / thermal-protection channel, not a precision ambient sensor. It is more useful than placing a precision sensor elsewhere on the PCB because QSW is the dominant controllable heat source.
+2. Add one cheap **10 kΩ SMD NTC next to QSW** and read it with the ESP32-C6 ADC. This is a hotspot / thermal-protection channel, not a precision ambient sensor. It is more useful than placing a precision sensor elsewhere on the PCB because QSW is the dominant controllable heat source.
 
 If prototype measurements later show that true enclosure ambient temperature is needed independently of shunt and MOSFET temperature, TMP117 is a suitable optional I2C part (up to ±0.1 °C around room temperature), but it is not justified for revision 0.
 
@@ -395,18 +395,18 @@ The high-current path is a primary mechanical/electrical design feature, not ord
 - keep shunt and INA228 close enough for low thermoelectric/EMI error, but characterize their temperature relationship
 - use wide, short copper for the MPPT-/shunt/MOSFET/PV- path; **2 oz copper is the initial PCB baseline**
 - size copper and thermal vias from actual hot-enclosure testing; no final trace width is frozen yet
-- keep the LM5164 switching loop physically away from the shunt/INA228 Kelvin pair
+- keep the LM5163 switching loop physically away from the shunt/INA228 Kelvin pair
 - reserve input-TVS / transient-protection area near the PV cable entry
 - use PV-rated pigtails/connectors and strain relief; do not rely on a small generic PCB terminal for the 15 A path
 - conformal coating / enclosure materials must tolerate the expected hot-backside temperature and UV/moisture environment
 
 ### RF placement
 
-A PV laminate and aluminium rail are poor surroundings for a 2.4 GHz ceramic antenna. Mount the node near a module edge and orient the E73 antenna away from aluminium and the module backsheet as far as practical. Link-margin testing in the final mechanical installation is a release gate; if it is inadequate, change to an external-antenna nRF52840 module variant rather than increasing TX power blindly.
+A PV laminate and aluminium rail are poor surroundings for a 2.4 GHz ceramic antenna. Mount the node near a module edge and orient the C6 antenna away from aluminium and the module backsheet as far as practical. Link-margin testing in the final mechanical installation is a release gate; if it is inadequate, change to an external-antenna ESP32-C6 module variant rather than increasing TX power blindly.
 
 ## Field-specific component decisions (2026-10-29)
 
-For the actual **1–2 m MC4 single-module installation**, with rare switching, LCSC preferred, and an accepted non-industrial surge risk profile, see [short-lead PV electrical decisions](docs/design_decisions_short_pv_leads_2026-10-29.md). **Prototype candidates** are TDK **CNA6P1X7R2A475KT000A** (LCSC C22877898) **3× 4.7 µF / 100 V in parallel** at LM5164 VIN because TDK's DC-bias curve shows ~−75% at 60 V; low-current **MMSZ4697** zener (JSCJ C2910058), **R8 47 kΩ**, and **R9 2.2 kΩ**. D1 TVS stays **DNP** unless switching tests establish a need for targeted clamping. **Implemented in the native KiCad 10 schematic:** C1/C21/C22 (3× 4.7 µF/100 V), D2 MMSZ4697, R8 47 kΩ, R9 2.2 kΩ, D1 SMB footprint (DNP), and R23/C23 RC snubber footprints (both DNP). See [static net/pin validation](hardware/kicad/VALIDATION_2026-10-29.md). **Native KiCad 10 ERC is still pending; PCB and component qualification are not released.** Continue the provisional **20-A** current-path check.
+For the actual **1–2 m MC4 single-module installation**, with rare switching, LCSC preferred, and an accepted non-industrial surge risk profile, see [short-lead PV electrical decisions](docs/design_decisions_short_pv_leads_2026-10-29.md). **Current prototype input capacitors:** FH **1210B475K101NT** (LCSC C2840282), **3× 4.7 µF / 100 V**. FH DC-bias and temperature derating must establish aggregate effective capacitance ≥2.2 µF at 60 V; the previous TDK curve is not applicable. Retained low-current **MMSZ4697** zener (JSCJ C2910058), **R8 47 kΩ**, and **R9 2.2 kΩ**. D1 TVS stays **DNP** unless switching tests establish a need for targeted clamping. **Implemented in the native KiCad 10 schematic:** C1/C21/C22 (3× 4.7 µF/100 V), D2 MMSZ4697, R8 47 kΩ, R9 2.2 kΩ, D1 SMB footprint (DNP), and R23/C23 RC snubber footprints (both DNP). See [static net/pin validation](hardware/kicad/VALIDATION_2026-10-29.md). **See current native checks in the C6 revision report; component qualification and production release remain pending.** Continue the provisional **20-A** current-path check.
 
 ### PCB review draft — 2026-10-29
 
@@ -414,7 +414,7 @@ The [native KiCad-10-readable PCB placement draft](hardware/kicad/panellog.kicad
 
 ## Current schematic review
 
-The [initial source-structural review](docs/schematic_audit_2026-10-29.md) records the KiCad label/pin check and provisional module data. The [full datasheet-based electrical audit](docs/electrical_audit_2026-10-29.md) recalculates the LM5164 and its ripple network, identifies gate-bias/2N7002 hot-leakage uncertainty, analyzes INA228 and 85-V transient coordination, and sets an **unqualified 20-A current-path check**. Neither review replaces native KiCad 10 ERC, real transient testing or bench/thermal validation.
+The [initial source-structural review](docs/schematic_audit_2026-10-29.md) records the KiCad label/pin check and provisional module data. The [full datasheet-based electrical audit](docs/electrical_audit_2026-10-29.md) recalculates the LM5163 and its ripple network, identifies gate-bias/2N7002 hot-leakage uncertainty, analyzes INA228 and 85-V transient coordination, and sets an **unqualified 20-A current-path check**. Neither review replaces native KiCad 10 ERC, real transient testing or bench/thermal validation.
 
 ## Release gates
 
@@ -422,7 +422,7 @@ Before the first fabrication/release:
 
 1. cold-`Voc` calculation for every deployed module type
 2. select/freeze TVS and input protection from that voltage/transient envelope
-3. complete LM5164 inductor/ripple-injection/input-filter design and simulate/check with TI design procedure
+3. complete LM5163 inductor/ripple-injection/input-filter design and simulate/check with TI design procedure
 4. thermal simulation/estimate plus hot-module prototype measurement for QSW, shunt, buck and enclosure
 5. Kelvin-layout review around BVB + INA228
 6. validate current/voltage error budget on at least two temperatures
@@ -439,8 +439,9 @@ Planned:
 
 - `hardware/` - KiCad schematic/PCB, service/calibration pads and project-local libraries
 - `bom/` - selected components, sourcing and alternates
-- `firmware/` - nRF52840/Zigbee firmware
+- `firmware/` - ESP32-C6/Zigbee firmware requirements
 - `docs/` - validation/calibration reports once measured hardware exists
 - `manufacturing/` - JLCPCB outputs and assembly notes
 
 The root README is the architecture and measurement-accuracy source of truth until the first schematic revision is committed.
+

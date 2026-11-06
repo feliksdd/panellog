@@ -1,0 +1,68 @@
+(footprint "UART_BOOT_1x06_Pogo"
+  (version 20241229)
+  (generator "pcbnew")
+  (layer "F.Cu")
+  (descr "6 pogo pads 2.54 mm: 3V3 reference, TX, RX, EN, GND, BOOT")
+  (property "Reference" "REF**"
+    (at 0 -3 0)
+    (layer "F.SilkS")
+    (effects
+      (font
+        (size 0.8 0.8)
+        (thickness 0.12))))
+  (property "Value" "UART / BOOT pogo"
+    (at 0 3 0)
+    (layer "F.Fab")
+    (effects
+      (font
+        (size 0.7 0.7)
+        (thickness 0.1))))
+  (attr smd)
+  (fp_rect
+    (start -7.77 -1.5)
+    (end 7.77 1.5)
+    (stroke
+      (width 0.1)
+      (type default))
+    (fill no)
+    (layer "F.Fab")
+    (uuid "5d4b7090-cc2b-465b-828d-f0c910bd4ef9"))
+  (fp_rect
+    (start -8.17 -1.9)
+    (end 8.17 1.9)
+    (stroke
+      (width 0.05)
+      (type default))
+    (fill no)
+    (layer "F.CrtYd")
+    (uuid "c4389608-1651-417a-b906-9814a912027a"))
+  (pad "1" smd circle
+    (at -6.35 0 0)
+    (size 1.6 1.6)
+    (layers "F.Cu" "F.Mask")
+    (uuid "9aee19dd-cb58-4dfc-82d8-a662ba1e4e28"))
+  (pad "2" smd circle
+    (at -3.8099999999999996 0 0)
+    (size 1.6 1.6)
+    (layers "F.Cu" "F.Mask")
+    (uuid "851ec259-f45b-4371-bda9-0af9e74bab50"))
+  (pad "3" smd circle
+    (at -1.2699999999999996 0 0)
+    (size 1.6 1.6)
+    (layers "F.Cu" "F.Mask")
+    (uuid "7487bb4a-8f53-477e-9cfe-3e89fafb0227"))
+  (pad "4" smd circle
+    (at 1.2700000000000005 0 0)
+    (size 1.6 1.6)
+    (layers "F.Cu" "F.Mask")
+    (uuid "ace09261-1a87-4b4e-8446-3e7c53afaf65"))
+  (pad "5" smd circle
+    (at 3.8100000000000005 0 0)
+    (size 1.6 1.6)
+    (layers "F.Cu" "F.Mask")
+    (uuid "9e576de9-b3c6-4d83-90ac-99adc539c65f"))
+  (pad "6" smd circle
+    (at 6.35 0 0)
+    (size 1.6 1.6)
+    (layers "F.Cu" "F.Mask")
+    (uuid "83f560a7-e007-4b8e-8386-2c8e62b161f6")))

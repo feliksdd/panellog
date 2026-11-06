@@ -1,25 +1,30 @@
-# Firmware
+# PanelLog C6 firmware requirements
 
-Target platform: nRF52840 / E73-2G4M08S1C as a Zigbee end device.
+Target: ESP32-C6-MINI-1-N4, 4 MB flash, ESP-IDF / ESP Zigbee SDK. This repository does not yet contain a completed C6 firmware port.
 
-## Required behavior
+| Function | GPIO | Module pad |
+|---|---:|---:|
+| Pt1000 ADC | 2 | 5 |
+| NTC ADC | 3 | 6 |
+| VCC monitor ADC | 0 | 12 |
+| I2C SDA | 6 | 15 |
+| I2C SCL | 7 | 16 |
+| SWITCH_OFF | 18 | 24 |
+| PGOOD | 19 | 25 |
+| INA_ALERT | 20 | 26 |
+| UART RX | 17 | 30 |
+| UART TX | 16 | 31 |
+| Boot strap high | 8 | 22 |
+| BOOT_N | 9 | 23 |
 
-- configure INA228 in the +/-40.96 mV shunt range (ADCRANGE=1) **after every power-on**, set SHUNT_CAL and averaging/conversion periods explicitly, then sample the calibrated shunt/bus readings
-- apply per-unit current/voltage calibration coefficients
-- read the external calibrated Pt1000 probe channel
-- read the internal QSW-area NTC for thermal protection
-- log INA228 die temperature as the measurement-chain internal temperature
-- integrate calibrated DC energy using MCU/BatteryFlex timestamps
-- expose raw INA228 accumulator values as diagnostics, not the authoritative long-term energy total
-- control the module switch as whole-module ON/OFF only; no PWM
-- enforce minimum dwell/hysteresis around switching
-- implement a software OFF lease: on loss/expiry of the curtailment command, **while firmware is executing**, release the OFF GPIO to return the module to ON; a latched HIGH GPIO during an MCU hang is **not** cleared by a firmware-only lease
-- publish reset reason, uptime, INA die temperature, QSW-area NTC temperature and radio link quality
+GPIO8 and GPIO9 have 10 kΩ pull-ups. J4 pin 6 grounds GPIO9 for download mode, with GPIO8 high; pulse EN (J4 pin 4). J4: 1=3V3 reference, 2=target TX, 3=target RX, 4=EN, 5=GND, 6=BOOT_N. Use 3.3 V UART levels. Pin 1 is a voltage reference, not permission to back-power the target. USB D+/D− are not routed. Use isolated programming for an installed PV circuit or disconnect PV and inverter before programming.
 
-## Calibration lifecycle
+EN has 10 kΩ / 1 µF reset delay. External 32.768 kHz crystal removed; use internal low-power clock and validate Zigbee sleep timing/current. The existing Nordic firmware design cannot be used unchanged.
 
-At boot/sunrise, QSW is passively **ON** by hardware default until the MCU is able to command it OFF. Firmware must not assume that it held QSW OFF throughout startup. Once the MCU is running, it can request a short OFF interval to measure the zero-current offset, provided the operating strategy permits it and a plausibility check supports zero current. Later deliberate OFF intervals can refresh the zero; on MCU reset or lease expiry, return to ON.
+Default SWITCH_OFF low/high-impedance keeps Q1 conducting through the existing fail-ON gate network. Explicitly drive GPIO18 low before enabling output; preserve this behavior through reboot, watchdog and firmware update. High turns Q2 on and Q1 off. Rate-limit curtailment; no high-frequency PWM operation is qualified.
 
-Factory calibration data are versioned and CRC-protected and include current/voltage scale and offset, effective current gain tempco when characterized, Pt1000 correction, calibration date and hardware revision.
+INA228, 0.7 mΩ BVB Kelvin shunt and IPT015N10N5 remain unchanged. Preserve calibration constants, measurement polarity, alert handling and temperature protections. Existing INA energy calculations remain applicable; MCU ADC claims do not.
 
-The full procedure and numerical error budget are in the root [README](../README.md). Startup/fault and electrical details are in [the datasheet-based audit](../docs/electrical_audit_2026-10-29.md). The hardware must be separately evaluated for stuck-HIGH GPIO and hot gate leakage; firmware alone cannot provide independent fail-ON safety.
+R20=R24=100 kΩ divides the supply by two. C19=100 nF gives approximately 5 ms time constant; allow ≥25 ms settling, and validate sample acquisition/loading at 50 kΩ source impedance. Apply ESP-IDF ADC calibration at the configured attenuation, average samples and characterize residual nonlinearity. Vrail=2×Vadc_rail; Rpt=14700×Vadc_pt/(Vrail−Vadc_pt). Pt1000 excitation is continuously enabled by R18, not software switched. Retain the precision R18. NTC is a thermal protection/hotspot channel. A C6 system temperature accuracy of ±0.5 °C is not yet demonstrated.
+
+Power budget: LM5163 is rated 500 mA, not 1 A. Validate radio bursts and 3.3 V droop across the complete input range, hot enclosure and sleep/wake transitions. Deep sleep numbers for the bare chip are not a board-level guarantee. External sensors, INA228, dividers and radio duty cycle contribute.

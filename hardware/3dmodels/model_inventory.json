@@ -42,27 +42,6 @@
     "status": "available"
   },
   {
-    "ref": "C15",
-    "models": [
-      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
-    ],
-    "status": "available"
-  },
-  {
-    "ref": "C16",
-    "models": [
-      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
-    ],
-    "status": "available"
-  },
-  {
-    "ref": "C17",
-    "models": [
-      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
-    ],
-    "status": "available"
-  },
-  {
     "ref": "C18",
     "models": [
       "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
@@ -430,13 +409,49 @@
   {
     "ref": "U3",
     "models": [
-      "${KIPRJMOD}/../3dmodels/manufacturer/E73-2G4M08S1C.step"
+      "${KIPRJMOD}/../3dmodels/manufacturer/ESP32-C6-MINI-1.STEP"
     ],
-    "status": "available_pad_alignment_discrepancy"
+    "status": "available",
+    "revision": "C6 2026-11-06"
   },
   {
-    "ref": "Y1",
-    "models": [],
-    "status": "missing_verified_model"
+    "ref": "C15",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0805_2012Metric.step"
+    ],
+    "status": "available",
+    "revision": "C6 2026-11-06"
+  },
+  {
+    "ref": "C24",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
+    ],
+    "status": "available",
+    "revision": "C6 2026-11-06"
+  },
+  {
+    "ref": "R24",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "available",
+    "revision": "C6 2026-11-06"
+  },
+  {
+    "ref": "R25",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "available",
+    "revision": "C6 2026-11-06"
+  },
+  {
+    "ref": "R26",
+    "models": [
+      "${KIPRJMOD}/../3dmodels/standard/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+    ],
+    "status": "available",
+    "revision": "C6 2026-11-06"
   }
 ]

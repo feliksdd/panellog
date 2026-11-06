@@ -1,3 +1,5 @@
+Current revision: [C6 / LM5163 reconstruction](../docs/c6_cost_revision_2026-11-06.md). Earlier placement coordinates below are historical; the KiCad board is authoritative.
+
 > [Externe STEP-Bauteilmodelle](3dmodels/README.md): aktuelle Zuordnungen auf Basis `130ec6e`; U3, RSH1 und Y1 bleiben ohne verifiziertes Modell.
 
 > Gehäuserevision: [Kradex Z74JH ABS, Platine 118 × 90 mm und Kabelmontage](../docs/enclosure_kradex_z74.md).
@@ -43,16 +45,16 @@ One node per PV module with:
 - PV+ pass-through and INA228 VBUS measurement
 - PV- return path: MPPT- -> Isabellenhuette BVB 0.7 mOhm shunt -> IPT015N10N5 -> module PV-
 - INA228 differential Kelvin pickup through 10 ohm / 100 nF input filtering
-- LM5164 converting the PV module directly to 3.3 V
+- LM5163 converting the PV module directly to 3.3 V
 - 9.0 V on / 8.4 V off **typical** UVLO target from 1 MOhm / 200 kOhm (datasheet thresholds and component tolerances apply)
-- ~300 kHz LM5164 RON setting with 27.4 kOhm
+- ~300 kHz LM5163 RON setting with 27.4 kOhm
 - 68 uH initial buck inductor value
-- Type-3 LM5164 ripple network: 150 kOhm / 3.3 nF / 150 pF
-- E73-2G4M08S1C / nRF52840 in normal-voltage mode with VDD and VDDH on 3.3 V; DCCH/USB VBUS are unused
+- Type-3 LM5163 ripple network: 150 kOhm / 3.3 nF / 150 pF
+- ESP32-C6-MINI-1-N4 at 3.3 V with EN RC, GPIO8/GPIO9 pull-ups and UART boot header
 - external two-wire Pt1000 module probe, measured ratiometrically with a 14.7 kOhm precision reference
 - internal 10 kOhm NTC close to Q1 for hotspot/thermal protection
 - passive normally-ON **intended** Q1 gate bias with **R8 47 kΩ**, **JSCJ MMSZ4697 10-V low-current zener (D2)** and **R9 2.2 kΩ**, with MCU-controlled 2N7002 pull-down; hot leakage, actual gate voltage, switching SOA and fault behavior remain unqualified
-- SWD pogo interface
+- UART pogo interface
 
 The TVS position D1 is intentionally present but DNP. Its actual part number and clamp voltage must not be frozen before the cold-Voc and transient envelope is checked for every deployed module type.
 
@@ -73,12 +75,12 @@ A first native KiCad PCB now exists at [`kicad/panellog.kicad_pcb`](kicad/panell
 
 1. Treat the 15 A current path as power hardware, not ordinary PCB routing.
 2. Use the exact BVB four-terminal land geometry and independent Kelvin pickup.
-3. Keep the INA228 sense pair away from the LM5164 switching loop.
+3. Keep the INA228 sense pair away from the LM5163 switching loop.
 4. Keep Q1 source at local PV-/MCU ground.
 5. Reserve large copper/thermal-via area for IPT015N10N5 and validate behind-module temperature experimentally.
 6. Start with 2 oz copper; final widths/via count are released only after thermal/current-path review.
-7. Keep the E73 antenna at a module/enclosure edge and out of the aluminium-rail shadow.
-8. A grounded debugger can bypass the low-side measurement; installed-system SWD must be isolated or the PV/inverter circuit disconnected.
+7. Keep the ESP32-C6 antenna at a module/enclosure edge and out of the aluminium-rail shadow.
+8. A grounded debugger can bypass the low-side measurement; installed-system UART must be isolated or the PV/inverter circuit disconnected.
 
 ## Updated field-installation assumptions (2026-10-29)
 
@@ -98,7 +100,8 @@ These depend on cold-Voc/transient validation, PCB geometry and the first therma
 
 ## Validation status
 
-The schematic file and project-local library have been generated in KiCad 10 syntax and structurally checked for balanced S-expressions, unique UUIDs, complete reference instances, and explicit no-connects on unused E73 pins.
+The schematic file and project-local library have been generated in KiCad 10 syntax and structurally checked for balanced S-expressions, unique UUIDs, complete reference instances, and explicit no-connects on unused ESP32-C6 pins.
 
 A native `kicad-cli sch erc` run is still required after opening/saving with KiCad 10; the current execution environment does not provide KiCad 10. See [datasheet-based electrical audit (2026-10-29)](../docs/electrical_audit_2026-10-29.md) for recalculations, source links and blockers.
+
 

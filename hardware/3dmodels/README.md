@@ -1,3 +1,9 @@
+## Current C6 revision (2026-11-06)
+
+U3 now uses the original Espressif ESP32-C6-MINI-1 STEP model from espressif/kicad-libraries. The module footprint references `manufacturer/ESP32-C6-MINI-1.STEP`, with the manufacturer's offset (-6.55, -8.3, 0.5) mm and unit scale. The model is not simplified. License: `../footprints/ESPRESSIF-LICENSE.md`.
+
+E73 and the external 32 kHz crystal are no longer fitted. Existing BVB shunt, TI DDA, IPT015N10N5 and other model assignments are retained. Historical inventory notes below describe earlier revisions.
+
 # Externe 3D-Modelle – recherchierte Revision
 
 **Keine selbst erzeugten Bauteil- oder Gehäusenäherungen mehr.** Die bisherigen `generated/`-Dateien, der Generator und die darauf beruhende Vorschau wurden entfernt. Die aktuelle Baugruppe ist ausdrücklich **unvollständig**: Für Y1 fehlt ein Modell. Für U3 besteht eine Abweichung zwischen STEP und Footprint. RSH1 verwendet ein Variantenmodell. Lötanschlüsse J1/J2/J3, SWD-Pads J4 und Bohrungen benötigen keinen erfundenen Bauteilkörper.
@@ -56,4 +62,5 @@ Die erneute Recherche der Ebyte-Downloadliste und Produktseite, der Isabellenhü
 - Ebyte: https://www.cdebyte.com/products/E73-2G4M08S1C/3 und https://www.ebyte.com/datadown/SPISOC.html
 - BVB: https://www.isabellenhuetteusa.com/product/bvb/ und https://www.isabellenhuette.com/hubfs/Files/Data-sheets/BVB.pdf
 - Jauch: https://www.jauch.com/en-GB/products/frequency_control_components
+
 
