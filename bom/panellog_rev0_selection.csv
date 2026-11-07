@@ -56,7 +56,7 @@ R22,1k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1001T5E,C21190,SELECTED_PROTOTYP
 R23,DNP 10R snubber TBD,Resistor_SMD:R_1206_3216Metric,,,DNP,Optional RC snubber resistor; first capture Q1 switching transient.
 RSH1,HOVB4026-5W-1mR-1%,PanelLog:HOVB4026_R001_Kelvin,Milliohm HOVB4026-5W-1mR-1%,C481535,SELECTED_PROTOTYPE,HoVB A0 p6 four-terminal land pattern; 1mOhm 5W 1% 50ppm/K; calibrate zero and gain.
 RT1,M222 Pt1000 Class A external probe,,Nexensos M222 Pt1000 F0.15 Class A 32208572,,EXTERNAL_SENSOR,"Off board: external 2-wire probe, encapsulation, cable, weather sealing and lead resistance compensation pending."
-RT2,10k NTC near Q1,Resistor_SMD:R_0603_1608Metric,TDK NTCG163JF103FT1S,C406719,CANDIDATE_REVIEW,"10kohm@25C, beta25/50 3380K +-1%, 0603; ADC calibration beta and thermal coupling."
+RT2,10k NTC near Q1,Resistor_SMD:R_0603_1608Metric,TDK NTCG163JF103FT1S,C406719,CANDIDATE_REVIEW,"10kohm@25C, B25/50 3380K typical; B25/85 3435K +-1%, 0603; ADC calibration beta and thermal coupling."
 U1,LM5163DDAR,PanelLog:LM5164_DDA,LM5163DDAR,C2873264,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 U2,INA237AIDGSR,PanelLog:INA237_DGS10,TI INA237AIDGSR,C2864837,SELECTED_PROTOTYPE,DGS10 pin-compatible; 16-bit registers; ADCRANGE=1; MCU energy integration required.
 U3,ESP32-C6-MINI-1-N4,PanelLog:ESP32_C6_MINI_1,ESP32-C6-MINI-1-N4,C5736265,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md

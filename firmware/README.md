@@ -39,3 +39,5 @@ R20=R24=100 kΩ divides the supply by two. C19=100 nF gives approximately 5 ms t
 Power budget: LM5163 is rated 500 mA, not 1 A. Validate radio bursts and 3.3 V droop across the complete input range, hot enclosure and sleep/wake transitions. Deep sleep numbers for the bare chip are not a board-level guarantee. External sensors, INA237, dividers and radio duty cycle contribute.
 
 Shutdown voltage/current plausibility, thresholds and unknown-state handling: [shutdown feedback](../docs/shutdown_feedback.md). These are implementation requirements, not a completed driver.
+
+Internal NTC: Rntc=10000*Vntc/(2*Vcc_adc-Vntc), after ADC calibration and with actual resistor-ratio corrections where available. R22 is not part of the DC divider. Use the TDK R/T table and invalid/open/short handling; see [temperature review](../docs/internal_temperature_review.md).
