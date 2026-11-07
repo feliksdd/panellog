@@ -1,7 +1,7 @@
 {
   "source": "hardware/kicad/panellog.kicad_sch",
   "sourced_at": "2026-10-29",
-  "status": "generated from symbol pin coordinates and visible wires; KiCad netlist confirmation required",
+  "status": "HISTORICAL DRAFT: use current KiCad schematic export for netlist",
   "pcb": [
     {
       "ref": "U1",

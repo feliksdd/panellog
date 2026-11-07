@@ -1,5 +1,7 @@
 # PanelLog
 
+Current measurement: **INA237 + C481535, 1 mΩ four-terminal shunt**. [Revision and verification](docs/current_sensor_2026-11-07.md).
+
 [C6 revision and qualification status](docs/c6_cost_revision_2026-11-06.md). ESP32-C6-MINI-1 manufacturer model included; external 32 kHz crystal removed.
 
 [Kradex Z74JH ABS enclosure and 118 × 90 mm PCB](docs/enclosure_kradex_z74.md)
@@ -17,10 +19,10 @@ One PanelLog node is used per module. Different MPPT inputs are never tied toget
 ```text
 PV+ IN ---------------------------------------------------- PV+ OUT / MPPT+
    |                         |
-   |                         +--> INA228 VBUS
-   +--> LM5163 (direct 3.3 V) --> MCU / INA228 / Zigbee
+   |                         +--> INA237 VBUS
+   +--> LM5163 (direct 3.3 V) --> MCU / INA237 / Zigbee
 
-MPPT- / PV- OUT --> 0.7 mOhm 4-wire shunt --> D  QSW  S --> PV- IN / local GND
+MPPT- / PV- OUT --> 1 mOhm 4-wire shunt --> D  QSW  S --> PV- IN / local GND
                      |              |
                    IN+/IN-        active-low OFF control
 
@@ -39,18 +41,18 @@ Initial design envelope for one node:
 - PCB design target: **0...60 V continuous**
 - historical current-measurement target: **0...15 A**; **not a released power-path maximum**. Solarwatt bifacial Isc can exceed it. Audit now requires a provisional **20-A current-path check** (not a qualified continuous-current rating).
 - power-switch semiconductor rating: **100 V**
-- INA228 bus/common-mode limit: **85 V**
+- INA237 bus/common-mode limit: **85 V**
 - DC/DC input rating: **100 V**
 - ambient/board environment: outdoor, behind a PV module; thermal validation is mandatory
 
-The 60 V design target is not a substitute for the final cold-`Voc` check. Before PCB release, the worst-case open-circuit voltage of **every actual module type** must be calculated at the minimum site temperature and checked against INA228, MOSFET, TVS and DC/DC limits with transient margin.
+The 60 V design target is not a substitute for the final cold-`Voc` check. Before PCB release, the worst-case open-circuit voltage of **every actual module type** must be calculated at the minimum site temperature and checked against INA237, MOSFET, TVS and DC/DC limits with transient margin.
 
 ## Selected components
 
 | Function | Selected part | Key reason | Sourcing |
 | --- | --- | --- | --- |
-| Current / bus-voltage monitor | TI **INA228AIDGSR** | 20-bit, ±40.96 mV range, ±1 µV max offset, ±0.05% max gain error, 85 V bus/common-mode | LCSC **C2887910** |
-| Current shunt | Isabellenhütte **BVB-M-R0007-1.0** | 0.7 mΩ, true 4-terminal, ±20 ppm/K TCR, 8 W | LCSC **C5563922**; stock must be rechecked before ordering |
+| Current / bus-voltage monitor | TI **INA237AIDGSR** | 16-bit, ±40.96 mV range, ±50 µV max offset, ±0.3% max gain error, 85 V | LCSC **C2864837** |
+| Current shunt | Milliohm **HOVB4026-5W-1mR-1%** | 1 mΩ, four terminals, ±1%, ±50 ppm/K, 5 W | LCSC **C481535** |
 | PV switch | Infineon **IPT015N10N5** | 100 V OptiMOS 5, max 1.5 mΩ at VGS=10 V; TOLL/HSOF-8 gives low loss and good thermal margin | LCSC **C108964** |
 | PV-to-3.3-V buck | TI **LM5163DDAR** | 6...100 V input, synchronous 500 mA buck, 10.5 µA no-load input IQ; direct 3.3 V avoids a second regulator | LCSC **C2873264** |
 | Radio / MCU | Espressif **ESP32-C6-MINI-1-N4** | ESP32-C6, 4 MB flash, Wi-Fi / BLE / IEEE 802.15.4; firmware port required | project-local footprint |
@@ -62,48 +64,34 @@ The 60 V design target is not a substitute for the final cold-`Voc` check. Befor
 
 Primary data sheets:
 
-- INA228: https://www.ti.com/lit/ds/symlink/ina228.pdf
-- BVB: https://www.isabellenhuette.com/hubfs/Files/Data-sheets/BVB.pdf
+- INA237: https://www.ti.com/lit/ds/symlink/ina237.pdf
+- HoVB: https://www.lcsc.com/datasheet/C481535.pdf
 - IPT015N10N5: https://www.infineon.com/dgdl/Infineon-IPT015N10N5-DataSheet-v02_04-EN.pdf
 - LM5163: https://www.ti.com/lit/ds/symlink/lm5163.pdf
 - YAGEO Nexensos M222: https://www.heraeus.com/media/media/hne/datasheets/m_sensors/en_10/m_222_e.pdf
 
-### Why 0.7 mΩ rather than 2 mΩ
+### 1 mΩ four-terminal shunt
 
-The INA228 has enough resolution that a large shunt voltage is unnecessary. The BVB 0.7 mΩ variant combines a useful signal with a **0 ±20 ppm/K** specified TCR; the 1 mΩ and 2 mΩ BVB variants are specified at 0 ±50 ppm/K. For this application the lower TCR matters more than gaining a few millivolts of signal.
+C481535 and INA237 replace BVB 0.7 mΩ and INA228 in the 2026-11-07 revision.
+At 12 A the shunt produces 12 mV and dissipates 144 mW; at the unchanged
+15 A design limit it produces 15 mV and dissipates 225 mW. The 5 W rating is
+subject to the manufacturer's thermal derating and is not a board current rating.
+At 20 A (comparison only, not a new board rating) dissipation is 400 mW.
 
-At 12 A:
-
-```text
-Vshunt = 12 A * 0.0007 ohm = 8.4 mV
-Pshunt = 12^2 * 0.0007 ohm = 100.8 mW
-```
-
-At the 15 A design limit:
-
-```text
-Vshunt = 10.5 mV
-Pshunt = 157.5 mW
-```
-
-The BVB-M-R0007 has an internal thermal resistance of about 12 K/W. Shunt self-heating due only to the measured current is therefore approximately 1.2 K at 12 A and 1.9 K at 15 A. The corresponding resistance change at 20 ppm/K is only about 0.0024% and 0.0038%, respectively.
-
-With INA228 `ADCRANGE=1`, one shunt-voltage LSB is 78.125 nV:
-
-```text
-I_LSB = 78.125 nV / 0.7 mOhm = 0.112 mA
-```
-
-Therefore the 0.7 mΩ shunt does not create a useful-resolution problem.
+ADCRANGE=1 gives ±40.96 A nominal electrical full scale and 1.25 mA per raw
+shunt ADC LSB. This is quantization, not guaranteed measurement accuracy.
+C481535 is specified at ±50 ppm/K in the exact 1 mΩ datasheet; the 0.5 mΩ
+variant's ±100 ppm/K specification does not apply. No BVB thermal-resistance
+or self-heating estimate is transferred to HoVB.
 
 ## Low-side measurement rationale
 
-The INA228 supports both high-side and low-side current sensing. PanelLog deliberately uses low-side sensing because:
+The INA237 supports both high-side and low-side current sensing. PanelLog deliberately uses low-side sensing because:
 
 - QSW is already a low-side N-MOSFET.
 - QSW source can be tied directly to local PV-/MCU ground.
 - no high-side gate driver is required.
-- INA228 accuracy does not depend on using the shunt high-side.
+- INA237 accuracy does not depend on using the shunt high-side.
 - the independent VBUS input still measures module voltage directly at PV+ up to 85 V.
 - there is no wired inter-node communication that would normally make a low-side ground shift troublesome.
 
@@ -113,7 +101,7 @@ The current path is ordered as:
 MPPT- --> shunt --> QSW drain --> QSW source --> PV- / local GND
 ```
 
-This keeps QSW source at the electronics reference potential. INA228 `IN+` is connected to the MPPT side of the shunt and `IN-` to the MOSFET side.
+This keeps QSW source at the electronics reference potential. INA237 `IN+` is connected to the MPPT side of the shunt and `IN-` to the MOSFET side.
 
 A grounded USB/UART programmer can create an unintended current path around the low-side measurement. Debugging an installed node therefore requires an **isolated debugger / isolated bench setup**, or the PV circuit must be disconnected from the inverter.
 
@@ -131,19 +119,19 @@ P_QSW(15 A) = 15^2 * 1.5 mOhm = 0.338 W
 Shunt + MOSFET at 12 A:
 
 ```text
-Rpath = 0.7 + 1.5 = 2.2 mOhm
-Vdrop = 26.4 mV
-Ploss = 0.317 W
+Rpath = 1.0 + 1.5 = 2.5 mOhm
+Vdrop = 30.0 mV
+Ploss = 0.360 W
 ```
 
 At 15 A:
 
 ```text
-Vdrop = 33.0 mV
-Ploss = 0.495 W
+Vdrop = 37.5 mV
+Ploss = 0.563 W
 ```
 
-RDS(on) still rises with junction temperature. Until the first hot-module prototype is measured, size the PCB thermal path for roughly **2x the 25 °C MOSFET resistance** as a conservative engineering allowance; at 15 A that gives about 0.83 W for shunt + MOSFET before connector/copper losses. The TOLL/HSOF-8 footprint is larger than SuperSO8, but that is beneficial here because switching is rare and conduction/thermal performance dominate gate charge and footprint.
+RDS(on) still rises with junction temperature. Until the first hot-module prototype is measured, size the PCB thermal path for roughly **2x the 25 °C MOSFET resistance** as a conservative engineering allowance; at 15 A that gives about 0.90 W for shunt + MOSFET before connector/copper losses. The TOLL/HSOF-8 footprint is larger than SuperSO8, but that is beneficial here because switching is rare and conduction/thermal performance dominate gate charge and footprint.
 
 ### Gate behavior / fail state
 
@@ -166,12 +154,12 @@ The sensor supply is connected directly across module PV+ / PV- **before QSW**, 
 Baseline:
 
 ```text
-PV 0...60 V --> LM5163 --> 3.3 V --> MCU / INA228 / sensors
+PV 0...60 V --> LM5163 --> 3.3 V --> MCU / INA237 / sensors
 ```
 
 A switching regulator is strongly preferred over a high-voltage linear regulator: at 40 V input a linear regulator would dissipate about 0.37 W already at only 10 mA average load, and about 0.73 W during a 20 mA load interval. That is unnecessary heat behind the PV module. A resistor/zener supply is also unsuitable because the radio load is strongly dynamic.
 
-The former 5 V + LDO architecture is therefore removed. INA228 accepts 2.7...5.5 V and the ESP32-C6 module operates from the 3.3 V rail, so a second regulator does not buy useful accuracy. Use normal local decoupling at INA228; add an RC/ferrite only if prototype EMI testing shows a need.
+The former 5 V + LDO architecture is therefore removed. INA237 accepts 2.7...5.5 V and the ESP32-C6 module operates from the 3.3 V rail, so a second regulator does not buy useful accuracy. Use normal local decoupling at INA237; add an RC/ferrite only if prototype EMI testing shows a need.
 
 LM5163 is rated 6...100 V and has 10.5 µA no-load input quiescent current. A preliminary direct-3.3-V operating point is:
 
@@ -208,102 +196,31 @@ Mechanically, use a thin thermally conductive electrically insulating adhesive l
 
 No extra precision digital temperature IC is required initially:
 
-1. **INA228 die temperature** is already available digitally and is specified to ±1 °C at 25 °C. Use it for measurement-chain temperature logging and for correlation with the shunt during temperature calibration.
+1. **INA237 die temperature** is already available digitally and is specified to ±1 °C at 25 °C. Use it for measurement-chain temperature logging and for correlation with the shunt during temperature calibration.
 2. Add one cheap **10 kΩ SMD NTC next to QSW** and read it with the ESP32-C6 ADC. This is a hotspot / thermal-protection channel, not a precision ambient sensor. It is more useful than placing a precision sensor elsewhere on the PCB because QSW is the dominant controllable heat source.
 
 If prototype measurements later show that true enclosure ambient temperature is needed independently of shunt and MOSFET temperature, TMP117 is a suitable optional I2C part (up to ±0.1 °C around room temperature), but it is not justified for revision 0.
 
 ## DC measurement error budget
 
-### Raw, uncalibrated
+The old INA228/BVB numerical budgets are superseded. INA237 maximum initial
+shunt offset is ±50 µV (±50 mA at 1 mΩ), gain error ±0.3%, plus shunt ±1%.
+Before calibration, the dominant linear current-error estimate is therefore
+±(1.3% of reading + 50 mA), excluding noise, INL and board effects.
 
-The 0.7 mΩ shunt has ±1% initial tolerance, so uncalibrated current accuracy is dominated by the shunt. High accuracy therefore **requires per-unit calibration**.
+Per-unit zero and gain calibration are required. At a 50 K temperature change,
+50 ppm/K shunt TCR and 50 ppm/K INA gain drift contribute 0.25% each;
+0.02 µV/K offset drift contributes another 1 mA. Adding a 0.05% calibration
+reference allocation gives a partial budget of 0.55% of reading + 1 mA
+(0.65% at 1 A, 0.56% at 10 A). This is NOT a complete guaranteed accuracy:
+quantization/noise, thermal EMFs, aging, thermal gradients and calibration
+residuals still require measurement. The shunt's TCR test uses room temperature
+and 85 °C; validate the actual outdoor range rather than extrapolating blindly.
 
-INA228 key maximum errors used here:
-
-- shunt offset: ±1 µV
-- shunt offset drift: ±10 nV/K
-- shunt gain error: ±0.05%
-- shunt gain drift: ±20 ppm/K
-- bus-voltage offset: ±2.5 mV
-- bus-voltage offset drift: ±20 µV/K
-- bus gain error: ±0.05%
-- bus gain drift: ±20 ppm/K
-- integral non-linearity: ±0.002%
-
-### Calibrated current budget
-
-Production current calibration removes the initial shunt tolerance and initial INA228 gain error as one combined gain term. Zero-current calibration removes the initial INA228 offset.
-
-The BVB data sheet specifies the ±20 ppm/K TCR for **20...60 °C**. Therefore the first guaranteed/data-sheet-derived budget uses a 40 K span inside that range. Wider temperature use must be validated by the two-temperature calibration described below; extrapolating ±20 ppm/K beyond the specified range is only an engineering assumption.
-
-For a 40 K change:
-
-| Contributor | Conservative residual |
-| --- | ---: |
-| BVB shunt TCR, ±20 ppm/K | 0.080% |
-| INA228 gain drift, ±20 ppm/K | 0.080% |
-| production current reference / fixture allocation | 0.050% |
-| INA228 INL | 0.002% |
-| INA228 residual offset drift | 0.571 mA equivalent |
-
-Worst-case linear sum:
-
-| Module current | Offset-drift contribution | Current error |
-| ---: | ---: | ---: |
-| 1 A | 0.057% | **0.269%** |
-| 5 A | 0.011% | **0.223%** |
-| 12 A | 0.005% | **0.217%** |
-| 15 A | 0.004% | **0.216%** |
-
-The values are deliberately pessimistic: all signed maxima are added in the same direction. RSS is about 0.16% at 1 A and about 0.14% at 5...15 A.
-
-For an **engineering 60 K extrapolation** using the same ±20 ppm/K shunt slope, the corresponding current totals would be about 0.378% at 1 A and 0.30% around 12...15 A. These 60 K values are not a manufacturer-guaranteed shunt specification.
-
-A zero measurement at the current operating temperature removes most of the offset-drift term.
-
-### Calibrated voltage budget
-
-A two-point precision-voltage calibration at two non-zero VBUS values solves both initial VBUS offset and gain error without a separate service supply. The baseline calibration points are approximately 12...15 V and 40...50 V.
-
-For a 40 K temperature excursion:
-
-| Contributor | Conservative residual |
-| --- | ---: |
-| INA228 bus gain drift | 0.080% |
-| calibration voltage reference allocation | 0.050% |
-| INA228 INL | 0.002% |
-| bus-offset drift | 0.8 mV absolute |
-
-Worst-case voltage error is approximately:
-
-- 0.140% at 10 V
-- 0.136% at 20 V
-- 0.134% at 40 V
-- 0.133% at 60 V
-
-For a 60 K INA228 temperature excursion the corresponding 40 V voltage budget is about 0.175%. Unlike the BVB TCR extrapolation, the INA228 drift specification covers its operating temperature range.
-
-### Calibrated DC power budget
-
-For `P = U * I`, conservative voltage and current worst-case errors are added:
-
-| Operating point | Conservative power error, 40 K / data-sheet TCR range |
-| --- | ---: |
-| 40 V / 1 A | **0.403%** |
-| 40 V / 5 A | **0.357%** |
-| 40 V / 12 A | **0.351%** |
-| 40 V / 15 A | **0.350%** |
-
-Therefore the first hardware target is:
-
-> **<= 0.4% DC-power error for the useful PV power range after per-unit calibration within a characterized 20...60 °C shunt-temperature range.**
-
-If the BVB ±20 ppm/K slope is extrapolated over 60 K, the corresponding engineering estimates are about 0.55% at 1 A and 0.47% around 12...15 A. Because the manufacturer's ±20 ppm/K number is specified for 20...60 °C, those wider-range figures are not a guaranteed data-sheet limit.
-
-This is an engineering error budget, not a guaranteed system specification. It excludes long-term shunt aging, thermal gradients between shunt and INA228, calibration-equipment errors beyond the allocated 0.05%, connector/contact thermoelectric effects and PCB/layout mistakes.
-
-A two-temperature current calibration can characterize the *effective* shunt + INA228 gain temperature coefficient of each assembled board. After that characterization the development target becomes **<= 0.3% DC-power error for I >= 1 A over the validated outdoor temperature range**, subject to prototype thermal validation.
+Development target: approximately 1% current accuracy for I >= 1 A after
+calibration over a characterized temperature range. Voltage/power accuracy must
+be requalified for INA237; previous <=0.4%/0.3% DC-power claims no longer apply.
+Use two-point VBUS calibration and compute power from calibrated U and I.
 
 ## Calibration strategy
 
@@ -314,13 +231,13 @@ Every PanelLog node gets a versioned calibration record stored in nonvolatile me
 1. **Current zero**
    - QSW OFF, source/module voltage present.
    - Verify no external current path.
-   - Average a long INA228 conversion sequence.
+   - Average a long INA237 conversion sequence.
    - Store zero offset and INA die temperature.
 
 2. **Current gain**
    - Pass a traceable current preferably in the **8...12 A** range through the complete assembled power path.
    - Reference current uncertainty target: <=0.05%.
-   - Determine one combined current scale factor; this absorbs initial shunt tolerance and INA228 gain error.
+   - Determine one combined current scale factor; this absorbs initial shunt tolerance and INA237 gain error.
 
 3. **Voltage offset and gain**
    - apply two traceable, non-zero module-input voltages, nominally one around **12...15 V** and one around **40...50 V**.
@@ -336,7 +253,7 @@ Every PanelLog node gets a versioned calibration record stored in nonvolatile me
    - repeat the current-gain point with the assembled board stabilized near about 20 °C and 60 °C.
    - fit one effective current-gain tempco in ppm/K.
    - validate at an additional temperature outside those two points if the intended outdoor shunt temperature range extends beyond 20...60 °C.
-   - this is preferred over blindly programming the nominal shunt TCR into INA228 because the shunt TCR is signed/toleranced, the ±20 ppm/K manufacturer value is specified for 20...60 °C, and INA die temperature is not exactly the shunt temperature.
+   - apply the measured signed temperature correction in the MCU: INA237 has no INA228-style shunt temperature compensation, and INA die temperature is not necessarily shunt temperature.
 
 Calibration record fields should include at least serial number, hardware revision, calibration format/version, UTC date, current gain, current zero, voltage gain, voltage zero, optional gain tempco, Pt1000 correction, reference-equipment ID/uncertainty and CRC.
 
@@ -344,21 +261,19 @@ Calibration record fields should include at least serial number, hardware revisi
 
 - At boot / sunrise QSW is **passively ON** until the MCU actively asserts `SWITCH_OFF`; firmware cannot guarantee OFF before it starts. Once running, firmware may request a brief OFF calibration interval if the operating strategy permits, verify the zero-current condition and then release QSW.
 - Whenever BatteryFlex intentionally curtails the module, use the OFF interval to refresh zero offset.
-- Record INA228 die temperature with every calibration/measurement batch.
+- Record INA237 die temperature with every calibration/measurement batch.
 - Apply the stored effective temperature coefficient only after prototype measurements establish the relation between INA temperature and actual shunt temperature.
 - Never infer a new gain calibration from normal PV operation without an independent current reference.
 
 ### Energy
 
-INA228's internal energy accumulator is useful as a diagnostic, but not the authoritative long-term energy counter: the device specifies up to 1% energy/charge TME and its internal oscillator has finite tolerance.
+INA237 has no energy/charge accumulators. Integrate calibrated U*I and current
+in the MCU using monotonic sample timestamps. Flag missing/stale intervals;
+do not integrate a held last value across resets or communication gaps. The
+register map and 16-bit measurement decoding differ from INA228.
 
-PanelLog/BatteryFlex should integrate calibrated voltage and current using its own timestamps:
-
-```text
-E += U_cal * I_cal * dt
-```
-
-The raw INA228 energy/charge registers can be transmitted as independent plausibility channels.
+See [current-sensor revision](docs/current_sensor_2026-11-07.md) and
+[firmware requirements](firmware/README.md).
 
 ## Curtailment behavior
 
@@ -380,7 +295,7 @@ The firmware should expose at minimum:
 - module temperature
 - switch requested state
 - switch actual/plausibility state
-- INA228 die temperature
+- INA237 die temperature
 - 3.3/5 V supply diagnostics where practical
 - uptime / reset reason
 - Zigbee LQI/RSSI
@@ -391,11 +306,11 @@ The firmware should expose at minimum:
 The high-current path is a primary mechanical/electrical design feature, not ordinary signal routing:
 
 - use the manufacturer's true 4-terminal BVB land pattern
-- route INA228 IN+/IN- as Kelvin traces directly from the sense terminals; never pick up the voltage from high-current copper
-- keep shunt and INA228 close enough for low thermoelectric/EMI error, but characterize their temperature relationship
+- route INA237 IN+/IN- as Kelvin traces directly from the sense terminals; never pick up the voltage from high-current copper
+- keep shunt and INA237 close enough for low thermoelectric/EMI error, but characterize their temperature relationship
 - use wide, short copper for the MPPT-/shunt/MOSFET/PV- path; **2 oz copper is the initial PCB baseline**
 - size copper and thermal vias from actual hot-enclosure testing; no final trace width is frozen yet
-- keep the LM5163 switching loop physically away from the shunt/INA228 Kelvin pair
+- keep the LM5163 switching loop physically away from the shunt/INA237 Kelvin pair
 - reserve input-TVS / transient-protection area near the PV cable entry
 - use PV-rated pigtails/connectors and strain relief; do not rely on a small generic PCB terminal for the 15 A path
 - conformal coating / enclosure materials must tolerate the expected hot-backside temperature and UV/moisture environment
@@ -414,7 +329,7 @@ The [native KiCad-10-readable PCB placement draft](hardware/kicad/panellog.kicad
 
 ## Current schematic review
 
-The [initial source-structural review](docs/schematic_audit_2026-10-29.md) records the KiCad label/pin check and provisional module data. The [full datasheet-based electrical audit](docs/electrical_audit_2026-10-29.md) recalculates the LM5163 and its ripple network, identifies gate-bias/2N7002 hot-leakage uncertainty, analyzes INA228 and 85-V transient coordination, and sets an **unqualified 20-A current-path check**. Neither review replaces native KiCad 10 ERC, real transient testing or bench/thermal validation.
+The [initial source-structural review](docs/schematic_audit_2026-10-29.md) records the KiCad label/pin check and provisional module data. The [full datasheet-based electrical audit](docs/electrical_audit_2026-10-29.md) recalculates the LM5163 and its ripple network, identifies gate-bias/2N7002 hot-leakage uncertainty, analyzes INA237 and 85-V transient coordination, and sets an **unqualified 20-A current-path check**. Neither review replaces native KiCad 10 ERC, real transient testing or bench/thermal validation.
 
 ## Release gates
 
@@ -424,9 +339,9 @@ Before the first fabrication/release:
 2. select/freeze TVS and input protection from that voltage/transient envelope
 3. complete LM5163 inductor/ripple-injection/input-filter design and simulate/check with TI design procedure
 4. thermal simulation/estimate plus hot-module prototype measurement for QSW, shunt, buck and enclosure
-5. Kelvin-layout review around BVB + INA228
+5. Kelvin-layout review around BVB + INA237
 6. validate current/voltage error budget on at least two temperatures
-7. characterize INA228 die temperature versus shunt temperature
+7. characterize INA237 die temperature versus shunt temperature
 8. validate Pt1000 attachment and module-temperature tracking
 9. RF range test with the enclosure mounted at the intended position behind a real PV module
 10. verify inverter/MPPT behavior during repeated module ON/OFF switching

@@ -1,3 +1,7 @@
+# Current revision: 2026-11-07
+
+INA237 + C481535 selected. See [revision](../docs/current_sensor_2026-11-07.md). Older dated reviews below are historical.
+
 Current revision: [C6 / LM5163 reconstruction](../docs/c6_cost_revision_2026-11-06.md). Earlier placement coordinates below are historical; the KiCad board is authoritative.
 
 > [Externe STEP-Bauteilmodelle](3dmodels/README.md): aktuelle Zuordnungen auf Basis `130ec6e`; U3, RSH1 und Y1 bleiben ohne verifiziertes Modell.
@@ -42,9 +46,9 @@ The schematic is intentionally flat and visually split into power, measurement/s
 
 One node per PV module with:
 
-- PV+ pass-through and INA228 VBUS measurement
-- PV- return path: MPPT- -> Isabellenhuette BVB 0.7 mOhm shunt -> IPT015N10N5 -> module PV-
-- INA228 differential Kelvin pickup through 10 ohm / 100 nF input filtering
+- PV+ pass-through and INA237 VBUS measurement
+- PV- return path: MPPT- -> Milliohm HoVB4026 1 mOhm shunt -> IPT015N10N5 -> module PV-
+- INA237 differential Kelvin pickup through 10 ohm / 100 nF input filtering
 - LM5163 converting the PV module directly to 3.3 V
 - 9.0 V on / 8.4 V off **typical** UVLO target from 1 MOhm / 200 kOhm (datasheet thresholds and component tolerances apply)
 - ~300 kHz LM5163 RON setting with 27.4 kOhm
@@ -60,12 +64,11 @@ The TVS position D1 is intentionally present but DNP. Its actual part number and
 
 ## Shunt / Kelvin representation
 
-RSH1 is deliberately represented as a **two-pin / two-net** resistor in the schematic. The future four-terminal BVB footprint must implement the force and sense lands using duplicate pad numbers:
-
-- both MPPT-side force/sense pads -> pad number 1
-- both PV-side force/sense pads -> pad number 2
-
-INA228 sense traces must leave directly from the dedicated Kelvin lands, not from the high-current copper. This preserves an electrically correct two-net model while enforcing true Kelvin routing on the PCB.
+RSH1 uses four distinct symbol pins and four PCB nets: 1=MPPT_MINUS,
+2=SHUNT_RETURN, 3=SHUNT_SENSE_P, 4=SHUNT_SENSE_M. The HoVB4026 land pattern
+has independent force/sense pads. Do not bridge sense pads to force copper
+or model them as duplicate pad numbers. The resistive element makes the
+connections inside the physical component.
 
 ## PCB placement draft (2026-10-29)
 
@@ -74,8 +77,8 @@ A first native KiCad PCB now exists at [`kicad/panellog.kicad_pcb`](kicad/panell
 ## Layout priorities
 
 1. Treat the 15 A current path as power hardware, not ordinary PCB routing.
-2. Use the exact BVB four-terminal land geometry and independent Kelvin pickup.
-3. Keep the INA228 sense pair away from the LM5163 switching loop.
+2. Use the exact HoVB4026 four-terminal land geometry and independent Kelvin pickup.
+3. Keep the INA237 sense pair away from the LM5163 switching loop.
 4. Keep Q1 source at local PV-/MCU ground.
 5. Reserve large copper/thermal-via area for IPT015N10N5 and validate behind-module temperature experimentally.
 6. Start with 2 oz copper; final widths/via count are released only after thermal/current-path review.
@@ -91,7 +94,7 @@ The intended PV connection uses only **1–2 m MC4 cables** per single module an
 - exact PV cable / MC4-pigtail mechanics and PCB termination
 - TVS / surge-clamp part number
 - exact 68 uH inductor MPN, hot Isat, input MLCC DC-bias derating (C1), input damping capacitor and regulator exposed-pad footprint
-- footprints for BVB, IPT015N10N5 and PV cable interfaces
+- footprints for HoVB4026, IPT015N10N5 and PV cable interfaces
 - enclosure
 - verify exact JSCJ MMSZ4697 diode characteristics and qualified 2N7002 Q2 MPN; test gate voltage, hot leakage, R9 switching time/SOA and brownout
 - exact Pt1000 probe encapsulation, cable and adhesive/protective patch stack

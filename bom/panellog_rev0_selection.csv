@@ -54,11 +54,11 @@ R20,100k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1003T5E,C25803,SELECTED_PROTOT
 R21,10k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1002T5E,C25804,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 R22,1k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1001T5E,C21190,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 R23,DNP 10R snubber TBD,Resistor_SMD:R_1206_3216Metric,,,DNP,Optional RC snubber resistor; first capture Q1 switching transient.
-RSH1,BVB-M-R0007-1.0 0.7mR,PanelLog:BVB_M_R0007_Kelvin,Isabellenhuette BVB-M-R0007-1.0,C5563922,SELECTED_PROTOTYPE,OEM force/sense geometry; separate nets for pads 1/2 force and 3/4 sense. Four-wire calibration required.
+RSH1,HOVB4026-5W-1mR-1%,PanelLog:HOVB4026_R001_Kelvin,Milliohm HOVB4026-5W-1mR-1%,C481535,SELECTED_PROTOTYPE,HoVB A0 p6 four-terminal land pattern; 1mOhm 5W 1% 50ppm/K; calibrate zero and gain.
 RT1,M222 Pt1000 Class A external probe,,Nexensos M222 Pt1000 F0.15 Class A 32208572,,EXTERNAL_SENSOR,"Off board: external 2-wire probe, encapsulation, cable, weather sealing and lead resistance compensation pending."
 RT2,10k NTC near Q1,Resistor_SMD:R_0603_1608Metric,TDK NTCG163JF103FT1S,C406719,CANDIDATE_REVIEW,"10kohm@25C, beta25/50 3380K +-1%, 0603; ADC calibration beta and thermal coupling."
 U1,LM5163DDAR,PanelLog:LM5164_DDA,LM5163DDAR,C2873264,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
-U2,INA228AIDGSR,PanelLog:INA228_DGS10,TI INA228AIDGSR,C2887910,SELECTED_PROTOTYPE,Validate INA228 DGS recommended land pattern.
+U2,INA237AIDGSR,PanelLog:INA237_DGS10,TI INA237AIDGSR,C2864837,SELECTED_PROTOTYPE,DGS10 pin-compatible; 16-bit registers; ADCRANGE=1; MCU energy integration required.
 U3,ESP32-C6-MINI-1-N4,PanelLog:ESP32_C6_MINI_1,ESP32-C6-MINI-1-N4,C5736265,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 Y1,32.768kHz CL=12.5pF,Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm,"Jauch Q 0,032768-JTX310-12,5-10-T1-HMR-LF",C5848533,REMOVED,C6 module uses internal LP clock; no external 32 kHz crystal.
 R24,100k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1003T5E,C25803,SELECTED_PROTOTYPE,C6 ADC divider / bootstrap / reset network

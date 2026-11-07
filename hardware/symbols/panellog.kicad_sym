@@ -2,7 +2,7 @@
   (version 20251024)
   (generator "kicad_symbol_editor")
   (generator_version "10.0")
-  (symbol "BVB_R0007"
+  (symbol "HOVB_R001"
     (pin_names
       (offset 1.016))
     (exclude_from_sim no)
@@ -17,14 +17,14 @@
       (effects
         (font
           (size 1.27 1.27))))
-    (property "Value" "BVB-M-R0007-1.0 0.7mR"
+    (property "Value" "HOVB4026-5W-1mR-1%"
       (at -0.508 -4.318 0)
       (show_name no)
       (do_not_autoplace no)
       (effects
         (font
           (size 1 1))))
-    (property "Footprint" "PanelLog:BVB_M_R0007_Kelvin"
+    (property "Footprint" "PanelLog:HOVB4026_R001_Kelvin"
       (at 0.254 -9.398 0)
       (show_name no)
       (do_not_autoplace no)
@@ -32,7 +32,7 @@
       (effects
         (font
           (size 1.27 1.27))))
-    (property "Datasheet" "https://www.isabellenhuette.com/hubfs/Files/Data-sheets/BVB.pdf"
+    (property "Datasheet" "https://www.lcsc.com/datasheet/C481535.pdf"
       (at 0.762 -11.938 0)
       (show_name no)
       (do_not_autoplace no)
@@ -40,7 +40,7 @@
       (effects
         (font
           (size 1.27 1.27))))
-    (property "Description" "BVB-M-R0007 four-terminal shunt: 1/2 force, 3/4 Kelvin sense; internal resistance couples terminals"
+    (property "Description" "HoVB4026 1mOhm 5W 1% 50ppm/K; 1/2 force, 3/4 Kelvin sense"
       (at 4.572 -14.732 0)
       (show_name no)
       (do_not_autoplace no)
@@ -48,7 +48,7 @@
       (effects
         (font
           (size 1.27 1.27))))
-    (symbol "BVB_R0007_0_1"
+    (symbol "HOVB_R001_0_1"
       (rectangle
         (start -6.35 -3.175)
         (end 6.35 3.175)
@@ -57,7 +57,7 @@
           (type default))
         (fill
           (type background))))
-    (symbol "BVB_R0007_1_1"
+    (symbol "HOVB_R001_1_1"
       (pin passive line
         (at -10.16 0 0)
         (length 3.81)
@@ -259,7 +259,7 @@
             (font
               (size 1.27 1.27))))))
     (embedded_fonts no))
-  (symbol "INA228AIDGSR"
+  (symbol "INA237AIDGSR"
     (pin_names
       (offset 1.016))
     (exclude_from_sim no)
@@ -274,7 +274,7 @@
       (effects
         (font
           (size 1.27 1.27))))
-    (property "Value" "INA228AIDGSR"
+    (property "Value" "INA237AIDGSR"
       (at 0 -18.2 0)
       (show_name no)
       (do_not_autoplace no)
@@ -289,7 +289,7 @@
       (effects
         (font
           (size 1.27 1.27))))
-    (property "Datasheet" "https://www.ti.com/lit/ds/symlink/ina228.pdf"
+    (property "Datasheet" "https://www.ti.com/lit/ds/symlink/ina237.pdf"
       (at 0 0 0)
       (show_name no)
       (do_not_autoplace no)
@@ -297,7 +297,7 @@
       (effects
         (font
           (size 1.27 1.27))))
-    (property "Description" "85 V 20-bit current, bus voltage, power, energy and temperature monitor"
+    (property "Description" "85 V 16-bit current, bus voltage, power and temperature monitor; energy integrated in MCU"
       (at 0 0 0)
       (show_name no)
       (do_not_autoplace no)
@@ -305,7 +305,7 @@
       (effects
         (font
           (size 1.27 1.27))))
-    (symbol "INA228AIDGSR_0_1"
+    (symbol "INA237AIDGSR_0_1"
       (rectangle
         (start -10.16 -12.7)
         (end 10.16 12.7)
@@ -314,7 +314,7 @@
           (type default))
         (fill
           (type background))))
-    (symbol "INA228AIDGSR_1_1"
+    (symbol "INA237AIDGSR_1_1"
       (pin input line
         (at -15.24 -10.16 0)
         (length 5.08)
