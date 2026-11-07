@@ -7,6 +7,7 @@ Target: ESP32-C6-MINI-1-N4, 4 MB flash, ESP-IDF / ESP Zigbee SDK. This repositor
 | Pt1000 ADC | 2 | 5 |
 | NTC ADC | 3 | 6 |
 | VCC monitor ADC | 0 | 12 |
+| Shutdown drain ADC | 1 | 13 |
 | I2C SDA | 6 | 15 |
 | I2C SCL | 7 | 16 |
 | SWITCH_OFF | 18 | 24 |
@@ -36,3 +37,5 @@ INA237AIDGSR with C481535 (1 mΩ, four-terminal) is selected. Q1 IPT015N10N5 rem
 R20=R24=100 kΩ divides the supply by two. C19=100 nF gives approximately 5 ms time constant; allow ≥25 ms settling, and validate sample acquisition/loading at 50 kΩ source impedance. Apply ESP-IDF ADC calibration at the configured attenuation, average samples and characterize residual nonlinearity. Vrail=2×Vadc_rail; Rpt=14700×Vadc_pt/(Vrail−Vadc_pt). Pt1000 excitation is continuously enabled by R18, not software switched. Retain the precision R18. NTC is a thermal protection/hotspot channel. A C6 system temperature accuracy of ±0.5 °C is not yet demonstrated.
 
 Power budget: LM5163 is rated 500 mA, not 1 A. Validate radio bursts and 3.3 V droop across the complete input range, hot enclosure and sleep/wake transitions. Deep sleep numbers for the bare chip are not a board-level guarantee. External sensors, INA237, dividers and radio duty cycle contribute.
+
+Shutdown voltage/current plausibility, thresholds and unknown-state handling: [shutdown feedback](../docs/shutdown_feedback.md). These are implementation requirements, not a completed driver.

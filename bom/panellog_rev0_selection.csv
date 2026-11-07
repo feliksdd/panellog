@@ -65,3 +65,7 @@ R24,100k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1003T5E,C25803,SELECTED_PROTOT
 R25,10k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1002T5E,C25804,SELECTED_PROTOTYPE,C6 ADC divider / bootstrap / reset network
 R26,10k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1002T5E,C25804,SELECTED_PROTOTYPE,C6 ADC divider / bootstrap / reset network
 C24,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B105KO8NNNC,C59782,SELECTED_PROTOTYPE,C6 ADC divider / bootstrap / reset network
+R27,1M 1%,Resistor_SMD:R_1206_3216Metric,1206W4F1004T5E,C17927,SELECTED,Shutdown diagnostic; see docs/shutdown_feedback.md
+R28,1M 1%,Resistor_SMD:R_1206_3216Metric,1206W4F1004T5E,C17927,SELECTED,Shutdown diagnostic; see docs/shutdown_feedback.md
+R29,27.4k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF2742T5E,C22964,SELECTED,Shutdown diagnostic; see docs/shutdown_feedback.md
+C25,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CC0603KRX7R9BB104,C14663,SELECTED,Shutdown diagnostic; see docs/shutdown_feedback.md

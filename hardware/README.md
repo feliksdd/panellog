@@ -108,3 +108,5 @@ The schematic file and project-local library have been generated in KiCad 10 syn
 A native `kicad-cli sch erc` run is still required after opening/saving with KiCad 10; the current execution environment does not provide KiCad 10. See [datasheet-based electrical audit (2026-10-29)](../docs/electrical_audit_2026-10-29.md) for recalculations, source links and blockers.
 
 
+
+Shutdown feedback: R27/R28 1 MΩ, R29 27.4 kΩ and C25 100 nF on GPIO1. See [design and qualification](../docs/shutdown_feedback.md).
