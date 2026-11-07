@@ -10319,7 +10319,7 @@
 				)
 			)
 		)
-		(property "MPN" "CC0603KRX7R9BB104"
+		(property "MPN" "CL10B104KB8NNNC"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -10330,7 +10330,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C14663"
+		(property "LCSC" "C1591"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -11372,7 +11372,7 @@
 				)
 			)
 		)
-		(property "MPN" "CC0603KRX7R9BB104"
+		(property "MPN" "CL10B104KB8NNNC"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -11383,7 +11383,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C14663"
+		(property "LCSC" "C1591"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -11986,7 +11986,7 @@
 				)
 			)
 		)
-		(property "MPN" "CC0603KRX7R9BB104"
+		(property "MPN" "CL10B104KB8NNNC"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -11997,7 +11997,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C14663"
+		(property "LCSC" "C1591"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -12087,7 +12087,7 @@
 				)
 			)
 		)
-		(property "MPN" "CC0603KRX7R9BB104"
+		(property "MPN" "CL10B104KB8NNNC"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -12098,7 +12098,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C14663"
+		(property "LCSC" "C1591"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -12368,7 +12368,7 @@
 				)
 			)
 		)
-		(property "MPN" "CC0603KRX7R9BB104"
+		(property "MPN" "CL10B104KB8NNNC"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -12379,7 +12379,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C14663"
+		(property "LCSC" "C1591"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -13818,7 +13818,7 @@
 				)
 			)
 		)
-		(property "MPN" "CC0603KRX7R9BB104"
+		(property "MPN" "CL10B104KB8NNNC"
 			(at 532.13 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -13829,7 +13829,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C14663"
+		(property "LCSC" "C1591"
 			(at 532.13 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -14983,7 +14983,7 @@
 				)
 			)
 		)
-		(property "MPN" "CC0603KRX7R9BB104"
+		(property "MPN" "CL10B104KB8NNNC"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -14994,7 +14994,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C14663"
+		(property "LCSC" "C1591"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -18083,8 +18083,8 @@
 (symbol (lib_id "Device:C") (at 210.82 264.16 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "84af77de-d05e-4faa-a06b-eb63fd99eada") (property "Reference" "C25" (at 214.82 262.66 0)  (effects (font (size 1 1)) (justify left)))
 (property "Value" "100nF 50V X7R" (at 214.82 265.66 0)  (effects (font (size 1 1)) (justify left)))
 (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 214.82 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
-(property "MPN" "CC0603KRX7R9BB104" (at 214.82 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
-(property "LCSC" "C14663" (at 214.82 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
+(property "MPN" "CL10B104KB8NNNC" (at 214.82 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
+(property "LCSC" "C1591" (at 214.82 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
  (pin "1" (uuid "cdb1ce6c-7e91-4811-97fd-a2847ef0aecf")) (pin "2" (uuid "3669f557-c231-4bbc-abfb-bd5c22ba927d")) (instances (project "panellog" (path "/00000000-0000-4000-8000-000000000001" (reference "C25") (unit 1)))))
 (label "SHUTDOWN_FB_ADC" (at 210.82 260.35 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "467d7b03-4593-4c29-9a5c-4cd5d6ea4689"))
 (global_label "GND" (shape input) (at 210.82 267.97 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "fe20fbcc-bce2-4480-818a-7e2ffaf77812"))

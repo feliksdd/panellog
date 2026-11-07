@@ -23,3 +23,10 @@ Gehäuse, Befestigung und Kabeldurchführungen: [Mechanikstückliste](../docs/en
 ## Strommessung 07.11.2026
 
 U2: INA237AIDGSR, C2864837. RSH1: Milliohm HOVB4026-5W-1mR-1%, C481535, 1 mΩ, 5 W, ±1%, ±50 ppm/K, vier Anschlüsse. Beide CSVs aktualisiert. [Änderung und aktuelle Prüfung](../docs/current_sensor_2026-11-07.md).
+
+## Aktueller Beschaffungsstand 2026-11-08
+
+Siehe [Verfügbarkeit und Kosten](../docs/bom_costs_2026-11-08.md).
+Alle ausgewählten Kaufteile haben LCSC-Nummern. R18 ist nicht lagernd.
+C14663 wurde durch C1591 ersetzt; L1 ist jetzt Sumida C2452974.
+Der LCSC-Import enthält nur lagernde Artikel und ist ohne R18 unvollständig.
