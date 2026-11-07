@@ -9995,7 +9995,7 @@
 				)
 			)
 		)
-		(property "Value" "68uH 7447709680 120V"
+		(property "Value" "68uH CDRH127/LDNP-680MC"
 			(at 131.064 60.706 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10005,7 +10005,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PanelLog:Wurth_7447709680"
+		(property "Footprint" "PanelLog:Sumida_CDRH127_LD_68uH"
 			(at 129.54 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -10016,7 +10016,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20220622/89722AE3D5A790941322CF6A48375E7D.pdf"
 			(at 129.54 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -10052,7 +10052,7 @@
 				)
 			)
 		)
-	)
+	(property "MPN" "CDRH127/LDNP-680MC" (at 0 0 0) (hide yes) (effects (font (size 1 1))))(property "LCSC" "C2452974" (at 0 0 0) (hide yes) (effects (font (size 1 1)))))
 	(symbol
 		(lib_id "Device:C")
 		(at 207.01 66.04 0)

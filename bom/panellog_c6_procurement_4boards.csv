@@ -14,7 +14,7 @@ J1,PV MODULE IN / PV-rated pigtail,MC4 PV-rated cable assemblies,,PanelLog:PV_MC
 J2,MPPT OUT / PV-rated pigtail,MC4 PV-rated cable assemblies,,PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT,1,4
 J3,External Pt1000 probe,Weatherproof Pt1000 sensor cable,,PanelLog:Pt1000_Cable_2pin_DRAFT,1,4
 J4,UART / BOOT pogo,PCB pogo lands,,PanelLog:UART_BOOT_1x06_Pogo,1,4
-L1,68uH 7447709680 120V,Wurth 7447709680,,PanelLog:Wurth_7447709680,1,4
+L1,68uH CDRH127/LDNP-680MC,CDRH127/LDNP-680MC,C2452974,PanelLog:Sumida_CDRH127_LD_68uH,1,4
 Q1,IPT015N10N5,Infineon IPT015N10N5ATMA1,C108964,PanelLog:IPT015N10N5_TOLL,1,4
 Q2,2N7002,onsemi 2N7002,C124475,Package_TO_SOT_SMD:SOT-23,1,4
 R1,1M 1%,0603WAF1004T5E,C22935,Resistor_SMD:R_0603_1608Metric,1,4

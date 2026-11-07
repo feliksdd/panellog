@@ -1,0 +1,17 @@
+(footprint "Sumida_CDRH127_LD_68uH" (version 20241229) (generator "pcbnew") (layer "F.Cu")
+(descr "Sumida CDRH127/LD 2021-09-20 p1; rotated OEM lands 2.9x5.4, gap 7mm; paired physical contacts form two electrical terminals") (attr smd)
+(property "Reference" "REF**" (at 0 -7.3) (layer "F.SilkS") (effects (font (size .8 .8) (thickness .12))))
+(property "Value" "Sumida_CDRH127_LD_68uH" (at 0 7.3) (layer "F.Fab") (effects (font (size .8 .8) (thickness .12))))
+(fp_rect (start -6.8 -6.5) (end 6.8 6.5) (stroke (width 0.05) (type default)) (fill no) (layer "F.CrtYd"))
+(fp_rect (start -6 -6) (end 6 6) (stroke (width 0.1) (type default)) (fill no) (layer "F.Fab"))
+(pad "1" smd rect (at -4.95 0) (size 2.9 5.4) (layers "F.Cu" "F.Paste" "F.Mask") )
+(pad "2" smd rect (at 4.95 0) (size 2.9 5.4) (layers "F.Cu" "F.Paste" "F.Mask") )
+
+
+
+
+(zone (net 0) (net_name "") (layer "F.Cu") (hatch edge 0.5)
+ (connect_pads (clearance 0)) (min_thickness 0.25)
+ (keepout (tracks not_allowed) (vias not_allowed) (pads allowed) (copperpour not_allowed) (footprints allowed))
+ (fill (thermal_gap 0.3) (thermal_bridge_width 0.3))
+ (polygon (pts (xy -3.5 -6.15) (xy 3.5 -6.15) (xy 3.5 6.15) (xy -3.5 6.15)))))

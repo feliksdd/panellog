@@ -28,7 +28,7 @@ J1,PV MODULE IN / PV-rated pigtail,PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT,MC4 PV-ra
 J2,MPPT OUT / PV-rated pigtail,PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT,MC4 PV-rated cable assemblies,,MECHANICAL_UNRESOLVED,MPPT output; 20A cable entry and PCB pad strain relief unqualified.
 J3,External Pt1000 probe,PanelLog:Pt1000_Cable_2pin_DRAFT,Weatherproof Pt1000 sensor cable,,MECHANICAL_UNRESOLVED,"Connector/cable termination, surge/ESD ingress, encapsulation and polarity verify."
 J4,UART / BOOT pogo,PanelLog:UART_BOOT_1x06_Pogo,PCB pogo lands,,MECHANICAL_UNRESOLVED,"1=3V3 sense, 2=TX, 3=RX, 4=EN, 5=GND, 6=BOOT"
-L1,68uH 7447709680 120V,PanelLog:Wurth_7447709680,Wurth 7447709680,,SELECTED_PROTOTYPE,Replaces 30V-rated SXN candidate; manufacturer 68uH/120V part and land pattern. Confirm sourcing and thermal performance.
+L1,68uH CDRH127/LDNP-680MC,PanelLog:Sumida_CDRH127_LD_68uH,CDRH127/LDNP-680MC,C2452974,SELECTED_PROTOTYPE,Sumida selected 2026-11-08; OEM keepout added. See docs/sumida_l1_2026-11-08.md. Max component temperature 100C.
 Q1,IPT015N10N5,PanelLog:IPT015N10N5_TOLL,Infineon IPT015N10N5ATMA1,C108964,SELECTED_PROTOTYPE,"OEM PG-HSOF-8 land geometry; pad 1 gate, 2-8 source, 9 drain. 20A thermal validation pending."
 Q2,2N7002,Package_TO_SOT_SMD:SOT-23,onsemi 2N7002,C124475,CANDIDATE_REVIEW,SOT-23 gate1 source2 drain3; qualify high-temperature drain leakage in gate-control fault case.
 R1,1M 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1004T5E,C22935,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md

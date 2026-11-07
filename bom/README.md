@@ -7,7 +7,7 @@ Die [Auswahlstückliste](panellog_rev0_selection.csv) führt Referenzen, MPNs, L
 - R8: VO SCR1206F47K, C5140109, 47 kΩ ±1 %, 250 mW, 200 V, 1206.
 - C1/C21/C22: FH 1210B475K101NT, nun C7500895 statt C2840282; identische Herstellerteilenummer.
 - Q2: onsemi 2N7002 C124475 bleibt. JSCJ C8545 ist mangels garantierter 3,3-V-/Heißkennwerte noch nicht übernommen. Auch die bisherige Auswahl erfordert die dokumentierte Gatepfad-Qualifikation.
-- L1: Würth 7447709680 bleibt; Sumida C2452974 benötigt eine Bestätigung der zulässigen Betriebsspannung sowie ein angepasstes Landpattern mit Sperrfläche.
+- L1: Sumida CDRH127/LDNP-680MC, C2452974, ersetzt Würth 7447709680. Landpattern und Sperrfläche angepasst; siehe docs/sumida_l1_2026-11-08.md.
 - Damaliger Stand: INA228 und 0,7-mΩ-Shunt; seit 07.11. ersetzt, siehe unten. IPT015N10N5 bleibt unverändert.
 
 Prüfung, Preise und offene Punkte: [Kosten-Folgeprüfung](../docs/cost_followup_2026-11-06.md). Vorherige Änderungen: [C6-/LM5163-Revision](../docs/c6_cost_revision_2026-11-06.md).
