@@ -28,7 +28,5 @@ footprint mismatches and the existing Q1/R9 courtyard overlap. The 43 opens
 must be routed before manufacture. Five baseline ERC findings remain.
 
 See review_2026-11-07/stitching.json and DRC_step4.json for exact UUIDs/counts.
-Reproduction: the separate PanelLog_changes_2026-11-07.zip change package contains
-tools/regenerate_stitching.py (KiCad 10 pcbnew + shapely). The generator is
-not included in this GitHub commit because its upload was not approved;
+Reproduction: tools/regenerate_stitching.py requires KiCad 10 pcbnew + shapely;
 refill zones and run native DRC after any regeneration.
