@@ -1,19 +1,13 @@
-# PanelLog — JLCPCB BOM / CPL export (engineering, not released)
+# PanelLog JLCPCB BOM and CPL — engineering export
 
-Source: `feliksdd/panellog` main commit `7f1c67f20ceba1060a6349fc031e52ae3023f9c8`, schematic `a408df4acd5e40a6a7586b292318d23f13ea2572`, PCB `657b2ee9d28ddcb54a6383ef21333cb1be80b309`, reference BOM `25e5232f15d614587bb242e07819c4caceb778f0`.
+**Source pinned**: `7f1c67f20ceba1060a6349fc031e52ae3023f9c8` of `feliksdd/panellog` main, before these export files were added. Schematic blob `a408df4acd5e40a6a7586b292318d23f13ea2572`; board blob `657b2ee9d28ddcb54a6383ef21333cb1be80b309`; selection blob `25e5232f15d614587bb242e07819c4caceb778f0`.
 
-BOM columns: Comment, Designator, Footprint, LCSC Part #. CPL columns: Designator, Mid X, Mid Y, Layer, Rotation. Units in mm. Coordinates are literal KiCad PCB footprint anchors (positive board X/Y), raw KiCad rotations normalized to 0..359; **these are not transformed JLC library pick-and-place origins/rotations**. Compare EVERY polarized/IC part and the entire placement overlay with the Gerbers in the JLCPCB upload preview. This connector-based export is not the native KiCad 10 POS exporter or Fabrication Toolkit.
+Fitted SMD count: 65. Grouped BOM rows: 36. CPL rows: 65. BOM/CPL reference equality checked. LCSC codes come from the reviewed 2026-11-09 selection; actual footprints and positions come from native KiCad text. **No native KiCad CLI was available in the export runtime**.
 
-Counts: 0 fitted surface-mount components, 0 grouped BOM lines, 0 unique LCSC codes, 0 CPL lines. BOM/CPL expanded designator sets verified equal. Board-only solder pads (J2...J8), mounting holes and external Pt1000 RT1 excluded; all PCB/schematic DNP excluded, including U4 P82B715 and snubber/TVS optional placements.
+JLC columns: BOM Comment, Designator, Footprint, LCSC Part #; CPL Designator, Mid X, Mid Y, Layer, Rotation (mm and degrees). Coordinates are literal KiCad drawing positions (board-space positive Y), not a native KiCad POS export and not corrected for JLC library centroids or orientation. **Overlay and orientation MUST be checked in the JLCPCB order preview against Gerbers**, and placement origin conventions reconciled if needed. A real Fabrication Toolkit / KiCad 10 native export is preferred for release.
 
-## Procurement and release blockers
+DNP variants (e.g. U4 P82B715, C26, R34/R35) plus D1/C23/R23 were excluded; J2/J3/J4/J5/J6/J7/J8 solder pads, H1-H4 nylon holes, and external RT1 excluded from the PCBA files.
 
-- R18 marked OUT_OF_STOCK in source reviewed selection, LCSC `C19680002`. **Do not place assembly order until stocked suitable alternative confirmed and schematic/BOM updated.**
-- CANDIDATE_REVIEW components  require engineering confirmation.
-- R36 is a 0-ohm link in the prototype external POA 3V3 power line; system-level cable short protection still requires qualification.
-- Exact rotation/centroid alignment not corrected for vendor library; **verify PCB+PCBA preview**, notably U1, U2, U3, Q1, Q2, C3 and D2/D3.
-- No native KiCad 10 ERC/DRC or fabrication Gerber comparison performed by this export. Do not treat files as fabrication release.
+**Blocking sourcing statuses from last reviewed selection:** C3:CANDIDATE_REVIEW:C494873; Q2:CANDIDATE_REVIEW:C124475; R18:OUT_OF_STOCK:C19680002; RT2:CANDIDATE_REVIEW:C406719. R18 is out of stock. All CANDIDATE_REVIEWs need explicit approval.
 
-Generated files:
-- `panelLog_JLCPCB_BOM.csv`
-- `panelLog_JLCPCB_CPL.csv`
+**Not a fabrication release**: Current, full native ERC/DRC, Gerber/centroid registration and JLCPCB placement preview not performed by this export. Do not order unvalidated PCBA. R36 is a 0R prototype supply link, not qualified cable short protection.
