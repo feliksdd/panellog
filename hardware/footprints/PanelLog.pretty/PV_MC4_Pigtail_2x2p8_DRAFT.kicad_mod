@@ -1,17 +1,84 @@
 (footprint "PV_MC4_Pigtail_2x2p8_DRAFT"
- (version 20241229)
- (generator "pcbnew")
- (layer "F.Cu")
- (descr "DRAFT MC4 pigtail solder holes 2.8 mm, 18 mm pin span. External mechanical strain relief required; not a certified DC terminal.")
- (property "Reference" "REF**" (at 0 -14 0) (layer "F.SilkS") (effects (font (size 0.8 0.8) (thickness 0.12))))
- (property "Value" "PV_MC4_Pigtail_2x2p8_DRAFT" (at 0 14 0) (layer "F.Fab") (effects (font (size 0.7 0.7) (thickness 0.1))))
- (attr through_hole)
- (fp_rect (start -4 -12.5) (end 4 12.5) (stroke (width 0.1) (type default)) (fill no) (layer "F.Fab") (uuid "c5b9e883-79ce-4c5b-8e19-00000000001f"))
- (fp_rect (start -4.4 -12.9) (end 4.4 12.9) (stroke (width 0.05) (type default)) (fill no) (layer "F.CrtYd") (uuid "c5b9e883-79ce-4c5b-8e19-000000000020"))
-  (pad "1" thru_hole circle (at 0 -9) (size 6.3 6.3) (drill 2.8) (layers "*.Cu" "*.Mask") (uuid "c5b9e883-79ce-4c5b-8e19-00000000001d"))
-  (pad "2" thru_hole circle (at 0 9) (size 6.3 6.3) (drill 2.8) (layers "*.Cu" "*.Mask") (uuid "c5b9e883-79ce-4c5b-8e19-00000000001e"))
-
-
-
-
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "DRAFT MC4 pigtail solder holes 2.8 mm, 18 mm pin span. External mechanical strain relief required; not a certified DC terminal.")
+	(property "Reference" "REF**"
+		(at 0 -14 0)
+		(layer "F.SilkS")
+		(uuid "98c53b73-3c77-4970-bf6d-2b3e17286fc0")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Value" "PV_MC4_Pigtail_2p8_DRAFT"
+		(at 0 -3.5 0)
+		(layer "F.Fab")
+		(uuid "e7d9c1e0-9b6e-44f5-8d3b-4a85fc385ee8")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "21a9ca4a-97cb-46f3-b767-bcbfcb0792df")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d9a2a3fc-bb4c-4a64-b51a-01f40738e1f3")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -4.4 -12.9)
+		(end 4.4 -5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "98f2b81e-9b14-43f5-adc6-01bea9869e82")
+	)
+	(fp_rect
+		(start -4 -12.5)
+		(end 4 -5.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "cfe183b8-ae9b-4a1e-9efd-6101d8609b00")
+	)
+	(pad "1" thru_hole circle
+		(at 0 -9)
+		(size 6.3 6.3)
+		(drill 2.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "d27713e9-cdcd-40a2-9e9f-8764d765ab1a")
+	)
+	(embedded_fonts no)
 )

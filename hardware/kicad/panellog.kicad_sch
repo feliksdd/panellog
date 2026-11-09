@@ -1952,157 +1952,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PanelLog:HOVB_R001"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "RSH1"
-				(at -3.556 4.826 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "HOVB4026-5W-1mR-1%"
-				(at -0.508 -4.318 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1 1)
-					)
-				)
-			)
-			(property "Footprint" "PanelLog:HOVB4026_R001_Kelvin"
-				(at 0.254 -9.398 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" "https://www.lcsc.com/datasheet/C481535.pdf"
-				(at 0.762 -11.938 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "HoVB4026 1mOhm 5W 1% 50ppm/K; 1/2 force, 3/4 Kelvin sense"
-				(at 4.572 -14.732 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "HOVB_R001_0_1"
-				(rectangle
-					(start -6.35 -3.175)
-					(end 6.35 3.175)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "HOVB_R001_1_1"
-				(pin passive line
-					(at -10.16 0 0)
-					(length 3.81)
-					(name "FORCE+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 10.16 0 180)
-					(length 3.81)
-					(name "FORCE-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -10.16 -2.54 0)
-					(length 3.81)
-					(name "SENSE+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 10.16 -2.54 180)
-					(length 3.81)
-					(name "SENSE-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "PanelLog:Conn_01x06_UART"
 			(pin_names
 				(offset 1.016)
@@ -4300,6 +4149,157 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "PanelLog:HOVB_R001"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "RSH1"
+				(at -3.556 4.826 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "HOVB4026-5W-1mR-1%"
+				(at -0.508 -4.318 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Footprint" "PanelLog:HOVB4026_R001_Kelvin"
+				(at 0.254 -9.398 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C481535.pdf"
+				(at 0.762 -11.938 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "HoVB4026 1mOhm 5W 1% 50ppm/K; 1/2 force, 3/4 Kelvin sense"
+				(at 4.572 -14.732 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "HOVB_R001_0_1"
+				(rectangle
+					(start -6.35 -3.175)
+					(end 6.35 3.175)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "HOVB_R001_1_1"
+				(pin passive line
+					(at -10.16 0 0)
+					(length 3.81)
+					(name "FORCE+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 0 180)
+					(length 3.81)
+					(name "FORCE-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -2.54 0)
+					(length 3.81)
+					(name "SENSE+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -2.54 180)
+					(length 3.81)
+					(name "SENSE-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "PanelLog:INA237AIDGSR"
 			(pin_names
 				(offset 1.016)
@@ -6163,6 +6163,17 @@
 		)
 		(uuid "00000000-0000-4000-8000-000000000191")
 	)
+	(text "Shutdown feedback: R27 test pull-up; R28/R29 drain divider; GPIO1 ADC"
+		(exclude_from_sim no)
+		(at 149.098 139.192 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left)
+		)
+		(uuid "10992a01-9da1-4f62-8abf-84bcb83a45ea")
+	)
 	(junction
 		(at 60.96 121.92)
 		(diameter 0)
@@ -6276,6 +6287,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5c3fd6c5-ff1e-4bd7-a0d1-076081c22341")
+	)
+	(junction
+		(at 162.56 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "62efc119-63f4-4de7-bf3f-d801830d2ab5")
 	)
 	(junction
 		(at 186.69 58.42)
@@ -6529,6 +6546,12 @@
 		(color 0 0 0 0)
 		(uuid "fa56e76f-26ba-4088-8972-ffebd77cfe50")
 	)
+	(junction
+		(at 162.56 120.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fda0d319-c0d6-46cc-a4e0-3ab9dca8025f")
+	)
 	(no_connect
 		(at 298.45 86.36)
 		(uuid "12e518ce-0a89-4c4c-814a-413998d3ed04")
@@ -6558,6 +6581,10 @@
 		(uuid "4a9bff02-ea73-4bde-b2b7-b669892236b4")
 	)
 	(no_connect
+		(at 351.79 76.2)
+		(uuid "57b48836-a510-4d26-8b0c-a9ccaf240a50")
+	)
+	(no_connect
 		(at 298.45 83.82)
 		(uuid "59991d77-02e7-491e-a754-c997f47b67a3")
 	)
@@ -6568,10 +6595,6 @@
 	(no_connect
 		(at 295.91 63.5)
 		(uuid "9a2fc75c-7133-41c1-8d2a-d6aa1363695e")
-	)
-	(no_connect
-		(at 351.79 66.04)
-		(uuid "aa1feb57-5c07-45ad-9348-16d88a34513b")
 	)
 	(no_connect
 		(at 351.79 78.74)
@@ -6589,7 +6612,6 @@
 		(at 351.79 81.28)
 		(uuid "d3eeed50-9424-4909-89e5-cddfecc3efb9")
 	)
-	
 	(no_connect
 		(at 298.45 81.28)
 		(uuid "e5f81d71-b6ad-4e65-ac50-e88b504b29dc")
@@ -6883,6 +6905,16 @@
 			(type default)
 		)
 		(uuid "2d18465f-f8d8-4507-a45b-1eebf5b040b1")
+	)
+	(wire
+		(pts
+			(xy 162.56 120.65) (xy 162.56 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31d6e4dd-8c51-42f5-b557-0ac7cee1715d")
 	)
 	(wire
 		(pts
@@ -7226,6 +7258,16 @@
 	)
 	(wire
 		(pts
+			(xy 177.8 120.65) (xy 162.56 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ace84aa-f234-47ba-a3a5-a45dd8bbfa98")
+	)
+	(wire
+		(pts
 			(xy 398.78 198.12) (xy 393.7 198.12)
 		)
 		(stroke
@@ -7233,6 +7275,16 @@
 			(type default)
 		)
 		(uuid "5c044292-8cf9-41f6-bd21-5cd657d7433a")
+	)
+	(wire
+		(pts
+			(xy 162.56 111.76) (xy 162.56 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62c13d6f-93b6-4309-a420-d9f0143f0134")
 	)
 	(wire
 		(pts
@@ -7926,7 +7978,7 @@
 	)
 	(wire
 		(pts
-			(xy 351.79 76.2) (xy 381 76.2)
+			(xy 351.79 66.04) (xy 381 66.04)
 		)
 		(stroke
 			(width 0)
@@ -8083,6 +8135,16 @@
 			(type default)
 		)
 		(uuid "babbd239-51b6-4152-be39-7d8d80f42e08")
+	)
+	(wire
+		(pts
+			(xy 177.8 120.65) (xy 177.8 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb7f4524-4f58-4c60-8dfb-2f74b7d18359")
 	)
 	(wire
 		(pts
@@ -8286,7 +8348,7 @@
 	)
 	(wire
 		(pts
-			(xy 381 40.64) (xy 381 76.2)
+			(xy 381 40.64) (xy 381 66.04)
 		)
 		(stroke
 			(width 0)
@@ -8313,6 +8375,26 @@
 			(type default)
 		)
 		(uuid "d82af9dc-be78-40c4-93f7-bf4253f19b1b")
+	)
+	(wire
+		(pts
+			(xy 162.56 130.81) (xy 177.8 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8c86d3f-2072-49ef-94a0-a3439da70cb4")
+	)
+	(wire
+		(pts
+			(xy 162.56 123.19) (xy 162.56 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9d987ff-b04d-4f68-8d52-997417cd754b")
 	)
 	(wire
 		(pts
@@ -8701,6 +8783,16 @@
 		)
 		(uuid "175784c5-8bc9-4c2d-93f3-ec44c71723d4")
 	)
+	(label "SHUNT_RETURN"
+		(at 162.56 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1a6c5d22-59f6-45f8-8f4f-1bbe7217e24f")
+	)
 	(label "RESET_N"
 		(at 368.3 105.41 180)
 		(effects
@@ -8720,6 +8812,36 @@
 			(justify right bottom)
 		)
 		(uuid "4651e661-edeb-4bb7-84ea-86531f0a1169")
+	)
+	(label "SHUTDOWN_FB_ADC"
+		(at 177.8 120.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "467d7b03-4593-4c29-9a5c-4cd5d6ea4689")
+	)
+	(label "SHUTDOWN_FB_ADC"
+		(at 295.91 48.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "46e9749e-6888-4834-8615-b9d93f6e3e8a")
+	)
+	(label "RESET_N"
+		(at 292.1 40.64 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "641c5489-af8e-46b4-8848-0af2174c7aef")
 	)
 	(label "NTC_ADC"
 		(at 292.1 53.34 180)
@@ -8810,7 +8932,7 @@
 		(uuid "b086b400-8045-463f-bcb8-c4cefde95f01")
 	)
 	(label "INA_ALERT"
-		(at 355.6 76.2 0)
+		(at 355.6 66.04 0)
 		(effects
 			(font
 				(size 1 1)
@@ -8858,6 +8980,16 @@
 			(justify right bottom)
 		)
 		(uuid "f04194c3-571d-432c-bcf9-94d48542d4cd")
+	)
+	(label "SHUTDOWN_FB_ADC"
+		(at 177.8 120.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f9eadafe-a8b7-445c-99f4-21935d87c741")
 	)
 	(label "PT1000_ADC"
 		(at 292.1 50.8 180)
@@ -10038,6 +10170,28 @@
 				)
 			)
 		)
+		(property "MPN" "CDRH127/LDNP-680MC"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C2452974"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "00000000-0000-4000-8000-000000000222")
 		)
@@ -10052,7 +10206,7 @@
 				)
 			)
 		)
-	(property "MPN" "CDRH127/LDNP-680MC" (at 0 0 0) (hide yes) (effects (font (size 1 1))))(property "LCSC" "C2452974" (at 0 0 0) (hide yes) (effects (font (size 1 1)))))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 207.01 66.04 0)
@@ -11065,6 +11219,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C2864837"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "INA237AIDGSR"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "00000000-0000-4000-8000-000000000290")
 		)
@@ -11103,9 +11279,7 @@
 				)
 			)
 		)
-	
-(property "LCSC" "C2864837" (at 0 0 0) (effects (font (size 1 1)) (hide yes)))
-(property "MPN" "INA237AIDGSR" (at 0 0 0) (effects (font (size 1 1)) (hide yes))))
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 323.85 203.2 90)
@@ -13957,6 +14131,214 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 162.56 106.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2b2651ce-fc10-4544-8963-d8b8392e5b6d")
+		(property "Reference" "R27"
+			(at 166.56 105.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1M 1%"
+			(at 166.56 108.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
+			(at 166.56 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 162.56 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "1206W4F1004T5E"
+			(at 166.56 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C17927"
+			(at 166.56 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "54071cdf-a483-4af1-89b1-292cac71b23c")
+		)
+		(pin "2"
+			(uuid "f041940a-ad2a-42c1-8c78-cab1225c2b81")
+		)
+		(instances
+			(project "panellog"
+				(path "/00000000-0000-4000-8000-000000000001"
+					(reference "R27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 162.56 115.57 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "323fd1d8-dbb7-45d2-9cf3-974e19567e0f")
+		(property "Reference" "R28"
+			(at 166.56 114.07 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1M 1%"
+			(at 166.56 117.07 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
+			(at 166.56 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 162.56 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "1206W4F1004T5E"
+			(at 166.56 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C17927"
+			(at 166.56 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "ee07cc76-5dd7-4085-8936-b95c1c0b9c63")
+		)
+		(pin "2"
+			(uuid "9f12e626-cfc9-43c3-9f22-0c207a4b9710")
+		)
+		(instances
+			(project "panellog"
+				(path "/00000000-0000-4000-8000-000000000001"
+					(reference "R28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PanelLog:HOVB_R001")
 		(at 97.79 194.31 0)
 		(unit 1)
@@ -14020,6 +14402,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C481535"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "HOVB4026-5W-1mR-1%"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "750cc138-74b3-4ef5-91f0-053bece1cd6e")
 		)
@@ -14040,9 +14444,7 @@
 				)
 			)
 		)
-	
-(property "LCSC" "C481535" (at 0 0 0) (effects (font (size 1 1)) (hide yes)))
-(property "MPN" "HOVB4026-5W-1mR-1%" (at 0 0 0) (effects (font (size 1 1)) (hide yes))))
+	)
 	(symbol
 		(lib_id "power:GND")
 		(at 374.65 114.3 0)
@@ -15824,6 +16226,110 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 177.8 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "84af77de-d05e-4faa-a06b-eb63fd99eada")
+		(property "Reference" "C25"
+			(at 181.8 125.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF 50V X7R"
+			(at 181.8 128.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 181.8 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 177.8 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 177.8 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL10B104KB8NNNC"
+			(at 181.8 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C1591"
+			(at 181.8 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "cdb1ce6c-7e91-4811-97fd-a2847ef0aecf")
+		)
+		(pin "2"
+			(uuid "3669f557-c231-4bbc-abfb-bd5c22ba927d")
+		)
+		(instances
+			(project "panellog"
+				(path "/00000000-0000-4000-8000-000000000001"
+					(reference "C25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:D_Zener")
 		(at 67.31 182.88 270)
 		(unit 1)
@@ -16856,6 +17362,110 @@
 	)
 	(symbol
 		(lib_id "Device:R")
+		(at 162.56 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b1c3bbaf-d9de-48c3-aa9f-e90b08b74c1d")
+		(property "Reference" "R29"
+			(at 166.56 125.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "27.4k 1%"
+			(at 166.56 128.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 166.56 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 162.56 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0603WAF2742T5E"
+			(at 166.56 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C22964"
+			(at 166.56 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "b1577a8d-609f-4205-a473-b5785f17f2a4")
+		)
+		(pin "2"
+			(uuid "561f18cd-c9de-4c47-8fe4-3defd402b74c")
+		)
+		(instances
+			(project "panellog"
+				(path "/00000000-0000-4000-8000-000000000001"
+					(reference "R29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
 		(at 151.13 67.31 180)
 		(unit 1)
 		(body_style 1)
@@ -17134,6 +17744,84 @@
 			(project "panellog"
 				(path "/00000000-0000-4000-8000-000000000001"
 					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 162.56 130.81 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c5178747-5c3e-498a-90ae-9ab23049559c")
+		(property "Reference" "#PWR034"
+			(at 162.56 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 162.56 135.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 162.56 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 162.56 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7917080f-c881-40e9-b36c-f0fcf0c21a8e")
+		)
+		(instances
+			(project "panellog"
+				(path "/00000000-0000-4000-8000-000000000001"
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -17499,6 +18187,84 @@
 			(project "panellog"
 				(path "/00000000-0000-4000-8000-000000000001"
 					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VDC")
+		(at 162.56 102.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d81821a2-3463-49f5-aa0d-9e2d2d246530")
+		(property "Reference" "#PWR041"
+			(at 162.56 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VDC"
+			(at 162.56 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VDC\""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7d92aa78-0142-4285-ac61-e36ffa95a54d")
+		)
+		(instances
+			(project "panellog"
+				(path "/00000000-0000-4000-8000-000000000001"
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -18056,38 +18822,4 @@
 		)
 	)
 	(embedded_fonts no)
-(symbol (lib_id "Device:R") (at 40.64 264.16 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "2b2651ce-fc10-4544-8963-d8b8392e5b6d") (property "Reference" "R27" (at 44.64 262.66 0)  (effects (font (size 1 1)) (justify left)))
-(property "Value" "1M 1%" (at 44.64 265.66 0)  (effects (font (size 1 1)) (justify left)))
-(property "Footprint" "Resistor_SMD:R_1206_3216Metric" (at 44.64 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
-(property "MPN" "1206W4F1004T5E" (at 44.64 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
-(property "LCSC" "C17927" (at 44.64 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
- (pin "1" (uuid "54071cdf-a483-4af1-89b1-292cac71b23c")) (pin "2" (uuid "f041940a-ad2a-42c1-8c78-cab1225c2b81")) (instances (project "panellog" (path "/00000000-0000-4000-8000-000000000001" (reference "R27") (unit 1)))))
-(global_label "VDC" (shape input) (at 40.64 260.35 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "55e261c1-e443-4064-8550-f70ee44b5aa1"))
-(label "SHUNT_RETURN" (at 40.64 267.97 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "2a9a1067-f5b8-42a3-bcd1-05720fe67f38"))
-(symbol (lib_id "Device:R") (at 101.6 264.16 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "323fd1d8-dbb7-45d2-9cf3-974e19567e0f") (property "Reference" "R28" (at 105.6 262.66 0)  (effects (font (size 1 1)) (justify left)))
-(property "Value" "1M 1%" (at 105.6 265.66 0)  (effects (font (size 1 1)) (justify left)))
-(property "Footprint" "Resistor_SMD:R_1206_3216Metric" (at 105.6 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
-(property "MPN" "1206W4F1004T5E" (at 105.6 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
-(property "LCSC" "C17927" (at 105.6 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
- (pin "1" (uuid "ee07cc76-5dd7-4085-8936-b95c1c0b9c63")) (pin "2" (uuid "9f12e626-cfc9-43c3-9f22-0c207a4b9710")) (instances (project "panellog" (path "/00000000-0000-4000-8000-000000000001" (reference "R28") (unit 1)))))
-(label "SHUNT_RETURN" (at 101.6 260.35 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "1a6c5d22-59f6-45f8-8f4f-1bbe7217e24f"))
-(label "SHUTDOWN_FB_ADC" (at 101.6 267.97 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "f9eadafe-a8b7-445c-99f4-21935d87c741"))
-(symbol (lib_id "Device:R") (at 160.02 264.16 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "b1c3bbaf-d9de-48c3-aa9f-e90b08b74c1d") (property "Reference" "R29" (at 164.02 262.66 0)  (effects (font (size 1 1)) (justify left)))
-(property "Value" "27.4k 1%" (at 164.02 265.66 0)  (effects (font (size 1 1)) (justify left)))
-(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 164.02 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
-(property "MPN" "0603WAF2742T5E" (at 164.02 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
-(property "LCSC" "C22964" (at 164.02 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
- (pin "1" (uuid "b1577a8d-609f-4205-a473-b5785f17f2a4")) (pin "2" (uuid "561f18cd-c9de-4c47-8fe4-3defd402b74c")) (instances (project "panellog" (path "/00000000-0000-4000-8000-000000000001" (reference "R29") (unit 1)))))
-(label "SHUTDOWN_FB_ADC" (at 160.02 260.35 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "f6a09745-b929-4eb8-b4fc-ff11b0fe68f6"))
-(global_label "GND" (shape input) (at 160.02 267.97 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "bb1ebd3a-8467-43e1-a322-e8e13b76eb19"))
-(symbol (lib_id "Device:C") (at 210.82 264.16 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "84af77de-d05e-4faa-a06b-eb63fd99eada") (property "Reference" "C25" (at 214.82 262.66 0)  (effects (font (size 1 1)) (justify left)))
-(property "Value" "100nF 50V X7R" (at 214.82 265.66 0)  (effects (font (size 1 1)) (justify left)))
-(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 214.82 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
-(property "MPN" "CL10B104KB8NNNC" (at 214.82 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
-(property "LCSC" "C1591" (at 214.82 264.16 0) (hide yes) (effects (font (size 1 1)) (justify left)))
- (pin "1" (uuid "cdb1ce6c-7e91-4811-97fd-a2847ef0aecf")) (pin "2" (uuid "3669f557-c231-4bbc-abfb-bd5c22ba927d")) (instances (project "panellog" (path "/00000000-0000-4000-8000-000000000001" (reference "C25") (unit 1)))))
-(label "SHUTDOWN_FB_ADC" (at 210.82 260.35 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "467d7b03-4593-4c29-9a5c-4cd5d6ea4689"))
-(global_label "GND" (shape input) (at 210.82 267.97 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "fe20fbcc-bce2-4480-818a-7e2ffaf77812"))
-(label "SHUTDOWN_FB_ADC" (at 295.91 48.26 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "46e9749e-6888-4834-8615-b9d93f6e3e8a"))
-(text "Shutdown feedback: R27 test pull-up; R28/R29 drain divider; GPIO1 ADC" (at 40.64 250.19 0) (effects (font (size 1.5 1.5)) (justify left)) (uuid "10992a01-9da1-4f62-8abf-84bcb83a45ea"))
 )
