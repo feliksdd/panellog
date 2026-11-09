@@ -9523,6 +9523,18 @@
 		)
 		(embedded_fonts no)
 		
+	
+		(model "/home/felix/Eigene_Projekte/Garten_PV/panellog/hardware/3dmodels/manufacturer/CDRH127_470M.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
@@ -10973,6 +10985,18 @@
 		)
 		(embedded_fonts no)
 		
+	
+		(model "/home/felix/Eigene_Projekte/Garten_PV/panellog/hardware/3dmodels/manufacturer/BVB-M-R0007.STEP"
+			(offset
+				(xyz 0 3.4 2.5)
+			)
+			(scale
+				(xyz 1.6 1.05 1)
+			)
+			(rotate
+				(xyz -0 -0 -180)
+			)
+		)
 	)
 	(footprint "PanelLog:IPT015N10N5_TOLL"
 		(layer "F.Cu")
