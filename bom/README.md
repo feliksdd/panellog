@@ -2,6 +2,23 @@
 
 Die [Auswahlstückliste](panellog_rev0_selection.csv) führt Referenzen, MPNs, LCSC-Nummern und Qualifikationsstatus. Die [Beschaffungsstückliste für vier Platinen](panellog_c6_procurement_4boards.csv) gruppiert die bestückten Teile; Bestellmengen müssen zusätzlich Mindestmengen und Bestückungsverluste berücksichtigen.
 
+## Aktuelle Bauteilauswahl vom 09.11.2026
+
+Ausgehend von `159d9a1` wurden die vom Nutzer ausgewählten Artikel in den aktiven Auswahl-, Beschaffungs- und JLCPCB-Stücklisten abgeglichen:
+
+| Referenzen | LCSC | Herstellerteilenummer |
+| --- | --- | --- |
+| C4 | C1604 | 0603B222K500NT |
+| C7, C10, C12, C14, C18, C19, C20, C25 | C14663 | CC0603KRX7R9BB104 |
+| C13, C24 | C15849 | CL10A105KB8NNNC |
+| Q2 | C8545 | 2N7002 (JSCJ) |
+
+Der Schaltplan enthielt diese Auswahl bereits vollständig. Im PCB wurden LCSC, MPN und Hersteller von C25 synchronisiert. C13/C24 sind mit **1 µF, 50 V, X5R** geführt. Die unbestückte Option C26 bleibt unverändert.
+
+Die historischen Kosten- und LCSC-Auditdateien bleiben Aufzeichnungen ihrer damaligen Artikel. Lagerbestand, Mindestmengen und Preise der Ersatzartikel wurden nicht neu abgefragt; entsprechende alte Angaben wurden in `reviewed_selection_2026-11-09.csv` geleert. Der Import `LCSC_import_4boards_in_stock.csv` enthält diese vier Artikelgruppen bis zur erneuten Bestandsprüfung nicht und ist daher zusätzlich zu R18 unvollständig. Die vollständigen Bedarfsmengen stehen in der Beschaffungsstückliste. Q2 ist ausgewählt; die praktische Gatepfad-Qualifikation bleibt offen.
+
+Geprüft: alle zwölf Referenzen in Schaltplan, PCB und aktiven Stücklisten; unveränderte elektrische Verbindungen, Footprints, Platzierung und Leiterbahngeometrie. Kein neuer nativer ERC/DRC: lokal ist KiCad 9.0.2 vorhanden, die Quelldateien verwenden KiCad 10.
+
 ## Kostenrevision vom 06.11.2026
 
 - R8: VO SCR1206F47K, C5140109, 47 kΩ ±1 %, 250 mW, 200 V, 1206.

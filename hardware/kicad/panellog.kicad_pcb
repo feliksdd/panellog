@@ -4531,7 +4531,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL10B104KB8NNNC"
+		(property "MPN" "CC0603KRX7R9BB104"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -4543,7 +4543,19 @@
 				)
 			)
 		)
-		(property "LCSC" "C1591"
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "b17e2d81-8efc-45a7-8728-627982848f05")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)

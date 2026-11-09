@@ -2,23 +2,23 @@ Ref,Value,Footprint,MPN_or_candidate,LCSC,Disposition,Selection_notes
 C1,4.7uF 100V X7R,Capacitor_SMD:C_1210_3225Metric,1210B475K101NT,C7500895,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 C2,100nF 100V X7R,Capacitor_SMD:C_0805_2012Metric,CL21B104KCFNNNE,C28233,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 C3,10uF 100V EEEFN2A100P,PanelLog:Panasonic_F_8x10p2,Panasonic EEEFN2A100P,C494873,CANDIDATE_REVIEW,Polarized symbol and Panasonic F 8x10.2 land pattern corrected; lifetime/ESR suitability still requires verification.
-C4,2.2nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B222KB8NNNC,C16033,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
+C4,2.2nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,0603B222K500NT,C1604,SELECTED_PROTOTYPE,User-selected LCSC substitution 2026-11-09; synchronized with native schematic.
 C5,22uF 25V X5R,Capacitor_SMD:C_0805_2012Metric,GRM21BR61E226ME44L,C86816,SELECTED_PROTOTYPE,Selected replacement 2026-11-09; retain package; R18 gain calibration required.
 C6,22uF 25V X5R,Capacitor_SMD:C_0805_2012Metric,GRM21BR61E226ME44L,C86816,SELECTED_PROTOTYPE,Selected replacement 2026-11-09; retain package; R18 gain calibration required.
-C7,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B104KB8NNNC,C1591,SELECTED_PROTOTYPE,"Same 100nF 50V X7R 10% 0603 ratings; C14663 out of stock, replaced with Samsung C1591 on 2026-11-08."
+C7,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CC0603KRX7R9BB104,C14663,SELECTED_PROTOTYPE,User-selected LCSC substitution 2026-11-09; synchronized with native schematic.
 C8,3.3nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B332KB8NNNC,C1613,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 C9,150pF 50V C0G,Capacitor_SMD:C_0603_1608Metric,CL10C151JB8NNNC,C37298,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
-C10,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B104KB8NNNC,C1591,SELECTED_PROTOTYPE,"Same 100nF 50V X7R 10% 0603 ratings; C14663 out of stock, replaced with Samsung C1591 on 2026-11-08."
+C10,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CC0603KRX7R9BB104,C14663,SELECTED_PROTOTYPE,User-selected LCSC substitution 2026-11-09; synchronized with native schematic.
 C11,10nF 100V X7R,Capacitor_SMD:C_0603_1608Metric,CC0603KRX7R0BB103,C107059,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
-C12,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B104KB8NNNC,C1591,SELECTED_PROTOTYPE,"Same 100nF 50V X7R 10% 0603 ratings; C14663 out of stock, replaced with Samsung C1591 on 2026-11-08."
-C13,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B105KO8NNNC,C59782,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
-C14,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B104KB8NNNC,C1591,SELECTED_PROTOTYPE,"Same 100nF 50V X7R 10% 0603 ratings; C14663 out of stock, replaced with Samsung C1591 on 2026-11-08."
+C12,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CC0603KRX7R9BB104,C14663,SELECTED_PROTOTYPE,User-selected LCSC substitution 2026-11-09; synchronized with native schematic.
+C13,1uF 50V X5R,Capacitor_SMD:C_0603_1608Metric,CL10A105KB8NNNC,C15849,SELECTED_PROTOTYPE,User-selected LCSC substitution 2026-11-09; synchronized with native schematic.
+C14,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CC0603KRX7R9BB104,C14663,SELECTED_PROTOTYPE,User-selected LCSC substitution 2026-11-09; synchronized with native schematic.
 C15,22uF 25V X5R,Capacitor_SMD:C_0805_2012Metric,GRM21BR61E226ME44L,C86816,SELECTED_PROTOTYPE,Selected replacement 2026-11-09; retain package; R18 gain calibration required.
 C16,22pF C0G,Capacitor_SMD:C_0603_1608Metric,,,REMOVED,C6 module uses internal LP clock; no external 32 kHz crystal.
 C17,22pF C0G,Capacitor_SMD:C_0603_1608Metric,,,REMOVED,C6 module uses internal LP clock; no external 32 kHz crystal.
-C18,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B104KB8NNNC,C1591,SELECTED_PROTOTYPE,"Same 100nF 50V X7R 10% 0603 ratings; C14663 out of stock, replaced with Samsung C1591 on 2026-11-08."
-C19,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B104KB8NNNC,C1591,SELECTED_PROTOTYPE,"Same 100nF 50V X7R 10% 0603 ratings; C14663 out of stock, replaced with Samsung C1591 on 2026-11-08."
-C20,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B104KB8NNNC,C1591,SELECTED_PROTOTYPE,"Same 100nF 50V X7R 10% 0603 ratings; C14663 out of stock, replaced with Samsung C1591 on 2026-11-08."
+C18,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CC0603KRX7R9BB104,C14663,SELECTED_PROTOTYPE,User-selected LCSC substitution 2026-11-09; synchronized with native schematic.
+C19,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CC0603KRX7R9BB104,C14663,SELECTED_PROTOTYPE,User-selected LCSC substitution 2026-11-09; synchronized with native schematic.
+C20,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CC0603KRX7R9BB104,C14663,SELECTED_PROTOTYPE,User-selected LCSC substitution 2026-11-09; synchronized with native schematic.
 C21,4.7uF 100V X7R,Capacitor_SMD:C_1210_3225Metric,1210B475K101NT,C7500895,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 C22,4.7uF 100V X7R,Capacitor_SMD:C_1210_3225Metric,1210B475K101NT,C7500895,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 C23,DNP 10nF 200V TBD,Capacitor_SMD:C_1206_3216Metric,,,DNP,"Optional RC snubber capacitor; 200V rating desired, not selected."
@@ -30,7 +30,7 @@ J3,External Pt1000 probe,PanelLog:Pt1000_Cable_2pin_DRAFT,"PCB feature, no LCSC 
 J4,UART / BOOT pogo,PanelLog:UART_BOOT_1x06_Pogo,"PCB feature, no LCSC ordering number applicable",,PCB_FEATURE,"PCB solder/pogo lands, no purchased connector. External cables/fixture are separate assembly items."
 L1,68uH CDRH127/LDNP-680MC,PanelLog:Sumida_CDRH127_LD_68uH,CDRH127/LDNP-680MC,C2452974,SELECTED_PROTOTYPE,Sumida selected 2026-11-08; OEM keepout added. See docs/sumida_l1_2026-11-08.md. Max component temperature 100C.
 Q1,IPT015N10N5,PanelLog:IPT015N10N5_TOLL,Infineon IPT015N10N5ATMA1,C108964,SELECTED_PROTOTYPE,"OEM PG-HSOF-8 land geometry; pad 1 gate, 2-8 source, 9 drain. 20A thermal validation pending."
-Q2,2N7002,Package_TO_SOT_SMD:SOT-23,onsemi 2N7002,C124475,CANDIDATE_REVIEW,SOT-23 gate1 source2 drain3; qualify high-temperature drain leakage in gate-control fault case.
+Q2,2N7002,Package_TO_SOT_SMD:SOT-23,2N7002,C8545,CANDIDATE_REVIEW,User-selected LCSC substitution 2026-11-09; synchronized with native schematic. Gate-control path still requires qualification at 3.3V and over temperature.
 R1,1M 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1004T5E,C22935,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 R2,200k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF2003T5E,C25811,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 R3,27.4k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF2742T5E,C22964,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
@@ -64,11 +64,11 @@ Y1,32.768kHz CL=12.5pF,Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm,"Jauch Q 0,032768
 R24,100k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1003T5E,C25803,SELECTED_PROTOTYPE,C6 ADC divider / bootstrap / reset network
 R25,10k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1002T5E,C25804,SELECTED_PROTOTYPE,C6 ADC divider / bootstrap / reset network
 R26,10k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1002T5E,C25804,SELECTED_PROTOTYPE,C6 ADC divider / bootstrap / reset network
-C24,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B105KO8NNNC,C59782,SELECTED_PROTOTYPE,C6 ADC divider / bootstrap / reset network
+C24,1uF 50V X5R,Capacitor_SMD:C_0603_1608Metric,CL10A105KB8NNNC,C15849,SELECTED_PROTOTYPE,User-selected LCSC substitution 2026-11-09; synchronized with native schematic.
 R27,1M 1%,Resistor_SMD:R_1206_3216Metric,1206W4F1004T5E,C17927,SELECTED,Shutdown diagnostic; see docs/shutdown_feedback.md
 R28,1M 1%,Resistor_SMD:R_1206_3216Metric,1206W4F1004T5E,C17927,SELECTED,Shutdown diagnostic; see docs/shutdown_feedback.md
 R29,27.4k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF2742T5E,C22964,SELECTED,Shutdown diagnostic; see docs/shutdown_feedback.md
-C25,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B104KB8NNNC,C1591,SELECTED,"Same 100nF 50V X7R 10% 0603 ratings; C14663 out of stock, replaced with Samsung C1591 on 2026-11-08."
+C25,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CC0603KRX7R9BB104,C14663,SELECTED,User-selected LCSC substitution 2026-11-09; synchronized with native schematic.
 J5,Power cable solder pad MPPT_MINUS,PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT,"PCB feature, no LCSC ordering number applicable",,PCB_FEATURE,"Separate external PV-rated wire, compatible connectors and strain relief must be specified."
 J6,Power cable solder pad VDC,PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT,"PCB feature, no LCSC ordering number applicable",,PCB_FEATURE,"Separate external PV-rated wire, compatible connectors and strain relief must be specified."
 J7,Power cable solder pad GND,PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT,"PCB feature, no LCSC ordering number applicable",,PCB_FEATURE,"Separate external PV-rated wire, compatible connectors and strain relief must be specified."
