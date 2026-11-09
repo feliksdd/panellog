@@ -13,135 +13,7 @@
 		(comment 2 "PV-powered 3.3 V / 500 mA via LM5163; ESP32-C6")
 	)
 	(lib_symbols
-		(symbol "Conn_01x02_2"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J2"
-				(at 0 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "MPPT OUT / PV-rated pigtail"
-				(at 13.208 -1.27 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1 1)
-					)
-				)
-			)
-			(property "Footprint" "PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Conn_01x02_2_1_1"
-				(rectangle
-					(start -1.27 1.27)
-					(end 1.27 -1.27)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
+		(symbol "PanelLog:PowerCablePadAlt" (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) (property "Reference" "J2" (at 0 2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Value" "PowerCablePadAlt" (at 13.208 -1.27 0) (show_name no) (do_not_autoplace no) (effects (font (size 1 1)))) (property "Footprint" "PanelLog:PV_MC4_Pigtail_2x2p8_DRAFT" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) (property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) (property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) (property "ki_keywords" "connector" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) (property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) (symbol "PowerCablePadAlt_1_1" (rectangle (start -1.27 1.27) (end 1.27 -1.27) (stroke (width 0.254) (type default)) (fill (type background))) (rectangle (start -1.27 0.127) (end 0 -0.127) (stroke (width 0.1524) (type default)) (fill (type none))) (pin passive line (at -5.08 0 0) (length 3.81) (name "Pin_1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))) (embedded_fonts no))
 		(symbol "Connector_Generic:Conn_01x02"
 			(pin_names
 				(offset 1.016)
@@ -11359,208 +11231,8 @@
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:C")
-		(at 207.01 66.04 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "00000000-0000-4000-8000-000000000227")
-		(property "Reference" "C5"
-			(at 209.042 63.754 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "22uF 25V X5R"
-			(at 213.36 68.072 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.85 0.85)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 207.01 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 207.01 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 207.01 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "CL21A226MAQNNNE"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" "C45783"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "00000000-0000-4000-8000-000000000225")
-		)
-		(pin "2"
-			(uuid "00000000-0000-4000-8000-000000000226")
-		)
-		(instances
-			(project "panellog"
-				(path "/00000000-0000-4000-8000-000000000001"
-					(reference "C5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 196.85 66.04 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "00000000-0000-4000-8000-000000000230")
-		(property "Reference" "C6"
-			(at 199.39 63.754 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "22uF 25V X5R"
-			(at 198.374 68.072 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.85 0.85)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 196.85 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 196.85 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 196.85 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "CL21A226MAQNNNE"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" "C45783"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "00000000-0000-4000-8000-000000000228")
-		)
-		(pin "2"
-			(uuid "00000000-0000-4000-8000-000000000229")
-		)
-		(instances
-			(project "panellog"
-				(path "/00000000-0000-4000-8000-000000000001"
-					(reference "C6")
-					(unit 1)
-				)
-			)
-		)
-	)
+	(symbol (lib_id "Device:C") (at 207.01 66.04 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no) (uuid "00000000-0000-4000-8000-000000000227") (property "Reference" "C5" (at 209.042 63.754 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Value" "22uF 25V X5R" (at 213.36 68.072 0) (show_name no) (do_not_autoplace no) (effects (font (size 0.85 0.85)))) (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 207.01 66.04 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Datasheet" "" (at 207.01 66.04 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Description" "Unpolarized capacitor" (at 207.01 66.04 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "MPN" "GRM21BR61E226ME44L" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1 1)))) (property "LCSC" "C86816" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1 1)))) (pin "1" (uuid "00000000-0000-4000-8000-000000000225")) (pin "2" (uuid "00000000-0000-4000-8000-000000000226")) (instances (project "panellog" (path "/00000000-0000-4000-8000-000000000001" (reference "C5") (unit 1)))))
+	(symbol (lib_id "Device:C") (at 196.85 66.04 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no) (uuid "00000000-0000-4000-8000-000000000230") (property "Reference" "C6" (at 199.39 63.754 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Value" "22uF 25V X5R" (at 198.374 68.072 0) (show_name no) (do_not_autoplace no) (effects (font (size 0.85 0.85)))) (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 196.85 66.04 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Datasheet" "" (at 196.85 66.04 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Description" "Unpolarized capacitor" (at 196.85 66.04 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "MPN" "GRM21BR61E226ME44L" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1 1)))) (property "LCSC" "C86816" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1 1)))) (pin "1" (uuid "00000000-0000-4000-8000-000000000228")) (pin "2" (uuid "00000000-0000-4000-8000-000000000229")) (instances (project "panellog" (path "/00000000-0000-4000-8000-000000000001" (reference "C6") (unit 1)))))
 	(symbol
 		(lib_id "Device:C")
 		(at 186.69 66.04 0)
@@ -15853,8 +15525,8 @@
 		)
 	)
 	(symbol
-		(lib_name "Conn_01x02_2")
-		(lib_id "Connector_Generic:Conn_01x02")
+		
+		(lib_id "PanelLog:PowerCablePadAlt")
 		(at 83.82 215.9 0)
 		(unit 1)
 		(body_style 1)
@@ -16366,8 +16038,8 @@
 		)
 	)
 	(symbol
-		(lib_name "Conn_01x02_2")
-		(lib_id "Connector_Generic:Conn_01x02")
+		
+		(lib_id "PanelLog:PowerCablePadAlt")
 		(at 83.82 205.74 0)
 		(unit 1)
 		(body_style 1)
@@ -16650,85 +16322,7 @@
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:R")
-		(at 203.2 187.96 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5f8c4650-ed86-4298-991d-5c3ceacfbe38")
-		(property "Reference" "R18"
-			(at 208.026 186.69 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "14.7k 0.05% 10ppm/K"
-			(at 214.884 188.722 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.85 0.85)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 203.2 187.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 203.2 187.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 203.2 187.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f088fd5b-29c8-4388-8bc4-3b67dc8def04")
-		)
-		(pin "2"
-			(uuid "03baf8d7-5630-4318-8881-f99cb07616ad")
-		)
-		(instances
-			(project "panellog"
-				(path "/00000000-0000-4000-8000-000000000001"
-					(reference "R18")
-					(unit 1)
-				)
-			)
-		)
-	)
+	(symbol (lib_id "Device:R") (at 203.2 187.96 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no) (uuid "5f8c4650-ed86-4298-991d-5c3ceacfbe38") (property "Reference" "R18" (at 208.026 186.69 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Value" "14.7k 0.1% 10ppm/K" (at 214.884 188.722 0) (show_name no) (do_not_autoplace no) (effects (font (size 0.85 0.85)))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 203.2 187.96 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Datasheet" "" (at 203.2 187.96 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Description" "Resistor" (at 203.2 187.96 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "f088fd5b-29c8-4388-8bc4-3b67dc8def04")) (pin "2" (uuid "03baf8d7-5630-4318-8881-f99cb07616ad")) (instances (project "panellog" (path "/00000000-0000-4000-8000-000000000001" (reference "R18") (unit 1)))) (property "MPN" "PTFR0603B14K7N9" (at 0 0 0) (hide yes) (effects (font (size 1 1)))) (property "LCSC" "C19680002" (at 0 0 0) (hide yes) (effects (font (size 1 1)))))
 	(symbol
 		(lib_id "power:VDC")
 		(at 58.42 58.42 0)
@@ -17717,107 +17311,7 @@
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:C")
-		(at 241.3 36.83 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "8957a030-a59d-4a65-b4a4-b77e06db4499")
-		(property "Reference" "C15"
-			(at 244.3 36.83 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "22uF 25V X5R"
-			(at 244.3 39.37 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.85 0.85)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 244.3 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 244.3 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 244.3 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "CL21A226MAQNNNE"
-			(at -52.07 -81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" "C45783"
-			(at -52.07 -81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "de13f806-33a7-425a-a8a5-1beed0774bfe")
-		)
-		(pin "2"
-			(uuid "519ac048-81ea-42c4-b089-799cfc3c64a0")
-		)
-		(instances
-			(project "panellog"
-				(path "/00000000-0000-4000-8000-000000000001"
-					(reference "C15")
-					(unit 1)
-				)
-			)
-		)
-	)
+	(symbol (lib_id "Device:C") (at 241.3 36.83 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no) (uuid "8957a030-a59d-4a65-b4a4-b77e06db4499") (property "Reference" "C15" (at 244.3 36.83 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Value" "22uF 25V X5R" (at 244.3 39.37 0) (show_name no) (do_not_autoplace no) (effects (font (size 0.85 0.85)))) (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 244.3 39.37 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Datasheet" "" (at 244.3 39.37 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Description" "Unpolarized capacitor" (at 244.3 39.37 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "MPN" "GRM21BR61E226ME44L" (at -52.07 -81.28 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1 1)))) (property "LCSC" "C86816" (at -52.07 -81.28 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1 1)))) (pin "1" (uuid "de13f806-33a7-425a-a8a5-1beed0774bfe")) (pin "2" (uuid "519ac048-81ea-42c4-b089-799cfc3c64a0")) (instances (project "panellog" (path "/00000000-0000-4000-8000-000000000001" (reference "C15") (unit 1)))))
 	(symbol
 		(lib_id "Device:R")
 		(at 270.51 190.5 0)
@@ -18232,8 +17726,8 @@
 		)
 	)
 	(symbol
-		(lib_name "Conn_01x02_2")
-		(lib_id "Connector_Generic:Conn_01x02")
+		
+		(lib_id "PanelLog:PowerCablePadAlt")
 		(at 83.82 213.36 0)
 		(unit 1)
 		(body_style 1)
@@ -21387,4 +20881,8 @@
 			(page "1")
 		)
 	)
+
+(symbol (lib_id "Device:C") (at 252.73 151.13 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp yes) (uuid "57a153bc-a188-4806-8f8c-9bd2dc80c16a") (property "Reference" "C26" (at 256.54 148.59 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Value" "100nF 50V X7R" (at 256.54 151.13 0) (show_name no) (do_not_autoplace no) (effects (font (size 0.85 0.85)))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 256.54 153.67000000000002 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Datasheet" "" (at 256.54 156.21 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "Description" "Unpolarized capacitor" (at 256.54 158.75 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (property "MPN" "CL10B104KB8NNNC" (at 256.54 161.29 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1 1)))) (property "LCSC" "C1591" (at 256.54 163.83 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1 1)))) (pin "1" (uuid "fa06a732-792a-4405-a6b1-e1e7614ddefb")) (pin "2" (uuid "ae67daf3-8574-4ba3-93a5-cf881e3606b5")) (instances (project "panellog" (path "/00000000-0000-4000-8000-000000000001" (reference "C26") (unit 1)))))
+(label "+3V3" (at 252.73 147.32 0) (effects (font (size 1 1)) (justify left bottom)) (uuid "ea365573-a98c-4803-8d4b-56781f5483bc"))
+(label "GND" (at 252.73 154.94 0) (effects (font (size 1 1)) (justify left bottom)) (uuid "21f122b0-e567-4760-9513-de29163d52c5"))
 )

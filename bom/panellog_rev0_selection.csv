@@ -3,8 +3,8 @@ C1,4.7uF 100V X7R,Capacitor_SMD:C_1210_3225Metric,1210B475K101NT,C7500895,SELECT
 C2,100nF 100V X7R,Capacitor_SMD:C_0805_2012Metric,CL21B104KCFNNNE,C28233,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 C3,10uF 100V EEEFN2A100P,PanelLog:Panasonic_F_8x10p2,Panasonic EEEFN2A100P,C494873,CANDIDATE_REVIEW,Polarized symbol and Panasonic F 8x10.2 land pattern corrected; lifetime/ESR suitability still requires verification.
 C4,2.2nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B222KB8NNNC,C16033,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
-C5,22uF 25V X5R,Capacitor_SMD:C_0805_2012Metric,CL21A226MAQNNNE,C45783,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
-C6,22uF 25V X5R,Capacitor_SMD:C_0805_2012Metric,CL21A226MAQNNNE,C45783,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
+C5,22uF 25V X5R,Capacitor_SMD:C_0805_2012Metric,GRM21BR61E226ME44L,C86816,SELECTED_PROTOTYPE,Selected replacement 2026-11-09; retain package; R18 gain calibration required.
+C6,22uF 25V X5R,Capacitor_SMD:C_0805_2012Metric,GRM21BR61E226ME44L,C86816,SELECTED_PROTOTYPE,Selected replacement 2026-11-09; retain package; R18 gain calibration required.
 C7,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B104KB8NNNC,C1591,SELECTED_PROTOTYPE,"Same 100nF 50V X7R 10% 0603 ratings; C14663 out of stock, replaced with Samsung C1591 on 2026-11-08."
 C8,3.3nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B332KB8NNNC,C1613,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 C9,150pF 50V C0G,Capacitor_SMD:C_0603_1608Metric,CL10C151JB8NNNC,C37298,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
@@ -13,7 +13,7 @@ C11,10nF 100V X7R,Capacitor_SMD:C_0603_1608Metric,CC0603KRX7R0BB103,C107059,SELE
 C12,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B104KB8NNNC,C1591,SELECTED_PROTOTYPE,"Same 100nF 50V X7R 10% 0603 ratings; C14663 out of stock, replaced with Samsung C1591 on 2026-11-08."
 C13,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B105KO8NNNC,C59782,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 C14,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B104KB8NNNC,C1591,SELECTED_PROTOTYPE,"Same 100nF 50V X7R 10% 0603 ratings; C14663 out of stock, replaced with Samsung C1591 on 2026-11-08."
-C15,22uF 25V X5R,Capacitor_SMD:C_0805_2012Metric,CL21A226MAQNNNE,C45783,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
+C15,22uF 25V X5R,Capacitor_SMD:C_0805_2012Metric,GRM21BR61E226ME44L,C86816,SELECTED_PROTOTYPE,Selected replacement 2026-11-09; retain package; R18 gain calibration required.
 C16,22pF C0G,Capacitor_SMD:C_0603_1608Metric,,,REMOVED,C6 module uses internal LP clock; no external 32 kHz crystal.
 C17,22pF C0G,Capacitor_SMD:C_0603_1608Metric,,,REMOVED,C6 module uses internal LP clock; no external 32 kHz crystal.
 C18,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B104KB8NNNC,C1591,SELECTED_PROTOTYPE,"Same 100nF 50V X7R 10% 0603 ratings; C14663 out of stock, replaced with Samsung C1591 on 2026-11-08."
@@ -48,7 +48,7 @@ R14,10k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1002T5E,C25804,SELECTED_PROTOTY
 R15,10k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1002T5E,C25804,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 R16,10k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1002T5E,C25804,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 R17,10k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1002T5E,C25804,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
-R18,14.7k 0.05% 10ppm/K,Resistor_SMD:R_0603_1608Metric,Susumu RG1608N-1472-W-T1,C1721340,OUT_OF_STOCK,"C1721340 stock zero. Retained 0.05% / 10ppm spec; available C2074591 is only a proposal (0.1% / 25ppm), NOT substituted."
+R18,14.7k 0.1% 10ppm/K,Resistor_SMD:R_0603_1608Metric,PTFR0603B14K7N9,C19680002,SELECTED_PROTOTYPE,Selected replacement 2026-11-09; retain package; R18 gain calibration required.
 R19,1k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1001T5E,C21190,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 R20,100k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1003T5E,C25803,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
 R21,10k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1002T5E,C25804,SELECTED_PROTOTYPE,C6 cost revision; qualification requirements in docs/c6_cost_revision_2026-11-06.md
@@ -76,3 +76,4 @@ H1,3.2mm mounting hole,PanelLog:MountingHole_3p2_Nylon,"PCB feature, no LCSC ord
 H2,3.2mm mounting hole,PanelLog:MountingHole_3p2_Nylon,"PCB feature, no LCSC ordering number applicable",,PCB_FEATURE,Fasteners/spacers belong to the separately specified enclosure assembly.
 H3,3.2mm mounting hole,PanelLog:MountingHole_3p2_Nylon,"PCB feature, no LCSC ordering number applicable",,PCB_FEATURE,Fasteners/spacers belong to the separately specified enclosure assembly.
 H4,3.2mm mounting hole,PanelLog:MountingHole_3p2_Nylon,"PCB feature, no LCSC ordering number applicable",,PCB_FEATURE,Fasteners/spacers belong to the separately specified enclosure assembly.
+C26,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,CL10B104KB8NNNC,C1591,DNP_BUFFER_OPTION,Populate together with U4 P82B715; local VCC bypass.

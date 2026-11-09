@@ -6,3 +6,4 @@ R32 R33,2,0R 0603,0603WAF0000T5E,C21189,FITTED_DIRECT,Remove both if U4 is fitte
 R34 R35,2,1k 0603,0603WAF1001T5E,C21190,DNP_BUFFER_OPTION,Line side pullups; buffered mode only
 R36,1,0R 0603,0603WAF0000T5E,C21189,FITTED_PROTOTYPE,Temporary 3V3 cable link. Replace with qualified current-limit or fuse
 U4,1,P82B715DR,Texas Instruments P82B715DR,C2649394,DNP_BUFFER_OPTION,Pin2 Lx; 3 Sx; 6 Sy; 7 Ly; 8 Vcc; 4 GND. Remove R32/R33 before fit
+C26,1,100nF X7R 0603,CL10B104KB8NNNC,C1591,DNP_BUFFER_OPTION,Populate with U4; local VCC bypass
