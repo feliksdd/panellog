@@ -1,7 +1,7 @@
 name: Reviewed KiCad 10 hardware
 on:
   push:
-    paths: ['hardware/**', 'tools/review_hardware.sh', '.github/workflows/hardware-review.yml']
+    paths: ['hardware/**', 'tools/review_hardware.sh', '.github/workflows/hardware-review.yml', 'tools/export_review.sh']
   pull_request:
   workflow_dispatch:
 permissions:
@@ -21,9 +21,13 @@ jobs:
           cp /usr/share/kicad/template/fp-lib-table "$HOME/.config/kicad/10.0/fp-lib-table"
       - name: Native ERC and DRC
         run: bash tools/review_hardware.sh
+      - name: Export review drawings
+        run: bash tools/export_review.sh
       - name: Preserve native reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: kicad-10-review
-          path: hardware/review_2026-11-09/
+          path: |
+            hardware/review_2026-11-09/
+            hardware/final_review_2026-11-09/
