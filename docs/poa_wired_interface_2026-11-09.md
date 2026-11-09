@@ -36,25 +36,25 @@ At 25 kHz, total 2.2k pull-up and 400 pF cable capacitance give a nominal 30–7
 
 - Remove R32/R33 at PanelLog AND R6/R7 at POA. **Never** populate a direct bypass concurrently with U4/U2.
 - Populate matching P82B715 (PanelLog U4 and POA U2); pinout pin2=Lx, 3=Sx, 4=GND, 6=Sy, 7=Ly, 8=VCC. Pins 1/5 no-connect.
-- Retain local S-side pull-ups (PanelLog R30/R31 2.2k; POA-side S-pull-ups must be added/verified before buffered operation). Do not power buffered mode without correct S-side pull-ups.
+- Retain local S-side pull-ups (PanelLog R30/R31 2.2k; POA-side S-pull-ups R10/R11 (2.2k) are fitted only in the buffered variant; electrical/EMV qualification is pending). Do not power buffered mode without correct S-side pull-ups.
 - Populate line-side R34/R35 and POA R8/R9 (1k each side proposed as a test starting point), confirm available sink-current and VOL margins against P82B715 datasheet.
 - Maintain 3.3 V at both ends; the P82B715 does not isolate the two domains.
 
-The current POA draft lacks independent S-side pull-up footprints; therefore **buffered mode is a reserved design option, not a qualified assembly variant**. Correct this on the sensor side before prototyping buffered operation.
+The revised POA schematic now includes DNP S-side pull-ups R10/R11. Buffered mode remains an unqualified design option pending schematic/PCB validation and on-hardware VOL/rise-time testing.
 
 ## EMC / SI routing requirements before release
 
 1. Keep current INA237 true Kelvin pair and its 10 Ω / 100 nF analog input network unchanged; avoid all new vias or digital traces directly alongside this pair.
 2. Route GPIO21/22 as 0.2–0.25 mm traces over continuous GND on In1.Cu. Keep the pair together; never cross the 3.3 V switch-node or run along Q1 gate/drain, RSH1 force return, VDC or high-current vias.
 3. Prefer digital routing on In2.Cu with continuous In1.Cu reference; drop near U3 breakout and rise near J8. Check return path under each signal and via transitions; use adjacent ground stitching near cable entry, without crossing other net copper.
-4. Place cable-side ESD arrays and a short-circuit-limited 3V3 supply near J8 **before fabrication**. They are not yet present on the connected KiCad PCB; see blocking points below.
+4. Cable-side low-capacitance D3 (TI TPD2E2U06DRLR, C1972959, 1.5pF) has been placed as a prototype footprint near J8, not routed or land-pattern validated. Add and qualify a short-circuit-limited 3V3 cable supply **before fabrication**; see blocking points below.
 5. Route and refill all 4 copper layers with KiCad 10. Re-run full native ERC/DRC, all layer/copper clearances, unconnected net and schematic parity checks. Check actual enclosure wall/mounting/cable gland clearance and RF keepout.
 6. Verify I²C 25/50/100 kHz rise times, VOL, noise margins and failure handling, including inverter transients; isolate sensor and capture scope traces with differential/isolated measurement as appropriate.
 7. No shield connection to frame or PE from the POA board. Assess ESD to each data conductor and 3V3/GND; 3 m cable can pick up substantial common-mode voltage.
 
 ### Blocking items for hardware release
 
-**A. Cable protection:** selected low-leakage digital ESD device footprint/MPN and 3.3 V load switch/current limiter or resettable fuse not integrated. Existing R36=0R is a temporary electrical placeholder only.
+**A. Cable protection:** D3 low-capacitance ESD array selected/placed but not routed or land-pattern verified. 3.3 V load switch/current limiter or resettable fuse still missing. Existing R36=0R is a temporary electrical placeholder only.
 
 **B. Routing:** new footprints placed but all new nets unrouted, including the new MCU GPIOs.
 
