@@ -1,8 +1,8 @@
 Ref,Qty,Value,MPN,LCSC,Assembly,Notes
-D3,1,Low capacitance dual digital ESD array,TPD2E2U06DRLR,C1972959,FITTED_PROTOTYPE,"Pin3 IO1 SDA; pin4 GND; pin5 IO2 SCL. Cable entry. Footprint still provisional."
-J8,1,6-wire 3-pair direct solder cable pads,PCB_FEATURE,,PCB_FEATURE,"1 3V3; 2 GND; 3 SDA; 4 GND; 5 SCL; 6 GND"
-R30 R31,2,2.2k 1%,0603WAF2201T5E,C4190,FITTED_DIRECT,"MCU side pullups on GPIO21 and GPIO22"
-R32 R33,2,0R 0603,Generic exact 0R TBD,,FITTED_DIRECT,"Remove both if U4 is fitted"
-R34 R35,2,1k 0603,0603WAF1001T5E,C21190,DNP_BUFFER_OPTION,"Line side pullups; buffered mode only"
-R36,1,0R 0603,Generic exact 0R TBD,,FITTED_PROTOTYPE,"Temporary 3V3 cable link. Replace with qualified current-limit or fuse"
-U4,1,P82B715DR,Texas Instruments P82B715DR,C2649394,DNP_BUFFER_OPTION,"Pin2 Lx; 3 Sx; 6 Sy; 7 Ly; 8 Vcc; 4 GND. Remove R32/R33 before fit"
+D3,1,Low capacitance dual digital ESD array,TPD2E2U06DRLR,C1972959,FITTED_PROTOTYPE,Pin3 IO1 SDA; pin4 GND; pin5 IO2 SCL. Cable entry. Footprint still provisional.
+J8,1,6-wire 3-pair direct solder cable pads,PCB_FEATURE,,PCB_FEATURE,1 3V3; 2 GND; 3 SDA; 4 GND; 5 SCL; 6 GND
+R30 R31,2,2.2k 1%,0603WAF2201T5E,C4190,FITTED_DIRECT,MCU side pullups on GPIO21 and GPIO22
+R32 R33,2,0R 0603,0603WAF0000T5E,C21189,FITTED_DIRECT,Remove both if U4 is fitted
+R34 R35,2,1k 0603,0603WAF1001T5E,C21190,DNP_BUFFER_OPTION,Line side pullups; buffered mode only
+R36,1,0R 0603,0603WAF0000T5E,C21189,FITTED_PROTOTYPE,Temporary 3V3 cable link. Replace with qualified current-limit or fuse
+U4,1,P82B715DR,Texas Instruments P82B715DR,C2649394,DNP_BUFFER_OPTION,Pin2 Lx; 3 Sx; 6 Sy; 7 Ly; 8 Vcc; 4 GND. Remove R32/R33 before fit
