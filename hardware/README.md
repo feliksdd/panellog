@@ -1,112 +1,31 @@
-# Current revision: 2026-11-07
-
-INA237 + C481535 selected. See [revision](../docs/current_sensor_2026-11-07.md). Older dated reviews below are historical.
-
-Current revision: [C6 / LM5163 reconstruction](../docs/c6_cost_revision_2026-11-06.md). Earlier placement coordinates below are historical; the KiCad board is authoritative.
-
-> [Externe STEP-Bauteilmodelle](3dmodels/README.md): aktuelle Zuordnungen auf Basis `130ec6e`; U3, RSH1 und Y1 bleiben ohne verifiziertes Modell.
-
-> Gehäuserevision: [Kradex Z74JH ABS, Platine 118 × 90 mm und Kabelmontage](../docs/enclosure_kradex_z74.md).
-
-> Historical KiCad 10.0.8 ERC/DRC: [review 2026-11-03](../docs/review_2026-11-03.md). Production release remains pending.
-
 # Hardware
 
-## Kupferlagen der PanelLog-Platine
+Das KiCad-10-Projekt liegt in [kicad/panellog.kicad_pro](kicad/panellog.kicad_pro). [Schaltplan](kicad/panellog.kicad_sch) und [PCB](kicad/panellog.kicad_pcb) sind die verbindlichen Konstruktionsdateien. Projektbibliotheken sind über `sym-lib-table` und `fp-lib-table` eingebunden.
+
+| Verzeichnis | Inhalt |
+|---|---|
+| `kicad/` | Native Schaltung, Layout und Projekteinstellungen |
+| `kicad/production/` | Gerber-/Bohrarchiv, BOM, Positionen und IPC-Netzliste |
+| `symbols/` | Projektspezifische Symbole |
+| `footprints/PanelLog.pretty/` | Projekt-Footprints |
+| `3dmodels/` | Bauteil-/Gehäusemodelle und Lizenzen |
+| `mechanical/` | Kradex-Gehäusegeometrie |
+
+## Platine
+
+118 × 90 × 1,6 mm, vier Kupferlagen. Der Umriss liegt in KiCad bei X = 81…199 mm und Y = 44,5…134,5 mm. Vorhandene Befestigungslöcher: H1, H3, H4; siehe [Montage](../docs/anwendung.md).
 
 | Lage | Funktion |
 |---|---|
-| L1 · F.Cu | VDC, Spannungsversorgung, kurze SMD-Anbindungen und lokale Rückstrompfade |
-| L2 · In1.Cu | GND-Fläche mit getrennten Modulstrompfaden |
-| L3 · In2.Cu | Signalrouting, kurze Versorgungsquerungen und Modulstrompfade |
-| L4 · B.Cu | GND-Fläche mit getrennten Modulstrompfaden |
+| F.Cu | Bauteile, Versorgung, lokale Signale und Leistungskupfer |
+| In1.Cu | GND-Bezug mit getrennten Leistungskupferbereichen |
+| In2.Cu | Signalrouting und Leistungskupferbereiche |
+| B.Cu | GND und Leistungskupferbereiche |
 
-VDC verbindet J1.1 mit J2.1 auf jeder Lage. Das 9 mm breite VDC-Band liegt bei Y = 61 mm. Zwischen den parallelen Zonenkanten bleiben 15 mm zum GND-Hochstromrückleiter, 14 mm zu SHUNT_RETURN und 15,5 mm zu MPPT_MINUS. Die Anschlüsse an die Lötpads J1.1/J2.1 bei Y = 66 mm und die Versorgungsabzweige sind lokale Ausnahmen. Für die angrenzende GND-Fläche gilt weiterhin der reguläre Zonenabstand von 0,5 mm. Auf L3 führt die Leiterbahn um die Querung der 3,3-V-Versorgung und der Gate-Ansteuerung. Der negative Modulstrompfad führt über GND, Q1, SHUNT_RETURN, RSH1 und MPPT_MINUS. Die Kupferbereiche auf beiden Seiten des Shunts bleiben getrennt. Durchkontaktierungen verbinden die gleichnamigen Kupferbereiche aller vier Lagen. Die Antennen- und Schraubfreiräume gelten durch den ganzen Lagenaufbau. Vor dem Fertigungsexport die Zonen in KiCad 10 neu füllen und den DRC ausführen.
+VDC, MPPT_MINUS, SHUNT_RETURN und GND führen den Modulstrom über getrennte Kupferbereiche mit Durchkontaktierungen. Die Kelvin-Leitungen gehören ausschließlich an die Sense-Anschlüsse des Shunts. Versorgungs-Schaltknoten, Q1-Gate und externe Digitalsignale benötigen Abstand zu diesen Messleitungen. Antennen-, Schrauben- und Spulensperrflächen sind beim Bearbeiten beizubehalten. Kupfergewicht und thermischer Betriebsstrom sind zusätzlich zur Lagenzahl bei der Fertigung festzulegen.
 
-The root [README](../README.md) is the architecture, dimensioning, error-budget and calibration source of truth.
+## Bearbeitung und Fertigung
 
-> **ERC-Warnung (29.10.2026):** Ein echter KiCad-10-ERC fand im ursprünglich erzeugten Schaltplan **35 Fehler und 65 Warnungen**, darunter sicherheitskritische Fehlzuordnungen an U1/U2/Q1/Q2/U3. Der Schaltplan wurde daraufhin in Commit `b1f31a81086f` anhand der tatsächlichen Pinpositionen korrigiert und auf 1,27-mm-Raster ausgerichtet. Die korrigierte Anschlussgeometrie wurde statisch geprüft; ein **erneuter nativer KiCad ERC** steht weiterhin aus. Das frühere allgemeine Strukturprüfergebnis war unzureichend. [Detaillierter ERC-Befund](kicad/VALIDATION_2026-10-29.md).
+KiCad 10 mit Standardbibliotheken und den lokalen Bibliothekstabellen verwenden. Nach Hardwareänderungen Zonen neu füllen, ERC/DRC mit Schaltplanabgleich ausführen und Fertigungsausgaben neu erzeugen. Die gespeicherten Ausgaben entsprechen keinem automatisch fortgeschriebenen Live-Export.
 
-> **Aktualisierung 29.10.2026:** Die Schaltung nutzt jetzt bei allen 60 generischen Bauteilen KiCad-Standardsymbole (u.a. Device:R/C/L/D_Zener/Crystal/Thermistor_NTC, Transistor_FET:2N7002, Connector_Generic, power:PWR_FLAG). Nur die fünf speziellen Schaltungssymbole bleiben in der PanelLog-Projektbibliothek. Insgesamt sind 198 sichtbare Drahtsegmente und 20 Junctions eingezeichnet; 143 lokale Netlabels verbleiben für bereichsübergreifende Signale. Der automatische Netzvergleich gegen den Originalstand ergibt **193/193 identische Pin-Netzzuordnungen**. **Ein neuer nativer KiCad-10-ERC und eine optische Kontrolle sind noch erforderlich.** Siehe [Konvertierungs- und Validierungsbericht](kicad/STANDARD_SYMBOLS_WIRING_2026-10-29.md).
-
-## KiCad 10 schematic
-
-The native KiCad 10 project is in `hardware/kicad/`:
-
-- `panellog.kicad_sch` - KiCad 10 schematic, format version 20260306
-- `panellog.kicad_pro` - project settings bootstrap
-- `sym-lib-table` - project-local symbol-library mapping
-- `../symbols/panellog.kicad_sym` - KiCad 10 project-local symbols
-
-The native schematic is now the electrical source of truth. Open it with KiCad 10 and save once before the first ERC run so KiCad can normalize any local project defaults.
-
-The schematic is intentionally flat and visually split into power, measurement/switch, and logic/temperature blocks.
-
-## Revision 0 implemented baseline
-
-One node per PV module with:
-
-- PV+ pass-through and INA237 VBUS measurement
-- PV- return path: MPPT- -> Milliohm HoVB4026 1 mOhm shunt -> IPT015N10N5 -> module PV-
-- INA237 differential Kelvin pickup through 10 ohm / 100 nF input filtering
-- LM5163 converting the PV module directly to 3.3 V
-- 9.0 V on / 8.4 V off **typical** UVLO target from 1 MOhm / 200 kOhm (datasheet thresholds and component tolerances apply)
-- ~300 kHz LM5163 RON setting with 27.4 kOhm
-- 68 uH initial buck inductor value
-- Type-3 LM5163 ripple network: 150 kOhm / 3.3 nF / 150 pF
-- ESP32-C6-MINI-1-N4 at 3.3 V with EN RC, GPIO8/GPIO9 pull-ups and UART boot header
-- external two-wire Pt1000 module probe, measured ratiometrically with a 14.7 kOhm precision reference
-- internal 10 kOhm NTC close to Q1 for hotspot/thermal protection
-- passive normally-ON **intended** Q1 gate bias with **R8 47 kΩ**, **JSCJ MMSZ4697 10-V low-current zener (D2)** and **R9 2.2 kΩ**, with MCU-controlled 2N7002 pull-down; hot leakage, actual gate voltage, switching SOA and fault behavior remain unqualified
-- UART pogo interface
-
-The TVS position D1 is intentionally present but DNP. Its actual part number and clamp voltage must not be frozen before the cold-Voc and transient envelope is checked for every deployed module type.
-
-## Shunt / Kelvin representation
-
-RSH1 uses four distinct symbol pins and four PCB nets: 1=MPPT_MINUS,
-2=SHUNT_RETURN, 3=SHUNT_SENSE_P, 4=SHUNT_SENSE_M. The HoVB4026 land pattern
-has independent force/sense pads. Do not bridge sense pads to force copper
-or model them as duplicate pad numbers. The resistive element makes the
-connections inside the physical component.
-
-## PCB placement draft (2026-10-29)
-
-A first native KiCad PCB now exists at [`kicad/panellog.kicad_pcb`](kicad/panellog.kicad_pcb): **61 placed components, 191 pads, 32 nets, 116×86-mm provisional outline, two pilot copper segments**. The external RT1 and ERC PWR_FLAGs remain off-board by design. An independent schematic-derived pad/net check found no mismatches or overlapping pads belonging to different nets. However, **this is NOT a routed, DRC-clean, 20-A/60-V-qualified or fabrication-ready board**. Nine local footprints are prototype candidates only, with major MPN/mechanical issues still open. Mandatory next step is the native KiCad 10 PCB DRC with schematic parity and completion of Kelvin sensing, return current path, buck/RF wiring, copper/via thermal design. See [PCB design status and footprint matrix](kicad/PCB_LAYOUT_REV0_DRAFT.md).
-
-## Layout priorities
-
-1. Treat the 15 A current path as power hardware, not ordinary PCB routing.
-2. Use the exact HoVB4026 four-terminal land geometry and independent Kelvin pickup.
-3. Keep the INA237 sense pair away from the LM5163 switching loop.
-4. Keep Q1 source at local PV-/MCU ground.
-5. Reserve large copper/thermal-via area for IPT015N10N5 and validate behind-module temperature experimentally.
-6. Start with 2 oz copper; final widths/via count are released only after thermal/current-path review.
-7. Keep the ESP32-C6 antenna at a module/enclosure edge and out of the aluminium-rail shadow.
-8. A grounded debugger can bypass the low-side measurement; installed-system UART must be isolated or the PV/inverter circuit disconnected.
-
-## Updated field-installation assumptions (2026-10-29)
-
-The intended PV connection uses only **1–2 m MC4 cables** per single module and infrequent, slow Q1 switching. A continuously imposed >85-V PV-module voltage is not expected from the nominal cold `Voc`, but inductive switching peaks at **Q1 drain**, MPPT input-capacitor resonance, and unrelated induced surges cannot be excluded by `Voc`. Given the explicitly accepted modest surge-protection requirement, **retain D1 as DNP**, reserve Q1-snubber space if possible, and scope the actual transients before ordering a TVS. The provisional 20-A thermal/current case remains. The proposed capacitor/zener/gate value changes and actual LCSC numbers are in [short-lead PV decisions](../docs/design_decisions_short_pv_leads_2026-10-29.md). Native schematic **has now been modified**, see [pin/net static validation](kicad/VALIDATION_2026-10-29.md). D1 and the Q1 RC snubber are **DNP**, not fitted protection.
-
-## Not yet release-frozen
-
-- exact PV cable / MC4-pigtail mechanics and PCB termination
-- TVS / surge-clamp part number
-- exact 68 uH inductor MPN, hot Isat, input MLCC DC-bias derating (C1), input damping capacitor and regulator exposed-pad footprint
-- footprints for HoVB4026, IPT015N10N5 and PV cable interfaces
-- enclosure
-- verify exact JSCJ MMSZ4697 diode characteristics and qualified 2N7002 Q2 MPN; test gate voltage, hot leakage, R9 switching time/SOA and brownout
-- exact Pt1000 probe encapsulation, cable and adhesive/protective patch stack
-
-These depend on cold-Voc/transient validation, PCB geometry and the first thermal/RF prototype. The earlier 15-A power-path envelope is not generally sufficient for the bifacial Solarwatt model; perform a provisional 20-A thermal/current-path design check as described in [the detailed audit](../docs/electrical_audit_2026-10-29.md). The native schematic remains unchanged pending verified part choices.
-
-## Validation status
-
-The schematic file and project-local library have been generated in KiCad 10 syntax and structurally checked for balanced S-expressions, unique UUIDs, complete reference instances, and explicit no-connects on unused ESP32-C6 pins.
-
-A native `kicad-cli sch erc` run is still required after opening/saving with KiCad 10; the current execution environment does not provide KiCad 10. See [datasheet-based electrical audit (2026-10-29)](../docs/electrical_audit_2026-10-29.md) for recalculations, source links and blockers.
-
-
-
-Shutdown feedback: R27/R28 1 MΩ, R29 27.4 kΩ and C25 100 nF on GPIO1. See [design and qualification](../docs/shutdown_feedback.md).
+[Schaltung](../docs/schaltung.md), [Auslegung](../docs/auslegung.md), [Bestückung](../bom/README.md), [3D-Modelle](3dmodels/README.md).

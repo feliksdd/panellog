@@ -1,43 +1,53 @@
-# PanelLog C6 firmware requirements
+# Firmware
 
-Target: ESP32-C6-MINI-1-N4, 4 MB flash, ESP-IDF / ESP Zigbee SDK. This repository does not yet contain a completed C6 firmware port.
+Zielplattform ist ESP32-C6-WROOM-1-N4 mit ESP-IDF / ESP Zigbee SDK. Enthalten ist der Baustein [poa_soft_i2c](components/poa_soft_i2c/) mit Software-I²C und ADS1115-Auswertung. Eine vollständige Anwendung mit Build-Projekt, INA237-Treiber, Kalibrierspeicher und Zigbee-/BatteryFlex-Anbindung ist nicht enthalten.
 
-| Function | GPIO | Module pad |
+## Pinbelegung der Hardware
+
+| Funktion | GPIO | WROOM-Pad |
 |---|---:|---:|
-| Pt1000 ADC | 2 | 5 |
-| NTC ADC | 3 | 6 |
-| VCC monitor ADC | 0 | 12 |
-| Shutdown drain ADC | 1 | 13 |
-| I2C SDA | 6 | 15 |
-| I2C SCL | 7 | 16 |
-| SWITCH_OFF | 18 | 24 |
-| PGOOD | 19 | 25 |
-| INA_ALERT | 20 | 26 |
-| UART RX | 17 | 30 |
-| UART TX | 16 | 31 |
-| Boot strap high | 8 | 22 |
-| BOOT_N | 9 | 23 |
+| Pt1000 ADC | 4 | 4 |
+| NTC ADC | 5 | 5 |
+| Versorgung ADC | 0 | 8 |
+| Q1-Drain ADC | 1 | 9 |
+| INA237 SDA | 6 | 6 |
+| INA237 SCL | 7 | 7 |
+| INA_ALERT | 10 | 11 |
+| SWITCH_OFF | 18 | 16 |
+| PGOOD | 19 | 17 |
+| POA SDA | 22 | 20 |
+| POA SCL | 23 | 21 |
+| UART RX | 17 | 24 |
+| UART TX | 16 | 25 |
+| Boot-Strap HIGH | 8 | 10 |
+| BOOT_N | 9 | 15 |
 
-GPIO8 and GPIO9 have 10 kΩ pull-ups. J4 pin 6 grounds GPIO9 for download mode, with GPIO8 high; pulse EN (J4 pin 4). J4: 1=3V3 reference, 2=target TX, 3=target RX, 4=EN, 5=GND, 6=BOOT_N. Use 3.3 V UART levels. Pin 1 is a voltage reference, not permission to back-power the target. USB D+/D− are not routed. Use isolated programming for an installed PV circuit or disconnect PV and inverter before programming.
+**Der vorhandene POA-Baustein konfiguriert SDA = GPIO21 und SCL = GPIO22. Vor Verwendung an dieser Platine sind die Definitionen `POA_GPIO_SDA` / `POA_GPIO_SCL` an GPIO22/23 anzupassen.**
 
-EN has 10 kΩ / 1 µF reset delay. External 32.768 kHz crystal removed; use internal low-power clock and validate Zigbee sleep timing/current. The existing Nordic firmware design cannot be used unchanged.
+## UART und Download
 
-Default SWITCH_OFF low/high-impedance keeps Q1 conducting through the existing fail-ON gate network. Explicitly drive GPIO18 low before enabling output; preserve this behavior through reboot, watchdog and firmware update. High turns Q2 on and Q1 off. Rate-limit curtailment; no high-frequency PWM operation is qualified.
+| J4-Pin | Signal |
+|---:|---|
+| 1 | 3,3-V-Referenz |
+| 2 | Target TX → Adapter RX |
+| 3 | Target RX ← Adapter TX |
+| 4 | EN / RESET_N |
+| 5 | GND |
+| 6 | BOOT_N |
 
-INA237AIDGSR with C481535 (1 mΩ, four-terminal) is selected. Q1 IPT015N10N5 remains unchanged. Invalidate old INA228/0.7 mΩ calibration records by hardware revision. Port the driver explicitly; do not reuse INA228 register widths/scales.
+3,3-V-UART-Pegel verwenden; Pin 1 dient der Referenz, nicht der ungeprüften Fremdspeisung. Downloadmodus: GPIO9 über Pin 6 LOW halten, GPIO8 HIGH belassen und EN kurz zurücksetzen. USB ist nicht herausgeführt. Im PV-System galvanisch getrennte Programmierung verwenden; siehe [Anwendung](../docs/anwendung.md).
 
-- CONFIG.ADCRANGE=1 (±40.96 mV); raw VSHUNT is signed 16-bit, 1.25 µV/LSB, hence 1.25 mA/LSB at 1 mΩ.
-- VBUS is 16-bit, 3.125 mV/LSB. Preserve IN+ on MPPT_MINUS and IN− on SHUNT_RETURN via separate Kelvin nets.
-- Optional hardware current calculation: CURRENT_LSB=0.002 A; SHUNT_CAL=round(819.2e6 * 0.002 * 0.001 * 4)=6554 (0x199A). Rounding adds about +61 ppm gain, removed by per-unit calibration. ADC range, not CURRENT register range, limits measurement to approximately ±40.96 A; board remains rated for the existing 15 A design target.
-- Prefer calibration from raw VSHUNT: Ical=(Vshunt−Vzero)/R_effective. Calibrate zero and gain at 8–12 A; characterize temperature dependence.
-- Recalculate alert thresholds for INA237 register formats; do not copy raw INA228 settings. Existing 10 Ω/100 nF input filter remains.
-- No hardware energy/charge accumulators or shunt-temperature compensation: integrate calibrated U*I and I with monotonic timestamps, flag gaps and apply any validated temperature correction in MCU software.
-- Start with long conversions and averaging for PV telemetry; verify latency against required alert response on hardware.
+## Messung und Regelung
 
-R20=R24=100 kΩ divides the supply by two. C19=100 nF gives approximately 5 ms time constant; allow ≥25 ms settling, and validate sample acquisition/loading at 50 kΩ source impedance. Apply ESP-IDF ADC calibration at the configured attenuation, average samples and characterize residual nonlinearity. Vrail=2×Vadc_rail; Rpt=14700×Vadc_pt/(Vrail−Vadc_pt). Pt1000 excitation is continuously enabled by R18, not software switched. Retain the precision R18. NTC is a thermal protection/hotspot channel. A C6 system temperature accuracy of ±0.5 °C is not yet demonstrated.
+- `SWITCH_OFF` zunächst LOW setzen, dann als Ausgang aktivieren. HIGH sperrt Q1; LOW/hochohmig gibt den passiven Gatepfad frei. OFF-Frist, Mindestverweilzeiten und Watchdog gehören in die Anwendung.
+- INA237 an Adresse 0x40: `ADCRANGE = 1`, VSHUNT als vorzeichenbehafteter 16-Bit-Wert mit 1,25 µV/LSB; VBUS mit 3,125 mV/LSB. Strom bevorzugt aus kalibriertem Rohwert berechnen: `I = (Vshunt − Vzero) / Reff`.
+- Für Hardware-Stromberechnung ist z. B. CURRENT_LSB = 2 mA mit SHUNT_CAL = 6554 möglich. Konfiguration und Kalibrierung müssen zusammenpassen; das Registerformat dem INA237-Datenblatt entnehmen.
+- INA237 hat keine Energie-/Ladungsakkumulatoren. Kalibriertes U × I und I mit monotonen Zeitstempeln integrieren; Lücken, Reset und veraltete Daten kennzeichnen.
+- ADC-Spannungen kalibrieren, Einschwingzeiten und Quellimpedanz berücksichtigen. Pt1000 nach IEC 60751, NTC nach Hersteller-R/T-Tabelle auswerten; offene/kurzgeschlossene Sensoren und unplausible Nenner als ungültig behandeln. Formeln siehe [Auslegung](../docs/auslegung.md).
+- Abschaltrückmeldung aus Drainspannung und Strom gemeinsam bilden; bei Dunkelheit/ungültigen Daten „unbekannt“ melden. Ansatz für Schwellen und Zeiten siehe [Anwendung](../docs/anwendung.md).
 
-Power budget: LM5163 is rated 500 mA, not 1 A. Validate radio bursts and 3.3 V droop across the complete input range, hot enclosure and sleep/wake transitions. Deep sleep numbers for the bare chip are not a board-level guarantee. External sensors, INA237, dividers and radio duty cycle contribute.
+## POA-Baustein
 
-Shutdown voltage/current plausibility, thresholds and unknown-state handling: [shutdown feedback](../docs/shutdown_feedback.md). These are implementation requirements, not a completed driver.
+`poa_i2c_init()`, `poa_i2c_recover()` und `poa_read_sample()` bedienen einen unabhängigen Open-Drain-Bus mit externen Pull-ups, nominell 25 kHz und ADS1115-Adresse 0x48. Der Baustein liest Shunt differentiell AIN0−AIN1 (±0,256 V) sowie NTC und Versorgung an AIN2/AIN3 (±4,096 V). Er mittelt acht Strommessungen und liefert Messzeit und Kalibrierkennzeichen.
 
-Internal NTC: Rntc=10000*Vntc/(2*Vcc_adc-Vntc), after ADC calibration and with actual resistor-ratio corrections where available. R22 is not part of the DC divider. Use the TDK R/T table and invalid/open/short handling; see [temperature review](../docs/internal_temperature_review.md).
+Defaultwerte sind 1-Ω-Shunt, 58,6 mA Referenzzellenstrom bei 25 °C und 1000 W/m² sowie eine NTC-Beta-Näherung. Verbindlich sind die tatsächlich bestückte Gegenstelle und deren Kalibrierung. Aufgabenintegration, Buszugriffsschutz, Fehlerbehandlung und Zigbee-Abbildung fehlen in der vollständigen Anwendung; der Baustein ist nicht als fertiges PanelLog-Image nutzbar.

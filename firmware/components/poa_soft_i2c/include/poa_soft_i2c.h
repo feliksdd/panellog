@@ -7,9 +7,10 @@
 extern "C" {
 #endif
 
-/* Dedicated software I2C: ESP32-C6-MINI-1 pad 27 / GPIO21 = SDA;
- * pad 28 / GPIO22 = SCL. Not shared with INA237 GPIO6/7.
- * External pull-ups REQUIRED. */
+/* Dedicated software I2C; external pull-ups required.
+ * Defaults below use GPIO21/22. The WROOM-1 PCB uses GPIO22 (pad 20)
+ * for SDA and GPIO23 (pad 21) for SCL; adapt these definitions before use.
+ * Not shared with INA237 GPIO6/7. See firmware/README.md. */
 #define POA_GPIO_SDA 21
 #define POA_GPIO_SCL 22
 #define POA_ADS1115_ADDR 0x48
