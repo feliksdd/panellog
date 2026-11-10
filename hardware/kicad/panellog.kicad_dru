@@ -1,6 +1,0 @@
-(version 1)
-# TI DRL-5 / official KiCad SOT-553: 0.5 mm pitch, 0.35 mm pad width.
-# Only intra-footprint pad clearance; board-level spacing remains 0.20 mm.
-(rule "D3 manufacturer DRL5 pad clearance"
- (condition "A.Type == 'Pad' && B.Type == 'Pad' && A.memberOfFootprint('D3') && B.memberOfFootprint('D3')")
- (constraint clearance (min 0.15mm)))
