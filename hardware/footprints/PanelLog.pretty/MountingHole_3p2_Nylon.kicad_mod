@@ -1,5 +1,5 @@
 (footprint "MountingHole_3p2_Nylon" (version 20241229) (generator "pcbnew") (layer "F.Cu")
-(descr "3.2mm NPTH for insulated spacer; 7mm copper keepout implemented on board")
+(descr "3.2mm NPTH; 7mm assembly courtyard only; use insulated screw-head bearing")
 (attr board_only exclude_from_pos_files exclude_from_bom)
 (property "Reference" "H?" (at 0 -4) (layer "F.SilkS") (effects (font (size .8 .8) (thickness .12))))
 (property "Value" "MountingHole_3p2_Nylon" (at 0 4) (layer "F.Fab") (hide yes) (effects (font (size .8 .8) (thickness .12))))

@@ -19,13 +19,7 @@ MC4-Verbindungen nur stromlos trennen. Q1 ersetzt keine Wartungstrennstelle: Plu
 
 ## Gehäuse und Einbau
 
-Kradex Z74JH ABS mit Deckeldichtung; PCB 118 × 90 × 1,6 mm. Die Platine liegt auf den inneren Kunststoffaufnahmen. Im aktuellen PCB sind H1, H3 und H4 als Befestigungslöcher vorhanden, jeweils Ø 3,2 mm; die freie vierte Gehäuseaufnahme ist bei der Montage zu berücksichtigen.
-
-| Loch | Abstand von linker / oberer Platinenkante |
-|---|---|
-| H1 | 9,452 / 4,875 mm |
-| H3 | 9,452 / 84,975 mm |
-| H4 | 101,498 / 84,975 mm |
+Kradex Z74JH ABS mit Deckeldichtung; PCB 118 × 90 × 1,6 mm. Die Platine liegt auf vier inneren Domen und ist an H1, H3 und H4 verschraubt. Lochbild, Schraubenauswahl, Isolierscheiben, Freiräume und CAD-Daten stehen unter [Gehäuse und Befestigung](gehaeuse.md).
 
 Passende Kunststoffschrauben verwenden; Einschraublänge am Gehäuse festlegen. Unterseitige Lötstellen und Drahtenden dürfen den Boden nicht berühren. Für vier einzelne PV-Adern sind passende Kabelverschraubungen, für Pt1000 und optional POA jeweils eigene dichte Durchführungen erforderlich. Bohrpositionen nach Leitung, Gegenmutter, Biegeradius und Deckeldichtung festlegen. Die Schutzart des Leergehäuses überträgt sich nicht automatisch auf den gebohrten Aufbau.
 

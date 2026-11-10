@@ -281,7 +281,7 @@
 		(layer "F.Cu")
 		(uuid "0860d671-89d8-4f73-a05b-7e7a5f712945")
 		(at 90.452 49.375)
-		(descr "3.2mm NPTH for insulated spacer; 7mm copper keepout implemented on board")
+		(descr "3.2mm NPTH; 7mm assembly courtyard only; use insulated screw-head bearing")
 		(property "Reference" "H1"
 			(at 0 -4 0)
 			(layer "F.SilkS")
@@ -349,6 +349,19 @@
 			(uuid "af381288-a4a9-45fb-a008-d19216b6c95d")
 		)
 		(embedded_fonts no)
+
+		(model "${KIPRJMOD}/../3dmodels/manufacturer/Kradex_Z74_base.step"
+			(opacity 1)
+			(offset (xyz 45.848 -40.125 46.05))
+			(scale (xyz 1 1 1))
+			(rotate (xyz 0 0 0))
+		)
+		(model "${KIPRJMOD}/../3dmodels/manufacturer/Kradex_Z74_cover.step"
+			(opacity 0.25)
+			(offset (xyz 45.848 -40.125 46.05))
+			(scale (xyz 1 1 1))
+			(rotate (xyz 0 0 0))
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -3037,7 +3050,7 @@
 		(layer "F.Cu")
 		(uuid "62974a95-0eef-4c10-bdd9-0cd97f6b21cd")
 		(at 182.498 129.475)
-		(descr "3.2mm NPTH for insulated spacer; 7mm copper keepout implemented on board")
+		(descr "3.2mm NPTH; 7mm assembly courtyard only; use insulated screw-head bearing")
 		(property "Reference" "H4"
 			(at 0 -4 0)
 			(layer "F.SilkS")
@@ -3110,7 +3123,7 @@
 		(layer "F.Cu")
 		(uuid "6800e183-53f1-402b-9a7a-60c2f8e862dc")
 		(at 90.452 129.475)
-		(descr "3.2mm NPTH for insulated spacer; 7mm copper keepout implemented on board")
+		(descr "3.2mm NPTH; 7mm assembly courtyard only; use insulated screw-head bearing")
 		(property "Reference" "H3"
 			(at 0 -4 0)
 			(layer "F.SilkS")
@@ -9947,7 +9960,7 @@
 			)
 		)
 		(embedded_fonts no)
-		(model "/home/felix/Eigene_Projekte/Garten_PV/panellog/hardware/3dmodels/manufacturer/CDRH127_470M.step"
+		(model "${KIPRJMOD}/../3dmodels/manufacturer/CDRH127_470M.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -11405,7 +11418,7 @@
 			(uuid "15a54d35-709c-49cf-bbc2-4ae11b4a8edd")
 		)
 		(embedded_fonts no)
-		(model "/home/felix/Eigene_Projekte/Garten_PV/panellog/hardware/3dmodels/manufacturer/BVB-M-R0007.STEP"
+		(model "${KIPRJMOD}/../3dmodels/manufacturer/BVB-M-R0007.STEP"
 			(offset
 				(xyz 0 3.4 2.5)
 			)

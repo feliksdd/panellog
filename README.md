@@ -31,6 +31,7 @@ Der Spannungsentwurf umfasst ein einzelnes Modul bis 60 V DC; die Versorgung sta
 | Schaltungsfunktion und Bauteilwerte | [Schaltung](docs/schaltung.md) |
 | Berechnungen, Messbereiche und Genauigkeit | [Auslegung](docs/auslegung.md) |
 | Verdrahtung, Montage, Kalibrierung und Betrieb | [Anwendung](docs/anwendung.md) |
+| Gehäuse, Lochbild und 3D-Einbindung | [Gehäuse](docs/gehaeuse.md) |
 | POA-Kabel und Bestückungsvarianten | [POA-Schnittstelle](docs/poa_schnittstelle.md) |
 | KiCad-Projekt und Lagenaufbau | [Hardware](hardware/README.md) |
 | Stückliste und Fertigungsunterlagen | [Bestückung](bom/README.md) |

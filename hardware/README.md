@@ -13,7 +13,7 @@ Das KiCad-10-Projekt liegt in [kicad/panellog.kicad_pro](kicad/panellog.kicad_pr
 
 ## Platine
 
-118 × 90 × 1,6 mm, vier Kupferlagen. Der Umriss liegt in KiCad bei X = 81…199 mm und Y = 44,5…134,5 mm. Vorhandene Befestigungslöcher: H1, H3, H4; siehe [Montage](../docs/anwendung.md).
+118 × 90 × 1,6 mm, vier Kupferlagen. Der Umriss liegt in KiCad bei X = 81…199 mm und Y = 44,5…134,5 mm. Vorhandene Befestigungslöcher: H1, H3, H4; siehe [Gehäuse und Montage](../docs/gehaeuse.md). Unterteil und Deckel sind als 3D-Modelle an H1 eingebunden.
 
 | Lage | Funktion |
 |---|---|
