@@ -6001,6 +6001,110 @@
 			)
 			(embedded_fonts no)
 		)
+
+(symbol "PanelLog:TPS2553DBV"
+	(pin_names
+		(offset 1.016))
+	(in_bom yes)
+	(on_board yes)
+	(property "Reference" "U"
+		(at 0 12.7 0)
+		(effects
+			(font
+				(size 1.27 1.27))))
+	(property "Value" "TPS2553DBV"
+		(at 0 10.16 0)
+		(effects
+			(font
+				(size 1.27 1.27))))
+	(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+		(at 0 0 0)
+		(effects
+			(font
+				(size 1.27 1.27))
+			(hide yes)))
+	(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps2553.pdf"
+		(at 0 0 0)
+		(effects
+			(font
+				(size 1.27 1.27))
+			(hide yes)))
+	(symbol "TPS2553DBV_0_1"
+		(rectangle
+			(start -10.16 -10.16)
+			(end 10.16 10.16)
+			(stroke
+				(width 0.254)
+				(type default))
+			(fill
+				(type background))))
+	(symbol "TPS2553DBV_1_1"
+		(pin power_in line
+			(at -15.24 5.08 0)
+			(length 5.08)
+			(name "IN"
+				(effects
+					(font
+						(size 1.0 1.0))))
+			(number "1"
+				(effects
+					(font
+						(size 1.0 1.0)))))
+		(pin power_in line
+			(at 0 -15.24 90)
+			(length 5.08)
+			(name "GND"
+				(effects
+					(font
+						(size 1.0 1.0))))
+			(number "2"
+				(effects
+					(font
+						(size 1.0 1.0)))))
+		(pin input line
+			(at -15.24 0 0)
+			(length 5.08)
+			(name "EN"
+				(effects
+					(font
+						(size 1.0 1.0))))
+			(number "3"
+				(effects
+					(font
+						(size 1.0 1.0)))))
+		(pin open_collector line
+			(at 15.24 -5.08 180)
+			(length 5.08)
+			(name "~{FAULT}"
+				(effects
+					(font
+						(size 1.0 1.0))))
+			(number "4"
+				(effects
+					(font
+						(size 1.0 1.0)))))
+		(pin input line
+			(at -15.24 -5.08 0)
+			(length 5.08)
+			(name "ILIM"
+				(effects
+					(font
+						(size 1.0 1.0))))
+			(number "5"
+				(effects
+					(font
+						(size 1.0 1.0)))))
+		(pin power_out line
+			(at 15.24 5.08 180)
+			(length 5.08)
+			(name "OUT"
+				(effects
+					(font
+						(size 1.0 1.0))))
+			(number "6"
+				(effects
+					(font
+						(size 1.0 1.0)))))))
 	)
 	(text "POWER: LM5163 0...60 V design target -> 3.3 V"
 		(exclude_from_sim no)
@@ -8251,16 +8355,7 @@
 		)
 		(uuid "9d5db0fd-e57a-4787-a572-c0954f40c958")
 	)
-	(wire
-		(pts
-			(xy 236.22 88.9) (xy 236.22 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a0ce9adc-9d9f-4f8e-bcf0-4227d1c845b6")
-	)
+
 	(wire
 		(pts
 			(xy 171.45 69.85) (xy 171.45 74.93)
@@ -8921,16 +9016,7 @@
 		)
 		(uuid "f8c963b1-2fef-4696-b521-bb21b94540bf")
 	)
-	(wire
-		(pts
-			(xy 233.68 88.9) (xy 236.22 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f8d44dbd-0262-42af-93ed-ce5f628d9aec")
-	)
+
 	(wire
 		(pts
 			(xy 73.66 69.85) (xy 73.66 68.58)
@@ -9684,7 +9770,7 @@
 			)
 		)
 	)
-	(global_label "+3V3"
+	(global_label "POA_VDD_CABLE"
 		(shape input)
 		(at 252.73 147.32 0)
 		(effects
@@ -14485,83 +14571,7 @@
 			)
 		)
 	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 234.95 125.73 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "1f2d9a49-b1c6-4472-9382-c04af174bf51")
-		(property "Reference" "#PWR042"
-			(at 234.95 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 238.506 123.952 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 234.95 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 234.95 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 234.95 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "fa89e469-07ab-481e-8689-b76fd73a7f08")
-		)
-		(instances
-			(project "panellog"
-				(path "/00000000-0000-4000-8000-000000000001"
-					(reference "#PWR042")
-					(unit 1)
-				)
-			)
-		)
-	)
+
 	(symbol
 		(lib_id "Device:R")
 		(at 129.54 69.85 90)
@@ -17935,203 +17945,149 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
+	(lib_id "Device:R")
+	(at 233.68 92.71 0)
+	(unit 1)
+	(body_style 1)
+	(exclude_from_sim no)
+	(in_bom yes)
+	(on_board yes)
+	(in_pos_files yes)
+	(dnp yes)
+	(uuid "a501b715-0000-4000-8000-000000000003")
+	(property "Reference" "R30"
+		(at 233.68 92.964 90)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "Value" "2.2k DNP BUFFER"
+		(at 231.902 96.774 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(at 241.68 95.25 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "Datasheet" ""
 		(at 233.68 92.71 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a501b715-0000-4000-8000-000000000003")
-		(property "Reference" "R30"
-			(at 233.68 92.964 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "2.2k"
-			(at 231.902 96.774 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 241.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 233.68 92.71 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 233.68 92.71 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0603WAF2201T5E"
-			(at 241.68 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" "C4190"
-			(at 241.68 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a501b715-0000-4000-8000-000000000004")
-		)
-		(pin "2"
-			(uuid "a501b715-0000-4000-8000-000000000005")
-		)
-		(instances
-			(project "panellog"
-				(path "/00000000-0000-4000-8000-000000000001"
-					(reference "R30")
-					(unit 1)
-				)
-			)
-		)
-	)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27))))
+	(property "Description" ""
+		(at 233.68 92.71 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27))))
+	(property "MPN" "0603WAF2201T5E"
+		(at 241.68 97.79 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "LCSC" "C4190"
+		(at 241.68 100.33 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(pin "1"
+		(uuid "a501b715-0000-4000-8000-000000000004"))
+	(pin "2"
+		(uuid "a501b715-0000-4000-8000-000000000005"))
+	(instances
+		(project "panellog"
+			(path "/00000000-0000-4000-8000-000000000001"
+				(reference "R30")
+				(unit 1)))))
 	(symbol
-		(lib_id "Device:R")
+	(lib_id "Device:R")
+	(at 229.87 92.71 0)
+	(unit 1)
+	(body_style 1)
+	(exclude_from_sim no)
+	(in_bom yes)
+	(on_board yes)
+	(in_pos_files yes)
+	(dnp yes)
+	(uuid "a501b715-0000-4000-8000-000000000008")
+	(property "Reference" "R31"
+		(at 229.87 92.71 90)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "Value" "2.2k DNP BUFFER"
+		(at 228.092 96.774 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(at 237.87 95.25 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "Datasheet" ""
 		(at 229.87 92.71 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a501b715-0000-4000-8000-000000000008")
-		(property "Reference" "R31"
-			(at 229.87 92.71 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "2.2k"
-			(at 228.092 96.774 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 237.87 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 229.87 92.71 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 229.87 92.71 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0603WAF2201T5E"
-			(at 237.87 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" "C4190"
-			(at 237.87 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a501b715-0000-4000-8000-000000000009")
-		)
-		(pin "2"
-			(uuid "a501b715-0000-4000-8000-000000000010")
-		)
-		(instances
-			(project "panellog"
-				(path "/00000000-0000-4000-8000-000000000001"
-					(reference "R31")
-					(unit 1)
-				)
-			)
-		)
-	)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27))))
+	(property "Description" ""
+		(at 229.87 92.71 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27))))
+	(property "MPN" "0603WAF2201T5E"
+		(at 237.87 97.79 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "LCSC" "C4190"
+		(at 237.87 100.33 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(pin "1"
+		(uuid "a501b715-0000-4000-8000-000000000009"))
+	(pin "2"
+		(uuid "a501b715-0000-4000-8000-000000000010"))
+	(instances
+		(project "panellog"
+			(path "/00000000-0000-4000-8000-000000000001"
+				(reference "R31")
+				(unit 1)))))
 	(symbol
 		(lib_id "Device:R")
 		(at 240.03 102.87 90)
@@ -18331,302 +18287,150 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
+	(lib_id "Device:R")
+	(at 222.25 129.54 0)
+	(unit 1)
+	(body_style 1)
+	(exclude_from_sim no)
+	(in_bom yes)
+	(on_board yes)
+	(in_pos_files yes)
+	(dnp no)
+	(uuid "a501b715-0000-4000-8000-000000000023")
+	(property "Reference" "R34"
+		(at 230.25 127 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "Value" "2.2k"
+		(at 230.25 129.54 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(at 230.25 132.08 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "Datasheet" ""
 		(at 222.25 129.54 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "a501b715-0000-4000-8000-000000000023")
-		(property "Reference" "R34"
-			(at 230.25 127 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "1k DNP BUFFER"
-			(at 230.25 129.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 230.25 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 222.25 129.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 222.25 129.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0603WAF1001T5E"
-			(at 230.25 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 230.25 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a501b715-0000-4000-8000-000000000024")
-		)
-		(pin "2"
-			(uuid "a501b715-0000-4000-8000-000000000025")
-		)
-		(instances
-			(project "panellog"
-				(path "/00000000-0000-4000-8000-000000000001"
-					(reference "R34")
-					(unit 1)
-				)
-			)
-		)
-	)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27))))
+	(property "Description" ""
+		(at 222.25 129.54 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27))))
+	(property "MPN" "0603WAF2201T5E"
+		(at 230.25 134.62 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "LCSC" "C4190"
+		(at 230.25 137.16 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(pin "1"
+		(uuid "a501b715-0000-4000-8000-000000000024"))
+	(pin "2"
+		(uuid "a501b715-0000-4000-8000-000000000025"))
+	(instances
+		(project "panellog"
+			(path "/00000000-0000-4000-8000-000000000001"
+				(reference "R34")
+				(unit 1)))))
 	(symbol
-		(lib_id "Device:R")
+	(lib_id "Device:R")
+	(at 246.38 129.54 0)
+	(unit 1)
+	(body_style 1)
+	(exclude_from_sim no)
+	(in_bom yes)
+	(on_board yes)
+	(in_pos_files yes)
+	(dnp no)
+	(uuid "a501b715-0000-4000-8000-000000000028")
+	(property "Reference" "R35"
+		(at 254.38 127 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "Value" "2.2k"
+		(at 254.38 129.54 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(at 254.38 132.08 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "Datasheet" ""
 		(at 246.38 129.54 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "a501b715-0000-4000-8000-000000000028")
-		(property "Reference" "R35"
-			(at 254.38 127 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "1k DNP BUFFER"
-			(at 254.38 129.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 254.38 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 246.38 129.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 246.38 129.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0603WAF1001T5E"
-			(at 254.38 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" "C21190"
-			(at 254.38 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a501b715-0000-4000-8000-000000000029")
-		)
-		(pin "2"
-			(uuid "a501b715-0000-4000-8000-000000000030")
-		)
-		(instances
-			(project "panellog"
-				(path "/00000000-0000-4000-8000-000000000001"
-					(reference "R35")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 240.03 97.79 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a501b715-0000-4000-8000-000000000033")
-		(property "Reference" "R36"
-			(at 241.554 95.758 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "0R"
-			(at 238.506 99.822 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 242.57 89.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 240.03 97.79 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 240.03 97.79 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0603WAF0000T5E"
-			(at 245.11 89.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" "C21189"
-			(at 247.65 89.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a501b715-0000-4000-8000-000000000034")
-		)
-		(pin "2"
-			(uuid "a501b715-0000-4000-8000-000000000035")
-		)
-		(instances
-			(project "panellog"
-				(path "/00000000-0000-4000-8000-000000000001"
-					(reference "R36")
-					(unit 1)
-				)
-			)
-		)
-	)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27))))
+	(property "Description" ""
+		(at 246.38 129.54 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27))))
+	(property "MPN" "0603WAF2201T5E"
+		(at 254.38 134.62 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(property "LCSC" "C4190"
+		(at 254.38 137.16 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1 1))))
+	(pin "1"
+		(uuid "a501b715-0000-4000-8000-000000000029"))
+	(pin "2"
+		(uuid "a501b715-0000-4000-8000-000000000030"))
+	(instances
+		(project "panellog"
+			(path "/00000000-0000-4000-8000-000000000001"
+				(reference "R35")
+				(unit 1)))))
+
 	(symbol
 		(lib_id "PanelLog:P82B715")
 		(at 234.95 137.16 0)
@@ -20931,4 +20735,245 @@
 		)
 	)
 	(embedded_fonts no)
+
+	(symbol
+	(lib_id "PanelLog:TPS2553DBV")
+	(at 160.02 130.81 0)
+	(unit 1)
+	(in_bom yes)
+	(on_board yes)
+	(dnp no)
+	(uuid "b15532d0-ea2a-4403-a77f-5b0664c06586")
+	(property "Reference" "U5"
+		(at 160.02 114.3 0)
+		(effects
+			(font
+				(size 1.0 1.0))))
+	(property "Value" "TPS2553DBVR / 75mA typ"
+		(at 160.02 116.84 0)
+		(effects
+			(font
+				(size 1.0 1.0))))
+	(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+		(at 160.02 123.19 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(hide yes)))
+	(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps2553.pdf"
+		(at 160.02 123.19 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(hide yes)))
+	(property "LCSC" "C55266"
+		(at 160.02 123.19 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(hide yes)))
+	(property "MPN" "TPS2553DBVR"
+		(at 160.02 123.19 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(hide yes)))
+	(instances
+		(project "panellog"
+			(path "/00000000-0000-4000-8000-000000000001"
+				(reference "U5")
+				(unit 1)))))
+	(label "+3V3"
+	(at 144.78 125.73 0)
+	(effects
+		(font
+			(size 0.95 0.95))
+		(justify right))
+	(uuid "f4ff38ec-fa00-4c94-8a64-e2985f965da9"))
+	(label "GND"
+	(at 160.02 146.05 0)
+	(effects
+		(font
+			(size 0.95 0.95))
+		(justify left))
+	(uuid "a26db9a2-52bd-4b8c-b4a8-ad5c61d9c498"))
+	(label "+3V3"
+	(at 144.78 130.81 0)
+	(effects
+		(font
+			(size 0.95 0.95))
+		(justify right))
+	(uuid "53b21d16-4724-4409-915b-34c38dd3af20"))
+	(label "+3V3"
+	(at 144.78 135.89 0)
+	(effects
+		(font
+			(size 0.95 0.95))
+		(justify right))
+	(uuid "2384f815-9f51-4ec2-a154-4d77a0faa817"))
+	(label "POA_VDD_CABLE"
+	(at 175.26 125.73 0)
+	(effects
+		(font
+			(size 0.95 0.95))
+		(justify left))
+	(uuid "366c3ac6-c063-44da-81d6-bc9bcb20d49f"))
+	(no_connect
+	(at 175.26 135.89)
+	(uuid "4a21101f-47e8-40e3-a54f-fa92dddbd6a5"))
+	(symbol
+	(lib_id "Device:C")
+	(at 120.65 109.22 0)
+	(unit 1)
+	(in_bom yes)
+	(on_board yes)
+	(dnp no)
+	(uuid "e9503ff6-c6b3-4338-9bd4-00ae1309bf5e")
+	(property "Reference" "C27"
+		(at 123.19000000000001 107.95 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(justify left)))
+	(property "Value" "1uF"
+		(at 123.19000000000001 109.855 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(justify left)))
+	(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(at 123.19000000000001 107.95 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(justify left)
+			(hide yes)))
+	(property "Datasheet" ""
+		(at 123.19000000000001 107.95 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(justify left)
+			(hide yes)))
+	(property "LCSC" "C15849"
+		(at 123.19000000000001 107.95 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(justify left)
+			(hide yes)))
+	(property "MPN" "CL10B105KP8NNNC"
+		(at 123.19000000000001 107.95 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(justify left)
+			(hide yes)))
+	(instances
+		(project "panellog"
+			(path "/00000000-0000-4000-8000-000000000001"
+				(reference "C27")
+				(unit 1)))))
+	(label "+3V3"
+	(at 120.65 105.41 0)
+	(effects
+		(font
+			(size 0.95 0.95))
+		(justify left))
+	(uuid "330e37cf-3568-449b-ab81-9f2b8f4d145b"))
+	(label "GND"
+	(at 120.65 113.03 0)
+	(effects
+		(font
+			(size 0.95 0.95))
+		(justify left))
+	(uuid "5d8aaa03-8721-4bf8-931c-ce3349a2bc19"))
+	(symbol
+	(lib_id "Device:C")
+	(at 195.58 132.08 0)
+	(unit 1)
+	(in_bom yes)
+	(on_board yes)
+	(dnp no)
+	(uuid "5be42e54-bb30-44ed-8c34-e511435ef9d3")
+	(property "Reference" "C28"
+		(at 198.12 130.81 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(justify left)))
+	(property "Value" "1uF"
+		(at 198.12 132.715 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(justify left)))
+	(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(at 198.12 130.81 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(justify left)
+			(hide yes)))
+	(property "Datasheet" ""
+		(at 198.12 130.81 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(justify left)
+			(hide yes)))
+	(property "LCSC" "C15849"
+		(at 198.12 130.81 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(justify left)
+			(hide yes)))
+	(property "MPN" "CL10B105KP8NNNC"
+		(at 198.12 130.81 0)
+		(effects
+			(font
+				(size 1.0 1.0))
+			(justify left)
+			(hide yes)))
+	(instances
+		(project "panellog"
+			(path "/00000000-0000-4000-8000-000000000001"
+				(reference "C28")
+				(unit 1)))))
+	(label "POA_VDD_CABLE"
+	(at 195.58 128.27 0)
+	(effects
+		(font
+			(size 0.95 0.95))
+		(justify left))
+	(uuid "ad230ce5-74ef-4ce7-9546-5aeca71236af"))
+	(label "GND"
+	(at 195.58 135.89 0)
+	(effects
+		(font
+			(size 0.95 0.95))
+		(justify left))
+	(uuid "eb1af21a-38c3-41ea-be49-803effff3afd"))
+	(text "POA CABLE SUPPLY: ILIM=IN -> 50...100mA, 75mA typ.\nR36 removed. DIRECT: R30/R31 DNP; R34/R35=2.2k on protected rail.\nNo reset immunity claim: test 3V3 during cable short + ESP32 TX."
+	(at 106.68 175.26 0)
+	(effects
+		(font
+			(size 1.0 1.0))
+		(justify left))
+	(uuid "f377c5a9-c457-4bc0-b161-85ea38c20adf"))
+	(label "POA_VDD_CABLE"
+	(at 234.95 125.73 0)
+	(effects
+		(font
+			(size 0.95 0.95))
+		(justify left))
+	(uuid "d9948b79-f08b-439f-b551-848c5a0c606d"))
+	(label "POA_VDD_CABLE"
+	(at 261.62 97.79 0)
+	(effects
+		(font
+			(size 0.95 0.95))
+		(justify left))
+	(uuid "5a9bd05a-8d02-4d83-8efa-9eb7e026549f"))
 )

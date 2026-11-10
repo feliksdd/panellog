@@ -1,0 +1,15 @@
+Ref,Value,MPN,LCSC,Assembly,Notes
+C26,100nF 50V X7R,CL10B104KB8NNNC,C1591,DNP,Schematic only; production exports retain prior RC0
+R30,2.2k DNP BUFFER,0603WAF2201T5E,C4190,DNP,Schematic only; production exports retain prior RC0
+R31,2.2k DNP BUFFER,0603WAF2201T5E,C4190,DNP,Schematic only; production exports retain prior RC0
+R32,0R,0603WAF0000T5E,C21189,FITTED,Schematic only; production exports retain prior RC0
+R33,0R,0603WAF0000T5E,C21189,FITTED,Schematic only; production exports retain prior RC0
+R34,2.2k,0603WAF2201T5E,C4190,FITTED,Schematic only; production exports retain prior RC0
+R35,2.2k,0603WAF2201T5E,C4190,FITTED,Schematic only; production exports retain prior RC0
+U4,P82B715DR,P82B715DR,C2649394,DNP,Schematic only; production exports retain prior RC0
+J8,POA 3m / 6 wire pads,,,FITTED,Schematic only; production exports retain prior RC0
+D3,TPD2E2U06DRLR,TPD2E2U06DRLR,C1972959,FITTED,Schematic only; production exports retain prior RC0
+U5,TPS2553DBVR / 75mA typ,TPS2553DBVR,C55266,FITTED,Schematic only; production exports retain prior RC0
+C27,1uF,CL10B105KP8NNNC,C15849,FITTED,Schematic only; production exports retain prior RC0
+C28,1uF,CL10B105KP8NNNC,C15849,FITTED,Schematic only; production exports retain prior RC0
+R36,REMOVED,,,REMOVED,No unprotected supply bypass

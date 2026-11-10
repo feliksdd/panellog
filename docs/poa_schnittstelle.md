@@ -1,42 +1,25 @@
-# POA-Schnittstelle
+# POA-I²C-Schnittstelle — aktualisiert 2026-11-10
 
-Ein optionaler [POA-Sensor](https://github.com/feliksdd/poa-sensor) besteht aus Referenzzelle, Temperaturmessung und ADC. PanelLog versorgt genau einen Sensor über J8 und liest ihn an einem separaten I²C-Bus aus. INA237 und POA teilen keine Datenleitungen.
+Die Anschlussentscheidung ist umgesetzt: maximal ein POA pro PanelLog, maximal 3 m, drei verdrillte Paare, direkte Lötpads. Maßgeblich ist [POA architecture.md](https://github.com/feliksdd/poa-sensor/blob/main/docs/architecture.md), Revision 0.3.
 
-## Kabel und Pins
+## Aktuelle Pins
 
-| J8-Pin | Signal | Verdrilltes Paar |
-|---:|---|---|
-| 1 | 3,3 V über R36 | Mit Pin 2 |
-| 2 | GND | Versorgung |
-| 3 | SDA, GPIO22 / WROOM-Pad 20 | Mit Pin 4 |
-| 4 | GND | SDA-Rückleiter |
-| 5 | SCL, GPIO23 / WROOM-Pad 21 | Mit Pin 6 |
-| 6 | GND | SCL-Rückleiter |
+SDA: GPIO22 / C6-WROOM-Modulpad 20. SCL: GPIO23 / Modulpad 21. J8: 1=geschützte 3V3, 2=GND, 3=SDA, 4=GND, 5=SCL, 6=GND; jeweils 1/2, 3/4 und 5/6 verdrillen und 1:1 mit POA J1 verbinden. INA237 bleibt auf GPIO6/GPIO7. Vorherige MINI-Angaben GPIO21/22 nicht mehr verwenden. Bestehende Firmware ist damit noch nicht automatisch angepasst; diese Änderung enthält keine Firmwareentwicklung.
 
-Drei verdrillte Paare, UV-/außentaugliches Kabel, bis 3 m als Auslegungsziel. Gegenstelle nach Signalnamen anschließen. Kabel von PV-Leistungspfad und Schaltknoten fernhalten. GND entspricht dem Modul-Minuspol; die Schnittstelle ist nicht galvanisch getrennt. Ein Schirm darf keine Verbindung zu Modulrahmen/PE oder anderen Modulmassen herstellen. Am Sensor isoliert lassen; eine einseitige lokale GND-Anbindung setzt eine passende Erdungs-/EMV-Auslegung voraus.
+## Versorgung und DIRECT-Bestückung
 
-## Bestückung
+R36 ist aus dem Schaltplan entfernt. U5 TPS2553DBVR (C55266), SOT-23-6: IN=1/EN=3/ILIM=5 an +3V3; GND=2; OUT=6 an POA_VDD_CABLE; FAULT=4 NC. ILIM direkt an IN: 50–100 mA, typisch 75 mA laut TI. C27=1 µF an IN; C28=1 µF an OUT. Der begrenzte Ausgang speist J8.1 und R34/R35. Keine Resetfestigkeit ohne Kurzschluss-/Sendeburstmessung behaupten.
 
-| Bauteil | Direkt, Standard | Gepuffert, Option |
-|---|---|---|
-| U4 P82B715DR | Unbestückt | Bestückt |
-| C26 100 nF | Unbestückt | Bestückt |
-| R30/R31, je 2,2 kΩ | Bestückt | Bestückt |
-| R32/R33, je 0 Ω | Bestückt | Unbestückt |
-| R34/R35, je 1 kΩ | Unbestückt | Bestückt, mit Gegenstelle abstimmen |
-| R36, 0 Ω Versorgung | Bestückt | Bestückt |
-| D3 TPD2E2U06DRLR | Bestückt | Bestückt |
+DIRECT: R32/R33=0 Ω bestückt; R34/R35=2,2 kΩ bestückt an POA_VDD_CABLE; R30/R31, U4 und C26 unbestückt. Die Kabel-Pull-ups gehen somit beim Einbruch der geschützten Versorgung mit herunter. MCU ausschließlich Open-Drain/hochohmig betreiben, interne Pull-ups aus. Auf dem POA sind R6/R7 bestückt und sämtliche zusätzlichen Pull-ups unbestückt.
 
-Direkte Brücken und Puffer dürfen nicht gleichzeitig bestückt sein. Gepufferter Betrieb benötigt an beiden Kabelenden einen P82B715, lokale S-seitige Pull-ups und abgestimmte L-seitige Pull-ups. U4: Pin 2 Lx/SDA-Kabel, 3 Sx/SDA-MCU, 4 GND, 6 Sy/SCL-MCU, 7 Ly/SCL-Kabel, 8 VCC; 1/5 unbeschaltet.
+## Option BUFFERED
 
-## Elektrische Auslegung
+An beiden Enden alle direkten Bypässe entfernen (Host R32/R33; POA R6/R7). Host U4/C26 sowie R30/R31=2,2 kΩ bestücken; Host R34/R35 von 2,2 kΩ auf 1 kΩ ändern. POA U2/C5, R8/R9=1 kΩ und R10/R11=2,2 kΩ bestücken. C26=100 nF gehört unmittelbar an U4. Der Host-Buffer wird ebenfalls von POA_VDD_CABLE gespeist. Diese Option bleibt bis zur Spannungs-/VOL-/Ausfallprüfung unqualifiziert und DNP.
 
-Für den Direktbetrieb sind 25 kHz als Startwert vorgesehen. 2,2 kΩ Pull-up ergeben bei 3,3 V etwa 1,5 mA Low-Strom je Leitung. Bei 400 pF Gesamtkapazität ist `tr(30–70 %) ≈ 0,8473 × R × C ≈ 746 ns`. Kabel, Gegenstelle, D3 und Pads zählen zur Kapazität. Ein niedriger Takt ersetzt nicht die Einhaltung von Anstiegszeit und Low-Pegel; endgültige Kabellänge und Störfestigkeit ergeben sich am realen Aufbau.
+## Stand und nächste Arbeit
 
-P82B715 arbeitet ab 3 V mit reduzierter dynamischer Senkfähigkeit und hat bis 85 °C zulässige Umgebungstemperatur. Sein Eigenstrom und die Kabelspannung sind im Versorgungsbudget zu berücksichtigen. Zwei 1-kΩ-Kabel-Pull-ups parallel ergeben etwa 6,6 mA Low-Strom bei 3,3 V. Diese Bestückungsoption benötigt eine passende Gegenstelle und Pegel-/Timingcharakterisierung.
+Die Anpassung betrifft **nur Schaltplan, Symbole, BOM und Dokumentation**. Das vorhandene PanelLog-PCB und seine JLCPCB-Dateien enthalten weiter den alten R36-Aufbau und die bisherige Pull-up-Bestückung. U5/C27/C28/C26 sind dort noch nicht platziert/geroutet. Vor Fertigung: Schaltplan nach PCB übernehmen, strombegrenzten Kabelzweig und ESD-Rückführung routen, alle Lagen prüfen und native DRC einschließlich Schaltplan-Parität ausführen. Keine neue Fertigungsfreigabe.
 
-D3 schützt die Datenleitungen gegen ESD-Ereignisse im Rahmen seiner Beschaltung. R36 ist eine 0-Ω-Brücke und keine Strombegrenzung: Ein Versorgungskurzschluss im Kabel kann die gemeinsame 3,3-V-Schiene und PanelLog herunterziehen. Die Schnittstelle besitzt keine separate Kabel-Kurzschlussabsicherung.
+Start 25 kHz, 2,2 kΩ, Lastziel ≤400 pF pro Leitung. Anstiegszeit ≤1 µs, VOL und Wechselrichter-Störfestigkeit am realen Kabel prüfen. Versorgungskurzschluss kann bis zu 100 mA plus dynamische Umladung beanspruchen; Haupt-3V3 dabei messen. Keine galvanische Isolation und keine unabhängige POA-Nachtversorgung.
 
-Der vorhandene [POA-Softwarebaustein](../firmware/components/poa_soft_i2c/) adressiert ADS1115 an 0x48. Seine Pin-Konfiguration muss vor Einsatz zur WROOM-Hardware passen; siehe [Firmware](../firmware/README.md).
-
-Datenblätter: [TI P82B715](https://www.ti.com/lit/ds/symlink/p82b715.pdf), [TI TPD2E2U06](https://www.ti.com/lit/ds/symlink/tpd2e2u06.pdf), [TI ADS1115](https://www.ti.com/lit/ds/symlink/ads1115.pdf).
+Quelle TPS2553: https://www.ti.com/lit/ds/symlink/tps2553.pdf

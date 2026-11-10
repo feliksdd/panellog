@@ -1,7 +1,7 @@
 name: Reviewed KiCad 10 hardware
 on:
   push:
-    paths: ['hardware/**', 'tools/review_hardware.sh', '.github/workflows/hardware-review.yml', 'tools/export_review.sh']
+    paths: ['hardware/**', 'tools/**', 'bom/poa_interface_revision_2026-11-10.csv', '.github/workflows/hardware-review.yml']
   pull_request:
   workflow_dispatch:
 permissions:
@@ -19,15 +19,24 @@ jobs:
           mkdir -p "$HOME/.config/kicad/10.0"
           cp /usr/share/kicad/template/sym-lib-table "$HOME/.config/kicad/10.0/sym-lib-table"
           cp /usr/share/kicad/template/fp-lib-table "$HOME/.config/kicad/10.0/fp-lib-table"
-      - name: Native ERC and DRC
-        run: bash tools/review_hardware.sh
-      - name: Export review drawings
-        run: bash tools/export_review.sh
+      - name: Native ERC, interface and PCB parity
+        shell: bash
+        run: |
+          set +e
+          out=hardware/review_2026-11-10
+          mkdir -p "$out"
+          kicad-cli sch erc --format json --severity-all --exit-code-violations -o "$out/ERC.json" hardware/kicad/panellog.kicad_sch
+          erc=$?
+          kicad-cli sch export netlist --format kicadxml -o "$out/netlist.xml" hardware/kicad/panellog.kicad_sch
+          net=$?
+          python3 tools/check_poa_netlist.py "$out/netlist.xml" --host > "$out/interface_check.json"
+          interface=$?
+          kicad-cli pcb drc --format json --severity-all --exit-code-violations --refill-zones --schematic-parity -o "$out/DRC.json" hardware/kicad/panellog.kicad_pcb
+          drc=$?
+          exit $((erc != 0 || net != 0 || interface != 0 || drc != 0))
       - name: Preserve native reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: kicad-10-review
-          path: |
-            hardware/review_2026-11-09/
-            hardware/final_review_2026-11-09/
+          path: hardware/review_2026-11-10/

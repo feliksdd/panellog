@@ -1,0 +1,9 @@
+{
+  "source": "KiCad 10 source unchanged in format; temporary KiCad 9 syntax normalization only",
+  "checked_existing_pins": 213,
+  "unrelated_connectivity": "PASS",
+  "interface": "PASS",
+  "pcb_synchronized": false,
+  "base_commit": "26c233504d7502bd804a929c6d474f3187d3f245",
+  "reused_buffer_capacitor": "C26"
+}

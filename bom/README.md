@@ -27,7 +27,7 @@ Die vorhandene Standardbestückung liegt unter [hardware/kicad/production](../ha
 
 Für Q1 ist C108964 aus der Produktions-BOM zu verwenden. Das LCSC-Feld des Q1-PCB-Footprints enthält C8545 und widerspricht dem Bauteil IPT015N10N5; daraus darf kein automatischer Bestellimport erfolgen.
 
-D1, R23/C23 sowie U4, C26 und R34/R35 bleiben in der Standardbestückung unbestückt. R32/R33 und R36 sind 0-Ω-Brücken. Die alternative Pufferbestückung steht in der [POA-Beschreibung](../docs/poa_schnittstelle.md).
+**Schaltplanänderung 2026-11-10:** U5/C27/C28 ergänzen die geschützte POA-Versorgung; R36 entfällt. R34/R35 werden mit 2,2 kΩ bestückt; R30/R31, U4 und C26 bleiben unbestückt. R32/R33 bleiben 0-Ω-Brücken. Die oben verlinkten Produktionsdateien bilden weiterhin den vorherigen RC0-Stand ab und sind noch nicht für diese Änderung neu exportiert. Die aktuelle POA-Änderungsliste liegt in [poa_interface_revision_2026-11-10.csv](poa_interface_revision_2026-11-10.csv). D1 und R23/C23 bleiben unbestückt. Die alternative Pufferbestückung steht in der [POA-Beschreibung](../docs/poa_schnittstelle.md).
 
 J2/J3/J4/J5/J6/J7/J8 sind PCB-Löt-/Serviceflächen, keine zu beschaffenden Steckverbinder. RT1 liegt außerhalb der Platine und ist zusätzlich zur SMD-BOM zu beschaffen. Gehäuse, passende Kunststoffschrauben, PV-Leitungen, Stecker, Sensorkabel und dichte Kabeldurchführungen ergänzen die Baugruppe.
 
