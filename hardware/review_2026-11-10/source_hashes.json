@@ -1,5 +1,5 @@
 {
-  "hardware/kicad/panellog.kicad_sch": "0ac9624a87374ca7ab9a612a3cdb405f4702d8dd8333d40b877cf7ea9a53dd7d",
-  "hardware/symbols/panellog.kicad_sym": "4379c353454b9cd9e7b2a978f780499be1ccec2501cb7c3b8bab3a387237d91c",
+  "hardware/kicad/panellog.kicad_sch": "d8b42b3393b258a066175644c937917f1a02af1cc05166ade84ab45de89a4624",
+  "hardware/symbols/panellog.kicad_sym": "a707497770088b98e10733e34fed7b79361b4ba6048fefdb09f7ce37610d8ee4",
   "bom/poa_interface_revision_2026-11-10.csv": "150dba72ab3203e26a266a1f871f11d5eb4940764f35f41cdf82d81be0bb027e"
 }

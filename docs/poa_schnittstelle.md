@@ -23,3 +23,5 @@ Die Anpassung betrifft **nur Schaltplan, Symbole, BOM und Dokumentation**. Das v
 Start 25 kHz, 2,2 kΩ, Lastziel ≤400 pF pro Leitung. Anstiegszeit ≤1 µs, VOL und Wechselrichter-Störfestigkeit am realen Kabel prüfen. Versorgungskurzschluss kann bis zu 100 mA plus dynamische Umladung beanspruchen; Haupt-3V3 dabei messen. Keine galvanische Isolation und keine unabhängige POA-Nachtversorgung.
 
 Quelle TPS2553: https://www.ti.com/lit/ds/symlink/tps2553.pdf
+
+Projektbibliothek: Die vorhandenen HOVB- und C6-WROOM-Symboldefinitionen sind aus dem aktuellen Schaltplancache synchronisiert; Pinbelegung und Schaltplansymbolgeometrie dieser Bauteile bleiben erhalten.

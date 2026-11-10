@@ -7755,16 +7755,7 @@
 		)
 		(uuid "797f0cd8-f12e-4d64-82f7-d0cdd6bd04df")
 	)
-	(wire
-		(pts
-			(xy 243.84 97.79) (xy 261.62 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7b6d65cd-e442-4e41-aa3e-bbfe8bf6010b")
-	)
+
 	(wire
 		(pts
 			(xy 270.51 57.15) (xy 278.13 57.15)
@@ -9770,28 +9761,13 @@
 			)
 		)
 	)
-	(global_label "POA_VDD_CABLE"
-		(shape input)
-		(at 252.73 147.32 0)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "ea365573-a98c-4803-8d4b-56781f5483bc")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 252.73 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
+	(label "POA_VDD_CABLE"
+	(at 252.73 147.32 0)
+	(effects
+		(font
+			(size 1 1))
+		(justify left bottom))
+	(uuid "ea365573-a98c-4803-8d4b-56781f5483bc"))
 	(global_label "GND"
 		(shape input)
 		(at 323.85 105.41 0)
@@ -20783,29 +20759,33 @@
 			(path "/00000000-0000-4000-8000-000000000001"
 				(reference "U5")
 				(unit 1)))))
-	(label "+3V3"
-	(at 144.78 125.73 0)
+	(global_label "+3V3"
+	(shape input)
+	(at 144.78 125.73 180)
 	(effects
 		(font
 			(size 0.95 0.95))
 		(justify right))
 	(uuid "f4ff38ec-fa00-4c94-8a64-e2985f965da9"))
-	(label "GND"
+	(global_label "GND"
+	(shape input)
 	(at 160.02 146.05 0)
 	(effects
 		(font
 			(size 0.95 0.95))
 		(justify left))
 	(uuid "a26db9a2-52bd-4b8c-b4a8-ad5c61d9c498"))
-	(label "+3V3"
-	(at 144.78 130.81 0)
+	(global_label "+3V3"
+	(shape input)
+	(at 144.78 130.81 180)
 	(effects
 		(font
 			(size 0.95 0.95))
 		(justify right))
 	(uuid "53b21d16-4724-4409-915b-34c38dd3af20"))
-	(label "+3V3"
-	(at 144.78 135.89 0)
+	(global_label "+3V3"
+	(shape input)
+	(at 144.78 135.89 180)
 	(effects
 		(font
 			(size 0.95 0.95))
@@ -20874,14 +20854,16 @@
 			(path "/00000000-0000-4000-8000-000000000001"
 				(reference "C27")
 				(unit 1)))))
-	(label "+3V3"
+	(global_label "+3V3"
+	(shape input)
 	(at 120.65 105.41 0)
 	(effects
 		(font
 			(size 0.95 0.95))
 		(justify left))
 	(uuid "330e37cf-3568-449b-ab81-9f2b8f4d145b"))
-	(label "GND"
+	(global_label "GND"
+	(shape input)
 	(at 120.65 113.03 0)
 	(effects
 		(font
@@ -20948,7 +20930,8 @@
 			(size 0.95 0.95))
 		(justify left))
 	(uuid "ad230ce5-74ef-4ce7-9546-5aeca71236af"))
-	(label "GND"
+	(global_label "GND"
+	(shape input)
 	(at 195.58 135.89 0)
 	(effects
 		(font
